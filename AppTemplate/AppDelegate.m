@@ -21,13 +21,14 @@
     [[UITabBar appearance] setTranslucent:YES];
     [[UINavigationBar appearance] setTranslucent:YES];
     [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"barShadow"]];
-    [[UITabBar appearance ] setBarStyle:UIBarStyleDefault];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
+    [[UITabBar appearance ] setBarStyle:UIBarStyleBlack];
     [[UILabel appearance] setTextColor:PrimaryBarColor];
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = [[MSTTabBarCtrl alloc]  init];
     [self.window makeKeyAndVisible ] ;
-    [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
+//    [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
     [self setAppearence];
 
     

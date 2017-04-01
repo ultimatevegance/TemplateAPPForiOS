@@ -41,15 +41,15 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 300;
 }
-
--(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    [self.tabBarController.tabBar setHidden:YES];
-    
-}
-
--(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    [self.tabBarController.tabBar setHidden:NO];
-}
+//
+//-(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+//    [self.tabBarController.tabBar setHidden:YES];
+//    
+//}
+//
+//-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
+//    [self.tabBarController.tabBar setHidden:NO];
+//}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

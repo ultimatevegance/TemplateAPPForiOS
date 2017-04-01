@@ -108,14 +108,15 @@ static  NSInteger cellMargin = 10;
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
     if (view == nil) {
         UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - 100, 50)];
-        label.numberOfLines = 0;
+        label.numberOfLines = 2;
+        [label setFont:[UIFont systemFontOfSize:20 weight:20]];
         label.textAlignment = NSTextAlignmentCenter;
-        label.text = @"WHAT IF THEY FAILED YOUR EXPECTATION?";
+        label.text = @"What If They Failed Your Expectations?";
         view = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - 40, carousel.frame.size.height)];
         label.center = view.center;
         [view addSubview:label];
 //        ((UIImageView *)view).image = [UIImage imageNamed:_items[index]];
-        [((YYAnimatedImageView *)view) yy_setImageWithURL:[NSURL URLWithString:@"http://img.tuboshu.com/images/article/201409/23/1906/00/201409231906007365_600.gif"] options:YYWebImageOptionProgressive]; ;
+        [((YYAnimatedImageView *)view) yy_setImageWithURL:[NSURL URLWithString:@"https://media.giphy.com/media/l0Iy5QIKUH5pN4rJu/giphy.gif"] options:YYWebImageOptionProgressive]; ;
         view.contentMode = UIViewContentModeScaleAspectFill;
         
     }

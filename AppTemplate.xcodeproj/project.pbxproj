@@ -205,13 +205,13 @@
 		72E858141E7EC735001EBB8B /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				72E8585F1E7EF56F001EBB8B /* Main */,
 				72C309051E7F034600165EED /* Common.h */,
 				72E858181E7EC735001EBB8B /* AppDelegate.h */,
 				72E858191E7EC735001EBB8B /* AppDelegate.m */,
 				72E858481E7EE35B001EBB8B /* MSTTabBarCtrl.h */,
 				72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */,
 				72E8581E1E7EC735001EBB8B /* Main.storyboard */,
-				72E8585F1E7EF56F001EBB8B /* Main */,
 				72E858211E7EC735001EBB8B /* Assets.xcassets */,
 				72E858231E7EC735001EBB8B /* LaunchScreen.storyboard */,
 				72E858261E7EC735001EBB8B /* Info.plist */,
