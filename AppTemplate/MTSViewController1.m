@@ -9,9 +9,10 @@
 #import "MTSViewController1.h"
 #import "Common.h"
 #import "TableViewCell.h"
+#import "MTSDRShot.h"
 @interface MTSViewController1 ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property (strong, nonatomic) NSMutableArray *dataSource;
 @end
 
 @implementation MTSViewController1
@@ -22,7 +23,19 @@
     self.tableView.dataSource  = self;
     self.tableView.delegate = self;
     [self.tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    NSDictionary *params = @{
+                             @"sort"  : @"recent"
+                             };
     
+    [[MTSAPIClient sharedClient] loadShotsWithParams:params responseHandler:^(DRApiResponse *response) {
+        self.dataSource = [NSMutableArray array];
+        for (DRShot *shotData in response.object) {
+            [_dataSource addObject:shotData];
+        }
+        
+        
+    }];
+
     // Do any additional setup after loading the view from its nib.
 }
 

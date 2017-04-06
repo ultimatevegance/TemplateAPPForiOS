@@ -9,7 +9,11 @@
 #import "AppDelegate.h"
 #import "MSTTabBarCtrl.h"
 #import "Common.h"
+#import "DribbbleSDK.h"
+#import "MTSAPIClient.h"
 @interface AppDelegate ()
+
+@property (strong,nonatomic)DRApiClient *apiClient;
 
 @end
 
@@ -24,11 +28,18 @@
     [[UITabBar appearance ] setBarStyle:UIBarStyleDefault];
     [[UILabel appearance] setTextColor:PrimaryBarColor];
 }
+
+- (void)setupDribbbleClient {
+    
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = [[MSTTabBarCtrl alloc]  init];
     [self.window makeKeyAndVisible ] ;
     [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
+    [MTSAPIClient sharedClient];
+    [self setupDribbbleClient];
     [self setAppearence];
+    
 
     
     return YES;

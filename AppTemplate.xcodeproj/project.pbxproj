@@ -11,6 +11,8 @@
 		728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728774B91E8172FA00CE4DFC /* CollectionViewCell.m */; };
 		728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */; };
 		72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 72950D2D1E86F35800413E39 /* UIImage+animatedGIF.m */; };
+		7298F8C01E9684D20023DA34 /* MTSAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 7298F8BF1E9684D20023DA34 /* MTSAPIClient.m */; };
+		7298F8C31E96887E0023DA34 /* MTSDRShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 7298F8C21E96887E0023DA34 /* MTSDRShot.m */; };
 		72C3090B1E801E9E00165EED /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3090A1E801E9E00165EED /* DataModel.m */; };
 		72C3090F1E801F5900165EED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3090D1E801F5900165EED /* TableViewCell.m */; };
 		72C309101E801F5900165EED /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C3090E1E801F5900165EED /* TableViewCell.xib */; };
@@ -61,6 +63,10 @@
 		728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
 		72950D2C1E86F35800413E39 /* UIImage+animatedGIF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+animatedGIF.h"; sourceTree = "<group>"; };
 		72950D2D1E86F35800413E39 /* UIImage+animatedGIF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+animatedGIF.m"; sourceTree = "<group>"; };
+		7298F8BE1E9684D20023DA34 /* MTSAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSAPIClient.h; sourceTree = "<group>"; };
+		7298F8BF1E9684D20023DA34 /* MTSAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSAPIClient.m; sourceTree = "<group>"; };
+		7298F8C11E96887E0023DA34 /* MTSDRShot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSDRShot.h; sourceTree = "<group>"; };
+		7298F8C21E96887E0023DA34 /* MTSDRShot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSDRShot.m; sourceTree = "<group>"; };
 		72C309051E7F034600165EED /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		72C309091E801E9E00165EED /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		72C3090A1E801E9E00165EED /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
@@ -160,6 +166,8 @@
 			children = (
 				72C309091E801E9E00165EED /* DataModel.h */,
 				72C3090A1E801E9E00165EED /* DataModel.m */,
+				7298F8C11E96887E0023DA34 /* MTSDRShot.h */,
+				7298F8C21E96887E0023DA34 /* MTSDRShot.m */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -216,6 +224,8 @@
 				72E858231E7EC735001EBB8B /* LaunchScreen.storyboard */,
 				72E858261E7EC735001EBB8B /* Info.plist */,
 				72E858151E7EC735001EBB8B /* Supporting Files */,
+				7298F8BE1E9684D20023DA34 /* MTSAPIClient.h */,
+				7298F8BF1E9684D20023DA34 /* MTSAPIClient.m */,
 			);
 			path = AppTemplate;
 			sourceTree = "<group>";
@@ -558,10 +568,12 @@
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
 				72E8585D1E7EEC22001EBB8B /* MTSViewController3.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
+				7298F8C31E96887E0023DA34 /* MTSDRShot.m in Sources */,
 				72C3090F1E801F5900165EED /* TableViewCell.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */,
 				72E858531E7EEC07001EBB8B /* MTSViewController1.m in Sources */,
+				7298F8C01E9684D20023DA34 /* MTSAPIClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
