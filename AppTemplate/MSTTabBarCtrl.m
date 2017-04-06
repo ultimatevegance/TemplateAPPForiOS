@@ -40,6 +40,7 @@
     
     [self setViewControllers:@[nav1,nav2,nav3] animated:YES];
     self.selectedIndex  = 0;
+    
 
 }
 
