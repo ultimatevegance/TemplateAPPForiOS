@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "DataModel.h"
+#import <DribbbleSDK.h>
 
 @interface TableViewCell : UITableViewCell
-@property(nonatomic,strong) DataModel *data;
+
+@property(nonatomic,strong) DRShot *shotData;
 
 @end

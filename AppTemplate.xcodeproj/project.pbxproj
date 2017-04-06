@@ -727,7 +727,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.AppTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.dribbbleAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -741,7 +741,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.AppTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.dribbbleAPP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

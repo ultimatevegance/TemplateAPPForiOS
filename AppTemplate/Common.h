@@ -10,6 +10,7 @@
 #define Common_h
 
 #import <Chameleon.h>
+#import "MJRefresh.h"
 //Constants
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height

@@ -22,7 +22,17 @@
     self.title = @"Home";
     self.tableView.dataSource  = self;
     self.tableView.delegate = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+       [self requestData];
+    }];
+    [self requestData];
     [self.tableView registerNib:[UINib nibWithNibName:@"TableViewCell" bundle:nil] forCellReuseIdentifier:@"Cell"];
+    
+    
+    // Do any additional setup after loading the view from its nib.
+}
+
+- (void)requestData {
     NSDictionary *params = @{
                              @"sort"  : @"recent"
                              };
@@ -31,12 +41,11 @@
         self.dataSource = [NSMutableArray array];
         for (DRShot *shotData in response.object) {
             [_dataSource addObject:shotData];
+            [self.tableView reloadData];
         }
-        
-        
     }];
+    [self.tableView.mj_header endRefreshing];
 
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath  {
@@ -44,15 +53,17 @@
     if (cell == nil) {
         cell  = [[TableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
+    cell.shotData = self.dataSource[indexPath.row];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return _dataSource.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 300;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    DRShot *shotData = self.dataSource[indexPath.row];
+    return [shotData.height floatValue];
 }
 
 -(void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
