@@ -18,7 +18,6 @@
 @property (nonatomic, strong) HMSegmentedControl *segmentControl;
 @property (strong, nonatomic) NSMutableArray *dataSource;
 @property (nonatomic, strong) NSMutableArray *columns;
-
 @end
 
 @implementation MTSViewController1
@@ -45,6 +44,11 @@
     
  }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+     self.navigationController.hidesBarsOnSwipe = YES;
+}
+
 -  (void)setupUI {
     self.columns = [NSMutableArray arrayWithObjects:@"Trending",@"Popular",@"Gifs", nil];
     _segmentControl = [[HMSegmentedControl alloc] initWithSectionTitles:self.columns];
@@ -64,6 +68,7 @@
                                                     NSFontAttributeName : [UIFont fontWithName:@"Advent Pro" size:20.0f]
                                                     };
     self.navigationItem.titleView = _segmentControl;
+   
 }
 
 - (void)requestDataBySelectedIndex:(NSUInteger)selectedIndex {
@@ -135,13 +140,7 @@
 
 #pragma mark -ScrollView
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    
-    
-}
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
-    
+-(void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView {
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
