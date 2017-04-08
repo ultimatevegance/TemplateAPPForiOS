@@ -40,8 +40,11 @@
     
     [self setViewControllers:@[nav1,nav2,nav3] animated:YES];
     self.selectedIndex  = 0;
-    
+    [[UITabBarItem appearance] setTitleTextAttributes:@{
+                                                        NSFontAttributeName:[UIFont fontWithName:@"Advent Pro" size:13.0f]
+                                                        } forState:UIControlStateNormal];
 
+    
 }
 
 - (void)didReceiveMemoryWarning {

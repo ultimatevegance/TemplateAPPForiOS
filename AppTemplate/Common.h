@@ -11,6 +11,7 @@
 
 #import <Chameleon.h>
 #import "MJRefresh.h"
+#import "MBProgressHUD.h"
 //Constants
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height

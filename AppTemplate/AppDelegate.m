@@ -23,25 +23,18 @@
 - (void)setAppearence {
     [[UITabBar appearance ] setTintColor:PrimaryIconColor];
     [[UITabBar appearance] setTranslucent:YES];
+    [[UITabBar appearance ] setBarStyle:UIBarStyleBlack];
     [[UINavigationBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"barShadow"]];
-    [[UITabBar appearance ] setBarStyle:UIBarStyleDefault];
-    [[UILabel appearance] setTextColor:PrimaryBarColor];
+    [[UINavigationBar appearance] setBarTintColor:PrimaryBarColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName :[UIColor whiteColor],NSFontAttributeName :[ UIFont fontWithName:@"Advent Pro" size:23]}];
 }
 
-- (void)setupDribbbleClient {
-    
-}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = [[MSTTabBarCtrl alloc]  init];
     [self.window makeKeyAndVisible ] ;
-    [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
     [MTSAPIClient sharedClient];
-    [self setupDribbbleClient];
     [self setAppearence];
-    
-
-    
+         
     return YES;
 }
 

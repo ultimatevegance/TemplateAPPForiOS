@@ -37,6 +37,7 @@ target 'AppTemplate' do
   pod 'Canvas'
   pod 'FTPopOverMenu'
   pod 'DribbbleSDK'
+  pod 'HMSegmentedControl'
   target 'AppTemplateTests' do
     inherit! :search_paths
     # Pods for testing
