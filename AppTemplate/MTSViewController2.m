@@ -8,14 +8,18 @@
 
 #import "MTSViewController2.h"
 #import "Common.h"
-#import "CollectionViewCell.h"
 #import "YYWebImage.h"
-static  NSString *cellId = @"CollectionViewCell";
+#import "MTSDesingerCollectionViewCell.h"
+#import "MTSProjectTableViewCell.h"
+#import "MTSBannerView.h"
+static  NSString *cellId = @"MTSProjectTableViewCell";
 static  NSString *bannerCellId = @"HeaderBannerCell";
-static  NSInteger cellMargin = 10;
+static  NSString *designerCellId = @"DesignerCell";
+static  NSString *designersCollectionViewId = @"Designers";
 
 @interface MTSViewController2 ()       
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet UITableView *wrapperTableView;
+@property (strong, nonatomic)  UICollectionView *designersCollectionView;
 @property (nonatomic, strong) UIPageControl *pageControl;
 @property (nonatomic, strong) iCarousel *_carouselView;
 @property (nonatomic, strong) NSMutableArray *items;
@@ -28,15 +32,22 @@ static  NSInteger cellMargin = 10;
     [super viewDidLoad];
     self.edgesForExtendedLayout = UIRectEdgeNone;
     self.title = @"LAB";
-    //UICollectionView
-    self.collectionView.dataSource =  self;
-    self.collectionView.delegate = self;
-    [self.collectionView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellWithReuseIdentifier:cellId];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:bannerCellId];
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-    self.collectionView.collectionViewLayout = layout;
+    [self setupUI];
+    //UITableView
+    self.wrapperTableView.dataSource =  self;
+    self.wrapperTableView.delegate = self;
+    [self.wrapperTableView registerNib:[UINib nibWithNibName:cellId bundle:nil] forCellReuseIdentifier:cellId];
+    [self.wrapperTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:bannerCellId];
+    [self.wrapperTableView registerClass:[UITableViewCell class] forCellReuseIdentifier:designersCollectionViewId];
+//    self.wrapperTableView.estimatedRowHeight = 461.5;
+    self.wrapperTableView.rowHeight = UITableViewAutomaticDimension;
+    [self.wrapperTableView setNeedsLayout];
+    [self.wrapperTableView layoutIfNeeded];
+
     
+}
+
+- (void)setupUI{
     //Carousel
     _items = [NSMutableArray arrayWithObjects:@"giphy.gif",@"giphy-2.gif",@"source.gif",@"giphy-4.gif",@"testImage5", nil];
     __carouselView = [[iCarousel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight * 0.35)];
@@ -48,75 +59,141 @@ static  NSInteger cellMargin = 10;
     _pageControl.center = CGPointMake(kScreenWidth / 2, CGRectGetHeight(__carouselView.frame) - 20);
     _pageControl.numberOfPages = __carouselView.numberOfItems;
     [__carouselView addSubview:_pageControl];
-    
+    //designers Collection View
+    UICollectionViewFlowLayout *layout2 = [[UICollectionViewFlowLayout alloc] init];
+    layout2.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    self.designersCollectionView = [[UICollectionView alloc] initWithFrame:CGRectMake (0, 0, kScreenWidth, kScreenHeight * 0.27)collectionViewLayout:layout2];
+    self.designersCollectionView.delegate = self;
+    self.designersCollectionView.dataSource = self;
+    self.designersCollectionView.pagingEnabled = YES;
+    self.designersCollectionView.showsHorizontalScrollIndicator = NO;
+    self.designersCollectionView.backgroundColor = [UIColor colorWithHexString:@"1A1720"];
+    [self.designersCollectionView registerNib:[UINib nibWithNibName:@"MTSDesingerCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:designerCellId];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
 }
-#pragma mark - UICollectionView
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 2;
+#pragma mark - UITableView
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        UICollectionViewCell *bannerCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:bannerCellId forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+       if (indexPath.section == 0) {
+        UITableViewCell *bannerCell = [self.wrapperTableView dequeueReusableCellWithIdentifier:bannerCellId forIndexPath:indexPath];
         if (! __carouselView.superview) {
             [bannerCell addSubview:__carouselView];
         }
         return bannerCell;
-        } else {
-        CollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:cellId forIndexPath:indexPath];
+    } else if (indexPath.section == 1) {
+        UITableViewCell *designersCell = [self.wrapperTableView dequeueReusableCellWithIdentifier:designersCollectionViewId forIndexPath:indexPath];
+        [designersCell addSubview:self.designersCollectionView];
+        return designersCell;
+    } else {
+      MTSProjectTableViewCell *cell = [self.wrapperTableView dequeueReusableCellWithIdentifier:cellId forIndexPath:indexPath];
         return cell;
- 
     }
+
 }
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if (section == 0) {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0 || section == 1) {
         return 1;
     } else {
         return 12;
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return __carouselView.frame.size.height;
+    } else if (indexPath.section == 1) {
+        return self.designersCollectionView.frame.size.height ;
+    }
+    else {
+        return 446;
+    }
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 1 || section == 2) {
+        return 50;
+    } else {
+        return 0;
+    }
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 50)];
+    titleView.backgroundColor = [UIColor colorWithHexString:@"1A1720"];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:titleView.frame];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    [titleLabel setFont:[UIFont fontWithName:@"Futura-Bold" size:20]];
+    [titleLabel setTextColor:[UIColor whiteColor]];      
+    [titleView addSubview:titleLabel];
+    if (section == 1) {
+        titleLabel.text = @"Popular Designers";
+    } else if (section == 2) {
+        titleLabel.text = @"Trending Projects";
+    } else {
+        titleLabel.text = @"";
+    }
+    return titleView;
+}
+
+#pragma mark - UICollectionView
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    MTSDesingerCollectionViewCell *designerCell = [self.designersCollectionView dequeueReusableCellWithReuseIdentifier:designerCellId forIndexPath:indexPath];
+    return designerCell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
+    
+}
 #pragma mark - UICollectionViewFlowLayout
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return __carouselView.frame.size;
-    } else {
-        NSInteger cellWidth = (kScreenWidth - cellMargin * 3) / 2;
-        NSInteger cellHeight = cellWidth;
+    NSInteger cellHeight =  self.designersCollectionView.bounds.size.height ;
+    NSInteger cellWidth = cellHeight * 0.78;
         return CGSizeMake(cellWidth, cellHeight);
-    }
+
 }
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout referenceSizeForHeaderInSection:(NSInteger)section {
             return CGSizeZero;
     
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
-    if (section == 0) {
-        return UIEdgeInsetsMake(0, 0, 10, 0);
-    }
-    return UIEdgeInsetsMake(0, cellMargin, 0, cellMargin);
+       return UIEdgeInsetsZero;
 }
 
 #pragma mark - Carousel
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSInteger)index reusingView:(UIView *)view {
     if (view == nil) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - 100, 50)];
-        label.numberOfLines = 0;
-        label.textAlignment = NSTextAlignmentCenter;
-        label.text = @"WHAT IF THEY FAILED YOUR EXPECTATION?";
-        view = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - 40, carousel.frame.size.height)];
-        label.center = view.center;
-        [view addSubview:label];
-//        ((UIImageView *)view).image = [UIImage imageNamed:_items[index]];
-        [((YYAnimatedImageView *)view) yy_setImageWithURL:[NSURL URLWithString:@"http://img.tuboshu.com/images/article/201409/23/1906/00/201409231906007365_600.gif"] options:YYWebImageOptionProgressive]; ;
-        view.contentMode = UIViewContentModeScaleAspectFill;
+//        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth - 100, 50)];
+//        label.numberOfLines = 0;
+//        label.textAlignment = NSTextAlignmentCenter;
+//        label.textColor = [UIColor whiteColor];
+//        label.text = @"WHAT IF THEY FAILED YOUR EXPECTATION?";
+//        view = [[YYAnimatedImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, carousel.frame.size.height)];
+//        label.center = view.center;
+//        [view addSubview:label];
+////        ((UIImageView *)view).image = [UIImage imageNamed:_items[index]];
+//        [((YYAnimatedImageView *)view) yy_setImageWithURL:[NSURL URLWithString:@"http://img.tuboshu.com/images/article/201409/23/1906/00/201409231906007365_600.gif"] options:YYWebImageOptionProgressive]; ;
+//        view.contentMode = UIViewContentModeScaleAspectFill;
+        MTSBannerView *bannerView = [[[NSBundle mainBundle] loadNibNamed:@"BannerView" owner:self options:nil] lastObject];
+        view = bannerView;
         
     }
     return view;

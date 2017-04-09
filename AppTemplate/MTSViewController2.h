@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <iCarousel.h>
-@interface MTSViewController2 : UIViewController<iCarouselDelegate,iCarouselDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface MTSViewController2 : UIViewController<iCarouselDelegate,iCarouselDataSource,UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UITableViewDelegate,UITableViewDataSource>
 
 @end

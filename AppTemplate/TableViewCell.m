@@ -8,7 +8,9 @@
 
 #import "TableViewCell.h"
 #import "YYWebImage.h"
+#import "MBCircularProgressBarView.h"
 @interface TableViewCell ()
+@property (weak, nonatomic) IBOutlet MBCircularProgressBarView *loadingProgressView;
 
 @property (weak, nonatomic) IBOutlet UIView *wraperView;
 @property (weak, nonatomic) IBOutlet UIImageView *_imageView;
@@ -33,12 +35,16 @@
 - (void)setShotData:(DRShot *)shotData {
     _shotData = shotData;
     _titleLabel.text = _shotData.user.username;
-    _locationLabel.text = _shotData.user.location;
+    _locationLabel.text = _shotData.user.location == nil ? @"Unknown" : _shotData.user.location ;
     _viewCount.text = [NSString stringWithFormat:@"%@",_shotData.viewsCount];
     _commentCountLabel.text = [NSString stringWithFormat:@"%@",_shotData.commentsCount];
     _likeCountLabel.text = [NSString stringWithFormat:@"%@",_shotData.likesCount];
-    [self.imageView yy_setImageWithURL:[NSURL URLWithString:_shotData.images.normal] placeholder:[UIImage imageNamed:@"shotPlaceholder"]];
-    [self.userImageView yy_setImageWithURL:[NSURL URLWithString:_shotData.user.avatarUrl] placeholder:[UIImage imageNamed:@"AvatarDefault"]];
+    if (_shotData.isAnimation) {
+        [self.imageView yy_setImageWithURL:[NSURL URLWithString:_shotData.images.hidpi] placeholder:[UIImage imageNamed:@"shotPlaceholder"]];
+           } else {
+        [self.imageView yy_setImageWithURL:[NSURL URLWithString:_shotData.images.normal] placeholder:[UIImage imageNamed:@"shotPlaceholder"]];
+    }
+        [self.userImageView yy_setImageWithURL:[NSURL URLWithString:_shotData.user.avatarUrl] placeholder:[UIImage imageNamed:@"AvatarDefault"]];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

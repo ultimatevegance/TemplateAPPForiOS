@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7230196D1E9A723F00C97032 /* BannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7230196C1E9A723F00C97032 /* BannerView.xib */; };
 		7281C2F3489597CCB622F211 /* libPods-AppTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */; };
 		728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728774B91E8172FA00CE4DFC /* CollectionViewCell.m */; };
 		728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */; };
@@ -18,6 +19,10 @@
 		729DCE321E99311000EE679B /* MSRereshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 729DCE311E99311000EE679B /* MSRereshGifHeader.m */; };
 		729DCE331E99311000EE679B /* MSRereshGifHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = 729DCE311E99311000EE679B /* MSRereshGifHeader.m */; };
 		729DCE361E99659E00EE679B /* MTSBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 729DCE351E99659E00EE679B /* MTSBannerView.m */; };
+		729DCE3A1E9A144000EE679B /* MTSDesingerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729DCE381E9A144000EE679B /* MTSDesingerCollectionViewCell.m */; };
+		729DCE3B1E9A144000EE679B /* MTSDesingerCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729DCE391E9A144000EE679B /* MTSDesingerCollectionViewCell.xib */; };
+		729DCE3F1E9A215A00EE679B /* MTSProjectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729DCE3D1E9A215A00EE679B /* MTSProjectTableViewCell.m */; };
+		729DCE401E9A215A00EE679B /* MTSProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729DCE3E1E9A215A00EE679B /* MTSProjectTableViewCell.xib */; };
 		72C3090B1E801E9E00165EED /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3090A1E801E9E00165EED /* DataModel.m */; };
 		72C3090F1E801F5900165EED /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3090D1E801F5900165EED /* TableViewCell.m */; };
 		72C309101E801F5900165EED /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72C3090E1E801F5900165EED /* TableViewCell.xib */; };
@@ -63,6 +68,7 @@
 		4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EE46CF075FE7B30045567C /* Pods-AppTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		7230196C1E9A723F00C97032 /* BannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BannerView.xib; sourceTree = "<group>"; };
 		728774B81E8172FA00CE4DFC /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		728774B91E8172FA00CE4DFC /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -77,6 +83,12 @@
 		729DCE311E99311000EE679B /* MSRereshGifHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSRereshGifHeader.m; sourceTree = "<group>"; };
 		729DCE341E99659E00EE679B /* MTSBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSBannerView.h; sourceTree = "<group>"; };
 		729DCE351E99659E00EE679B /* MTSBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSBannerView.m; sourceTree = "<group>"; };
+		729DCE371E9A144000EE679B /* MTSDesingerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSDesingerCollectionViewCell.h; sourceTree = "<group>"; };
+		729DCE381E9A144000EE679B /* MTSDesingerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSDesingerCollectionViewCell.m; sourceTree = "<group>"; };
+		729DCE391E9A144000EE679B /* MTSDesingerCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSDesingerCollectionViewCell.xib; sourceTree = "<group>"; };
+		729DCE3C1E9A215A00EE679B /* MTSProjectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSProjectTableViewCell.h; sourceTree = "<group>"; };
+		729DCE3D1E9A215A00EE679B /* MTSProjectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSProjectTableViewCell.m; sourceTree = "<group>"; };
+		729DCE3E1E9A215A00EE679B /* MTSProjectTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSProjectTableViewCell.xib; sourceTree = "<group>"; };
 		72C309051E7F034600165EED /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		72C309091E801E9E00165EED /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		72C3090A1E801E9E00165EED /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
@@ -171,6 +183,13 @@
 				728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */,
 				729DCE341E99659E00EE679B /* MTSBannerView.h */,
 				729DCE351E99659E00EE679B /* MTSBannerView.m */,
+				7230196C1E9A723F00C97032 /* BannerView.xib */,
+				729DCE371E9A144000EE679B /* MTSDesingerCollectionViewCell.h */,
+				729DCE381E9A144000EE679B /* MTSDesingerCollectionViewCell.m */,
+				729DCE391E9A144000EE679B /* MTSDesingerCollectionViewCell.xib */,
+				729DCE3C1E9A215A00EE679B /* MTSProjectTableViewCell.h */,
+				729DCE3D1E9A215A00EE679B /* MTSProjectTableViewCell.m */,
+				729DCE3E1E9A215A00EE679B /* MTSProjectTableViewCell.xib */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -423,12 +442,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7230196D1E9A723F00C97032 /* BannerView.xib in Resources */,
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				72C309101E801F5900165EED /* TableViewCell.xib in Resources */,
+				729DCE401E9A215A00EE679B /* MTSProjectTableViewCell.xib in Resources */,
 				72E858591E7EEC15001EBB8B /* MTSViewController2.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
 				72E858541E7EEC07001EBB8B /* MTSViewController1.xib in Resources */,
+				729DCE3B1E9A144000EE679B /* MTSDesingerCollectionViewCell.xib in Resources */,
 				728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */,
 				72E8585E1E7EEC22001EBB8B /* MTSViewController3.xib in Resources */,
 				729DCE2B1E98F31500EE679B /* advent-pro.regular.ttf in Resources */,
@@ -597,6 +619,7 @@
 			files = (
 				72E858581E7EEC15001EBB8B /* MTSViewController2.m in Sources */,
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
+				729DCE3F1E9A215A00EE679B /* MTSProjectTableViewCell.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
 				72E8585D1E7EEC22001EBB8B /* MTSViewController3.m in Sources */,
@@ -606,6 +629,7 @@
 				729DCE321E99311000EE679B /* MSRereshGifHeader.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */,
+				729DCE3A1E9A144000EE679B /* MTSDesingerCollectionViewCell.m in Sources */,
 				729DCE361E99659E00EE679B /* MTSBannerView.m in Sources */,
 				72E858531E7EEC07001EBB8B /* MTSViewController1.m in Sources */,
 				7298F8C01E9684D20023DA34 /* MTSAPIClient.m in Sources */,

@@ -16,7 +16,7 @@
             <rect key="frame" x="0.0" y="0.0" width="396" height="457"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="396" height="456.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="396" height="457"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UeE-Dj-1ta" userLabel="WraperView">
@@ -203,20 +203,47 @@
                             <constraint firstAttribute="bottom" secondItem="RhN-0v-eB1" secondAttribute="bottom" constant="6" id="tZC-mg-5Gy"/>
                         </constraints>
                     </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8jE-sO-ahj" customClass="MBCircularProgressBarView">
+                        <rect key="frame" x="155.5" y="186" width="85" height="85"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="85" id="2zN-C2-gjs"/>
+                            <constraint firstAttribute="width" constant="85" id="gew-Wg-5Lz"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressColor">
+                                <color key="value" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="progressStrokeColor">
+                                <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="emptyLineColor">
+                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="UeE-Dj-1ta" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="2Xk-2Z-zar"/>
+                    <constraint firstItem="8jE-sO-ahj" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="IYj-jn-U8C"/>
                     <constraint firstAttribute="trailing" secondItem="UeE-Dj-1ta" secondAttribute="trailing" constant="8" id="TTt-tI-6MO"/>
                     <constraint firstItem="UeE-Dj-1ta" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7" id="WNb-r5-ei7"/>
                     <constraint firstAttribute="bottom" secondItem="UeE-Dj-1ta" secondAttribute="bottom" constant="8.5" id="hhu-UD-gdD"/>
+                    <constraint firstItem="8jE-sO-ahj" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xMN-zs-3DG"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="8jE-sO-ahj"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="_imageView" destination="hCd-Gw-6CJ" id="LmT-Lu-C35"/>
                 <outlet property="commentCountLabel" destination="PPE-iM-6JP" id="krp-Ne-96E"/>
                 <outlet property="likeCountLabel" destination="Ajc-bY-cSe" id="09X-Th-NCm"/>
+                <outlet property="loadingProgressView" destination="8jE-sO-ahj" id="GOD-hr-S9U"/>
                 <outlet property="locationLabel" destination="B28-6n-CFY" id="tX2-4k-giD"/>
                 <outlet property="titleLabel" destination="Bh8-vu-9tE" id="fQX-nU-HGV"/>
                 <outlet property="userImageView" destination="qET-V7-hXp" id="anF-dc-f6K"/>
