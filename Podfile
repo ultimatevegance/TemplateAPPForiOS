@@ -35,7 +35,9 @@ target 'AppTemplate' do
   pod 'JVFloatLabeledTextField'
 #   pod 'YYKit'
   pod 'Canvas'
+  pod 'DCAnimationKit'
   pod 'FTPopOverMenu'
+  pod 'BubbleTransition-objc'
   target 'AppTemplateTests' do
     inherit! :search_paths
     # Pods for testing

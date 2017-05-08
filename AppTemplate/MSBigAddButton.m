@@ -18,20 +18,21 @@
 }
 */
 
-- (void)drawRect:(CGRect)rect {
-    self.layer.cornerRadius = CGRectGetHeight(self.frame) / 2;
-    self.layer.masksToBounds = NO;
-    CALayer *shadowlayer = [CALayer layer];
-    shadowlayer.shadowRadius = 14;
-    shadowlayer.shadowColor = [UIColor colorWithHexString:@"0F57EC"].CGColor;
-    shadowlayer.shadowOffset = CGSizeMake(0, 0);
-    shadowlayer.shadowOpacity = 0.7;
-    shadowlayer.frame = self.frame;
-    shadowlayer.backgroundColor = [UIColor redColor].CGColor;
-    [self.layer addSublayer:shadowlayer];
-    self.backgroundColor = nil;
-    
-}
+//- (void)drawRect:(CGRect)rect {
+////    CALayer *shadowlayer = [CALayer layer];
+////    shadowlayer.shadowRadius = 14;
+////    shadowlayer.shadowColor = [UIColor colorWithHexString:@"0F57EC"].CGColor;
+////    shadowlayer.shadowOffset = CGSizeMake(0, 0);
+////    shadowlayer.shadowOpacity = 0.7;
+////    shadowlayer.frame = CGRectMake(0, 0, CGRectGetWidth(self.frame), CGRectGetHeight(self.frame));
+////    shadowlayer.backgroundColor = self.backgroundColor.CGColor;
+////    [self.layer addSublayer:shadowlayer];
+//    
+////    self.layer.cornerRadius = CGRectGetHeight(self.frame) / 2;
+////    self.layer.masksToBounds = YES;
+//
+//  
+//}
 
 
 @end

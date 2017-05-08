@@ -7,10 +7,13 @@
 //
 
 #import "MSTaskDashboardViewController.h"
-
-@interface MSTaskDashboardViewController ()
+#import "CollectionViewCell.h"
+@interface MSTaskDashboardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
+
+static NSString *dashboardCellID = @"CollectionViewCell";
 
 @implementation MSTaskDashboardViewController
 
@@ -19,6 +22,9 @@
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"dashboard"] selectedImage:[UIImage imageNamed:@"dashboard_s"]];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"statistics"] style:UIBarButtonItemStylePlain target:self action:@selector(statics:)];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"setting"] style:UIBarButtonItemStylePlain target:self action:@selector(setting:)];
+        
     }
     
     return self;
@@ -28,6 +34,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"DASHBOARD";
+    
+    // 1. create UICollectionViewFlowLayout
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    self.collectionView.collectionViewLayout = layout;
+    // 2. register custom xib cell
+    [self.collectionView registerNib:[UINib nibWithNibName:dashboardCellID bundle:nil] forCellWithReuseIdentifier:dashboardCellID];
+    // 3. config delegate and datasource
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+}
+
+- (void)setting:(UIBarButtonItem *)sender {
+    
+}
+
+- (void)statics:(UIBarButtonItem *)sender {
+    
+}
+
+#pragma mark - UICollectionViewDataSource
+//cell config
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor whiteColor];
+    return  cell;
+}
+// items number for section
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 10;
+}
+// sections number
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+#pragma mark - UICollectionViewDelegateFlowLayout
+// cell margins
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(23, 18, 18, 18);
+}
+// cell size
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(164, 186);
+}
+#pragma mark - UICollectionViewDelegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+}
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void)didReceiveMemoryWarning {

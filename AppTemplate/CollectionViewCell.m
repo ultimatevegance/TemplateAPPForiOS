@@ -8,15 +8,20 @@
 
 #import "CollectionViewCell.h"
 #import "YYWebImage.h"
+
+@interface CollectionViewCell()
+@property (weak, nonatomic) IBOutlet UIView *iconView;
+
+@end
 @implementation CollectionViewCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.imageView.layer.cornerRadius = 6;
-    self.imageView.layer.masksToBounds = YES;
-    [self.imageView yy_setImageWithURL:[NSURL URLWithString:@"http://img.tuboshu.com/images/article/201409/23/1906/00/201409231906007365_600.gif"] options:YYWebImageOptionProgressiveBlur];
-
+    self.layer.cornerRadius = 7;
+    self.layer.masksToBounds = YES;
+    _iconView.layer.cornerRadius = CGRectGetHeight(_iconView.frame) / 2;
+    _iconView.layer.masksToBounds = YES;
 
 }
 

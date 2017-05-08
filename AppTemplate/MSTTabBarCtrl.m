@@ -10,9 +10,13 @@
 #import "Common.h"
 #import "MSTaskHomeViewController.h"
 #import "MSTaskDashboardViewController.h"
+#import "MSTaskCreateViewController.h"
 #import "MSBigAddButton.h"
-@interface MSTTabBarCtrl ()
-
+#import <YPBubbleTransition.h>
+@interface MSTTabBarCtrl ()<UIViewControllerTransitioningDelegate>
+@property (nonatomic, strong) YPBubbleTransition *transition;
+@property (nonatomic, strong) MSBigAddButton *addTaskButton;
+@property (nonatomic, assign) CGRect buttonFrame;
 @end
 
 @implementation MSTTabBarCtrl
@@ -35,14 +39,58 @@
 }
 
 - (void)configCenterAddButton {
-    MSBigAddButton *addButton = [MSBigAddButton buttonWithType:UIButtonTypeCustom];
-    [addButton setFrame:CGRectMake(0, 0, kScreenWidth * 0.15, kScreenWidth * 0.15)];
-    [addButton setImage:[UIImage imageNamed:@"addIcon"] forState:UIControlStateNormal];
+    //不要复写draw 方法来加圆角和阴影 最好写一个UIview的拓展
+    _addTaskButton = [MSBigAddButton buttonWithType:UIButtonTypeCustom];
+    [_addTaskButton setFrame:CGRectMake(0, 0, kScreenWidth * 0.15, kScreenWidth * 0.15)];
+    _addTaskButton.layer.cornerRadius = CGRectGetHeight(_addTaskButton.frame) / 2;
+    _addTaskButton.layer.shadowColor = PrimaryThemeColor.CGColor;
+    _addTaskButton.layer.shadowOffset = CGSizeMake(0, 8);
+    _addTaskButton.layer.shadowOpacity = 0.6;
+    _addTaskButton.layer.shadowRadius = 6;
+    [_addTaskButton setImage:[UIImage imageNamed:@"addIcon"] forState:UIControlStateNormal];
+    _addTaskButton.tintColor = [UIColor whiteColor];
     CGPoint center = CGPointMake(self.tabBar.center.x, self.tabBar.center.y - CGRectGetHeight(self.tabBar.frame) / 2);
-    addButton.center = center;
-    [addButton setBackgroundColor:PrimaryThemeColor];
-    [self.view addSubview:addButton];
+    [_addTaskButton addTarget: self action:@selector(addButtonClickd:) forControlEvents:UIControlEventTouchUpInside];
+    _addTaskButton.center = center;
+    _buttonFrame = _addTaskButton.frame;
+    [_addTaskButton setBackgroundColor:PrimaryThemeColor];
+    [self.view addSubview:_addTaskButton];
 }
+
+- (void)addButtonClickd:(UIButton *)sender {
+    MSTaskCreateViewController *taskCreateVC = [[MSTaskCreateViewController alloc] initWithButtonFrame:_buttonFrame];
+    taskCreateVC.transitioningDelegate = self;
+    [self presentViewController:taskCreateVC animated:YES completion:nil];
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    self.transition.transitionMode = YPBubbleTransitionModePresent;
+    self.transition.startPoint = _addTaskButton.center;
+    self.transition.bubbleColor = _addTaskButton.backgroundColor;
+    return self.transition;
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
+{
+    self.transition.transitionMode = YPBubbleTransitionModeDismiss;
+    self.transition.startPoint = _addTaskButton.center;
+    self.transition.bubbleColor = _addTaskButton.backgroundColor;
+    return self.transition;
+}
+
+
+- (YPBubbleTransition *)transition
+{
+    if (!_transition) {
+        _transition = [[YPBubbleTransition alloc] init];
+        _transition.duration = 0.3f;
+    }
+    return _transition;
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

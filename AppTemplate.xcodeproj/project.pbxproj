@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		726600E21EC0B21400A7F48F /* MSTaskCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 726600E01EC0B21400A7F48F /* MSTaskCreateViewController.m */; };
+		726600E31EC0B21400A7F48F /* MSTaskCreateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 726600E11EC0B21400A7F48F /* MSTaskCreateViewController.xib */; };
 		7281C2F3489597CCB622F211 /* libPods-AppTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */; };
 		728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 728774B91E8172FA00CE4DFC /* CollectionViewCell.m */; };
 		728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */; };
@@ -55,6 +57,9 @@
 		4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EE46CF075FE7B30045567C /* Pods-AppTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		726600DF1EC0B21400A7F48F /* MSTaskCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskCreateViewController.h; sourceTree = "<group>"; };
+		726600E01EC0B21400A7F48F /* MSTaskCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskCreateViewController.m; sourceTree = "<group>"; };
+		726600E11EC0B21400A7F48F /* MSTaskCreateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskCreateViewController.xib; sourceTree = "<group>"; };
 		728774B81E8172FA00CE4DFC /* CollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewCell.h; sourceTree = "<group>"; };
 		728774B91E8172FA00CE4DFC /* CollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewCell.m; sourceTree = "<group>"; };
 		728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionViewCell.xib; sourceTree = "<group>"; };
@@ -173,6 +178,9 @@
 				8D43C1A81EC05D2A0043F02A /* MSTaskDashboardViewController.h */,
 				8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */,
 				8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */,
+				726600DF1EC0B21400A7F48F /* MSTaskCreateViewController.h */,
+				726600E01EC0B21400A7F48F /* MSTaskCreateViewController.m */,
+				726600E11EC0B21400A7F48F /* MSTaskCreateViewController.xib */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -284,12 +292,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E8583F1E7EC735001EBB8B /* Build configuration list for PBXNativeTarget "AppTemplate" */;
 			buildPhases = (
-				491A8D7C8B1C114D59A5BDD5 /* 📦 Check Pods Manifest.lock */,
+				491A8D7C8B1C114D59A5BDD5 /* [CP] Check Pods Manifest.lock */,
 				72E8580E1E7EC735001EBB8B /* Sources */,
 				72E8580F1E7EC735001EBB8B /* Frameworks */,
 				72E858101E7EC735001EBB8B /* Resources */,
-				B0FFA25ABEE2B1367C412E9C /* 📦 Embed Pods Frameworks */,
-				A1394EE79E46C92065F6EAEA /* 📦 Copy Pods Resources */,
+				B0FFA25ABEE2B1367C412E9C /* [CP] Embed Pods Frameworks */,
+				A1394EE79E46C92065F6EAEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -304,12 +312,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E858421E7EC735001EBB8B /* Build configuration list for PBXNativeTarget "AppTemplateTests" */;
 			buildPhases = (
-				5A463D7A7378F14BA4CD2929 /* 📦 Check Pods Manifest.lock */,
+				5A463D7A7378F14BA4CD2929 /* [CP] Check Pods Manifest.lock */,
 				72E858271E7EC735001EBB8B /* Sources */,
 				72E858281E7EC735001EBB8B /* Frameworks */,
 				72E858291E7EC735001EBB8B /* Resources */,
-				F5F2169F50C358AE8BE9087D /* 📦 Embed Pods Frameworks */,
-				1C4C7C0F1971EA53E56B0733 /* 📦 Copy Pods Resources */,
+				F5F2169F50C358AE8BE9087D /* [CP] Embed Pods Frameworks */,
+				1C4C7C0F1971EA53E56B0733 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -325,11 +333,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E858451E7EC735001EBB8B /* Build configuration list for PBXNativeTarget "AppTemplateUITests" */;
 			buildPhases = (
-				D6895C4C0705B6E22EBA6422 /* 📦 Check Pods Manifest.lock */,
+				D6895C4C0705B6E22EBA6422 /* [CP] Check Pods Manifest.lock */,
 				72E858321E7EC735001EBB8B /* Sources */,
 				72E858331E7EC735001EBB8B /* Frameworks */,
 				72E858341E7EC735001EBB8B /* Resources */,
-				A6FDEC12745538714737DFC4 /* 📦 Copy Pods Resources */,
+				A6FDEC12745538714737DFC4 /* [CP] Copy Pods Resources */,
+				D3E124021756DCD65E2EB2D4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -399,6 +408,7 @@
 				8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */,
 				72C309101E801F5900165EED /* TableViewCell.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
+				726600E31EC0B21400A7F48F /* MSTaskCreateViewController.xib in Resources */,
 				728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */,
 				8D43C1A71EC05D0E0043F02A /* MSTaskHomeViewController.xib in Resources */,
 			);
@@ -421,14 +431,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C4C7C0F1971EA53E56B0733 /* 📦 Copy Pods Resources */ = {
+		1C4C7C0F1971EA53E56B0733 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,44 +446,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplateTests/Pods-AppTemplateTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		491A8D7C8B1C114D59A5BDD5 /* 📦 Check Pods Manifest.lock */ = {
+		491A8D7C8B1C114D59A5BDD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5A463D7A7378F14BA4CD2929 /* 📦 Check Pods Manifest.lock */ = {
+		5A463D7A7378F14BA4CD2929 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A1394EE79E46C92065F6EAEA /* 📦 Copy Pods Resources */ = {
+		A1394EE79E46C92065F6EAEA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -481,14 +491,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A6FDEC12745538714737DFC4 /* 📦 Copy Pods Resources */ = {
+		A6FDEC12745538714737DFC4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,14 +506,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0FFA25ABEE2B1367C412E9C /* 📦 Embed Pods Frameworks */ = {
+		B0FFA25ABEE2B1367C412E9C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,29 +521,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D6895C4C0705B6E22EBA6422 /* 📦 Check Pods Manifest.lock */ = {
+		D3E124021756DCD65E2EB2D4 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F5F2169F50C358AE8BE9087D /* 📦 Embed Pods Frameworks */ = {
+		D6895C4C0705B6E22EBA6422 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5F2169F50C358AE8BE9087D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +578,7 @@
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
 				8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */,
 				8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */,
+				726600E21EC0B21400A7F48F /* MSTaskCreateViewController.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
 				72C3090F1E801F5900165EED /* TableViewCell.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
