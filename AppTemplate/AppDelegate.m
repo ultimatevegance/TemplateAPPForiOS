@@ -17,17 +17,20 @@
 
 
 - (void)setAppearence {
-    [[UITabBar appearance ] setTintColor:PrimaryIconColor];
-    [[UITabBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"barShadow"]];
+    [[UITabBar appearance ] setTintColor:PrimaryThemeColor];
+    [[UITabBar appearance] setTranslucent:NO];
+    //remove bar border line
+    [[UITabBar appearance] setShadowImage:[[UIImage alloc] init]];
+    [[UITabBar appearance] setBackgroundImage:[[UIImage alloc] init]];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UITabBar appearance] setBackgroundColor:[UIColor whiteColor]];
     [[UITabBar appearance ] setBarStyle:UIBarStyleDefault];
-    [[UILabel appearance] setTextColor:PrimaryBarColor];
+    
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = [[MSTTabBarCtrl alloc]  init];
     [self.window makeKeyAndVisible ] ;
-    [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
+//    [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
     [self setAppearence];
 
     

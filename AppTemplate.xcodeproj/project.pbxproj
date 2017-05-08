@@ -22,13 +22,12 @@
 		72E858301E7EC735001EBB8B /* AppTemplateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E8582F1E7EC735001EBB8B /* AppTemplateTests.m */; };
 		72E8583B1E7EC735001EBB8B /* AppTemplateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E8583A1E7EC735001EBB8B /* AppTemplateUITests.m */; };
 		72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */; };
-		72E858531E7EEC07001EBB8B /* MTSViewController1.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858511E7EEC07001EBB8B /* MTSViewController1.m */; };
-		72E858541E7EEC07001EBB8B /* MTSViewController1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72E858521E7EEC07001EBB8B /* MTSViewController1.xib */; };
-		72E858581E7EEC15001EBB8B /* MTSViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858561E7EEC15001EBB8B /* MTSViewController2.m */; };
-		72E858591E7EEC15001EBB8B /* MTSViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72E858571E7EEC15001EBB8B /* MTSViewController2.xib */; };
-		72E8585D1E7EEC22001EBB8B /* MTSViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E8585B1E7EEC22001EBB8B /* MTSViewController3.m */; };
-		72E8585E1E7EEC22001EBB8B /* MTSViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72E8585C1E7EEC22001EBB8B /* MTSViewController3.xib */; };
 		7D10EA9835D37BC95810846F /* libPods-AppTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */; };
+		8D43C1A61EC05D0E0043F02A /* MSTaskHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43C1A41EC05D0E0043F02A /* MSTaskHomeViewController.m */; };
+		8D43C1A71EC05D0E0043F02A /* MSTaskHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */; };
+		8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */; };
+		8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */; };
+		8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDD2BE31EC067A900301111 /* MSBigAddButton.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -83,15 +82,14 @@
 		72E8583C1E7EC735001EBB8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E858481E7EE35B001EBB8B /* MSTTabBarCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTTabBarCtrl.h; sourceTree = "<group>"; };
 		72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTTabBarCtrl.m; sourceTree = "<group>"; };
-		72E858501E7EEC07001EBB8B /* MTSViewController1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSViewController1.h; sourceTree = "<group>"; };
-		72E858511E7EEC07001EBB8B /* MTSViewController1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSViewController1.m; sourceTree = "<group>"; };
-		72E858521E7EEC07001EBB8B /* MTSViewController1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSViewController1.xib; sourceTree = "<group>"; };
-		72E858551E7EEC15001EBB8B /* MTSViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSViewController2.h; sourceTree = "<group>"; };
-		72E858561E7EEC15001EBB8B /* MTSViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSViewController2.m; sourceTree = "<group>"; };
-		72E858571E7EEC15001EBB8B /* MTSViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSViewController2.xib; sourceTree = "<group>"; };
-		72E8585A1E7EEC22001EBB8B /* MTSViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSViewController3.h; sourceTree = "<group>"; };
-		72E8585B1E7EEC22001EBB8B /* MTSViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSViewController3.m; sourceTree = "<group>"; };
-		72E8585C1E7EEC22001EBB8B /* MTSViewController3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSViewController3.xib; sourceTree = "<group>"; };
+		8D43C1A31EC05D0E0043F02A /* MSTaskHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskHomeViewController.h; sourceTree = "<group>"; };
+		8D43C1A41EC05D0E0043F02A /* MSTaskHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskHomeViewController.m; sourceTree = "<group>"; };
+		8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskHomeViewController.xib; sourceTree = "<group>"; };
+		8D43C1A81EC05D2A0043F02A /* MSTaskDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskDashboardViewController.h; sourceTree = "<group>"; };
+		8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskDashboardViewController.m; sourceTree = "<group>"; };
+		8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskDashboardViewController.xib; sourceTree = "<group>"; };
+		8DDD2BE21EC067A900301111 /* MSBigAddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBigAddButton.h; sourceTree = "<group>"; };
+		8DDD2BE31EC067A900301111 /* MSBigAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBigAddButton.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,6 +149,8 @@
 				728774B81E8172FA00CE4DFC /* CollectionViewCell.h */,
 				728774B91E8172FA00CE4DFC /* CollectionViewCell.m */,
 				728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */,
+				8DDD2BE21EC067A900301111 /* MSBigAddButton.h */,
+				8DDD2BE31EC067A900301111 /* MSBigAddButton.m */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -167,15 +167,12 @@
 		72C309081E801E5600165EED /* C */ = {
 			isa = PBXGroup;
 			children = (
-				72E858501E7EEC07001EBB8B /* MTSViewController1.h */,
-				72E858511E7EEC07001EBB8B /* MTSViewController1.m */,
-				72E858521E7EEC07001EBB8B /* MTSViewController1.xib */,
-				72E858551E7EEC15001EBB8B /* MTSViewController2.h */,
-				72E858561E7EEC15001EBB8B /* MTSViewController2.m */,
-				72E858571E7EEC15001EBB8B /* MTSViewController2.xib */,
-				72E8585A1E7EEC22001EBB8B /* MTSViewController3.h */,
-				72E8585B1E7EEC22001EBB8B /* MTSViewController3.m */,
-				72E8585C1E7EEC22001EBB8B /* MTSViewController3.xib */,
+				8D43C1A31EC05D0E0043F02A /* MSTaskHomeViewController.h */,
+				8D43C1A41EC05D0E0043F02A /* MSTaskHomeViewController.m */,
+				8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */,
+				8D43C1A81EC05D2A0043F02A /* MSTaskDashboardViewController.h */,
+				8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */,
+				8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -399,12 +396,11 @@
 			files = (
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
+				8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */,
 				72C309101E801F5900165EED /* TableViewCell.xib in Resources */,
-				72E858591E7EEC15001EBB8B /* MTSViewController2.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
-				72E858541E7EEC07001EBB8B /* MTSViewController1.xib in Resources */,
 				728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */,
-				72E8585E1E7EEC22001EBB8B /* MTSViewController3.xib in Resources */,
+				8D43C1A71EC05D0E0043F02A /* MSTaskHomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,16 +548,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72E858581E7EEC15001EBB8B /* MTSViewController2.m in Sources */,
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
-				72E8585D1E7EEC22001EBB8B /* MTSViewController3.m in Sources */,
+				8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */,
+				8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
 				72C3090F1E801F5900165EED /* TableViewCell.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */,
-				72E858531E7EEC07001EBB8B /* MTSViewController1.m in Sources */,
+				8D43C1A61EC05D0E0043F02A /* MSTaskHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -715,7 +711,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.AppTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.TaskManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -729,7 +725,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.AppTemplate;
+				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.TaskManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
