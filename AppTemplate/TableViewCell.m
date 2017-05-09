@@ -7,10 +7,13 @@
 //
 
 #import "TableViewCell.h"
-#import "YYWebImage.h"
+#import "Common.h"
 @interface TableViewCell ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *_imageView;
+@property (weak, nonatomic) IBOutlet UIView *priorityView;
+@property (weak, nonatomic) IBOutlet UIView *wrapperView;
+@property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 
 @end
 
@@ -19,23 +22,40 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
-    self.imageView.layer.cornerRadius = 6;
-    self.imageView.layer.masksToBounds = YES;
-//    [self.imageView yy_setImageWithURL:[NSURL URLWithString:@"http://img.tuboshu.com/images/article/201409/23/1906/00/201409231906007365_600.gif"] options:YYWebImageOptionProgressiveBlur];
-    [self.imageView yy_setImageWithURL:[NSURL URLWithString:@"https://d13yacurqjgara.cloudfront.net/users/418188/screenshots/3383625/home_budget_app_interaction_animation_tubik.gif"] options:YYWebImageOptionProgressiveBlur];
+    
+    _wrapperView.layer.cornerRadius = 8;
+    _wrapperView.layer.masksToBounds = YES;
+
 
     
 }
 
--(void)setData:(DataModel *)data {
-    _data = data;
-    [self.imageView setImage:_data.albumImage];
 
+- (IBAction)check:(UIButton *)sender {
+    
+    sender.selected = !sender.selected;
+    if (sender.selected) {
+        _wrapperView.alpha = 0.3;
+        [_priorityView setBackgroundColor:[UIColor colorWithHexString:@"9B9B9B"]];
+        [_statusLabel setText:@"COMPLETED"];
+
+        
+    } else {
+        _wrapperView.alpha = 1;
+        
+    }
+    
+}
+
+
+-(void)setData:(DataModel *)data {
+    
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    
 }
 
 

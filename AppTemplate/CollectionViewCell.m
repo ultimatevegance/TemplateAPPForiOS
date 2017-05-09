@@ -20,7 +20,7 @@
     // Initialization code
     self.layer.cornerRadius = 7;
     self.layer.masksToBounds = YES;
-    _iconView.layer.cornerRadius = CGRectGetHeight(_iconView.frame) / 2;
+    _iconView.layer.cornerRadius = CGRectGetWidth(_iconView.frame) / 2;
     _iconView.layer.masksToBounds = YES;
 
 }

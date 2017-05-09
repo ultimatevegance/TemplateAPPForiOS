@@ -8,6 +8,7 @@
 
 #import "MSTaskDashboardViewController.h"
 #import "CollectionViewCell.h"
+#import "Common.h"
 @interface MSTaskDashboardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -34,6 +35,7 @@ static NSString *dashboardCellID = @"CollectionViewCell";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"DASHBOARD";
+    self.tabBarItem.badgeValue = @"34";
     
     // 1. create UICollectionViewFlowLayout
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
@@ -43,6 +45,7 @@ static NSString *dashboardCellID = @"CollectionViewCell";
     // 3. config delegate and datasource
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
+    
 }
 
 - (void)setting:(UIBarButtonItem *)sender {
@@ -58,6 +61,7 @@ static NSString *dashboardCellID = @"CollectionViewCell";
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"CollectionViewCell" forIndexPath:indexPath];
     cell.backgroundColor = [UIColor whiteColor];
+    [cell bounce:NULL];
     return  cell;
 }
 // items number for section
@@ -72,12 +76,15 @@ static NSString *dashboardCellID = @"CollectionViewCell";
 // cell margins
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(23, 18, 18, 18);
+    return UIEdgeInsetsMake(23, 15, 15, 15);
 }
 // cell size
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    return CGSizeMake(164, 186);
+    NSInteger cellHeight = kScreenHeight * 0.28;
+    NSInteger cellWidth = cellHeight * 0.88;
+    
+    return CGSizeMake(cellWidth, cellHeight);
 }
 #pragma mark - UICollectionViewDelegate
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {

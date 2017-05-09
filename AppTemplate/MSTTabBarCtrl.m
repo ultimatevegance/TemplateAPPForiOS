@@ -86,7 +86,7 @@
 {
     if (!_transition) {
         _transition = [[YPBubbleTransition alloc] init];
-        _transition.duration = 0.3f;
+        _transition.duration = 0.25f;
     }
     return _transition;
 }

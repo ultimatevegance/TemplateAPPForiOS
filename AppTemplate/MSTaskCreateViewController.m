@@ -13,6 +13,8 @@
 @property (nonatomic, assign) CGRect buttonFrame;
 @property (nonatomic, strong) MSBigAddButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UILabel *lable;
+@property (weak, nonatomic) IBOutlet UIView *taskCreateBoardView;
+@property (weak, nonatomic) IBOutlet UIButton *createButton;
 
 @end
 
@@ -27,8 +29,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_lable bounce:NULL];
+    _taskCreateBoardView.layer.cornerRadius = 8;
+    _taskCreateBoardView.layer.masksToBounds = YES;
+    [_taskCreateBoardView pulse:NULL];
+    [_lable pulse:NULL];
+    _createButton.layer.cornerRadius = CGRectGetHeight(_createButton.frame) / 2;
+    _createButton.layer.masksToBounds = YES;
     self.view .backgroundColor = PrimaryThemeColor;
+    
     [self setNeedsStatusBarAppearanceUpdate];
     _cancelButton = [MSBigAddButton buttonWithType:UIButtonTypeCustom];
     [_cancelButton setFrame:_buttonFrame];

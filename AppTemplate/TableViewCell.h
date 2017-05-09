@@ -10,6 +10,6 @@
 #import "DataModel.h"
 
 @interface TableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIButton *checkButton;
 @property(nonatomic,strong) DataModel *data;
-
 @end

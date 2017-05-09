@@ -7,10 +7,14 @@
 //
 
 #import "MSTaskHomeViewController.h"
+#import "TableViewCell.h"
 
-@interface MSTaskHomeViewController ()
+@interface MSTaskHomeViewController () <UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
+
+static NSString *mTaskCellID = @"TableViewCell";
 
 @implementation MSTaskHomeViewController
 
@@ -19,6 +23,7 @@
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home"] selectedImage:[UIImage imageNamed:@"home_s"]];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"calendar"] style:UIBarButtonItemStylePlain target:self action:@selector(calendar:)];
     }
     
     return self;
@@ -29,8 +34,53 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.title = @"TASKS";
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [_tableView registerNib:[UINib nibWithNibName:mTaskCellID bundle:nil] forCellReuseIdentifier:mTaskCellID];
+    _tableView.estimatedRowHeight = 150;
+    _tableView.rowHeight = UITableViewAutomaticDimension;
+    
+    
     
 }
+
+- (void)calendar:(UIBarButtonItem *)sender {
+    
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 10;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 3;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TableViewCell *taskCell = [_tableView dequeueReusableCellWithIdentifier:mTaskCellID forIndexPath:indexPath];
+    taskCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    return taskCell;
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    if (section == 0) {
+        return @"TODAY";
+    }
+    if (section == 1) {
+        return @"MONDAY";
+    }
+
+    if (section == 2) {
+        return @"TUESDAY";
+    }
+    else {
+        return @"";
+    }
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
