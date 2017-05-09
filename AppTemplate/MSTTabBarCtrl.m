@@ -13,6 +13,7 @@
 #import "MSTaskCreateViewController.h"
 #import "MSBigAddButton.h"
 #import <YPBubbleTransition.h>
+#import "MSBaseNavigationController.h"
 @interface MSTTabBarCtrl ()<UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) YPBubbleTransition *transition;
 @property (nonatomic, strong) MSBigAddButton *addTaskButton;
@@ -23,15 +24,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configTabbarAppearance];
     [self configCenterAddButton];
     [self setupViewControllers];
 }
 
+- (void)configTabbarAppearance {
+    self.tabBar.layer.shadowColor = [UIColor blackColor].CGColor;
+    self.tabBar.layer.shadowOffset = CGSizeMake(2, 2);
+    self.tabBar.layer.shadowOpacity = 0.5;
+    self.tabBar.layer.shadowRadius = 10;
+}
+
 - (void)setupViewControllers {
     MSTaskHomeViewController *taskHomeVC = [[MSTaskHomeViewController alloc] init];
-    UINavigationController *taskHomeNav = [[UINavigationController alloc] initWithRootViewController:taskHomeVC];
+    MSBaseNavigationController *taskHomeNav = [[MSBaseNavigationController alloc] initWithRootViewController:taskHomeVC];
     MSTaskDashboardViewController *taskDashboardVC = [[MSTaskDashboardViewController alloc] init];
-    UINavigationController *taskDashboardNav = [[UINavigationController alloc] initWithRootViewController:taskDashboardVC];
+    MSBaseNavigationController *taskDashboardNav = [[MSBaseNavigationController alloc] initWithRootViewController:taskDashboardVC];
     
     [self setViewControllers:@[taskHomeNav,taskDashboardNav] animated:YES];
     self.selectedIndex  = 0;

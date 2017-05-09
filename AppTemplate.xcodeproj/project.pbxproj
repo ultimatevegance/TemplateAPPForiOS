@@ -30,6 +30,7 @@
 		8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */; };
 		8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */; };
 		8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDD2BE31EC067A900301111 /* MSBigAddButton.m */; };
+		8DE3432F1EC1A5A500141C4B /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +96,8 @@
 		8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskDashboardViewController.xib; sourceTree = "<group>"; };
 		8DDD2BE21EC067A900301111 /* MSBigAddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBigAddButton.h; sourceTree = "<group>"; };
 		8DDD2BE31EC067A900301111 /* MSBigAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBigAddButton.m; sourceTree = "<group>"; };
+		8DE3432D1EC1A5A500141C4B /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
+		8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -210,16 +213,10 @@
 		72E858141E7EC735001EBB8B /* AppTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				72C309051E7F034600165EED /* Common.h */,
 				72E858181E7EC735001EBB8B /* AppDelegate.h */,
 				72E858191E7EC735001EBB8B /* AppDelegate.m */,
-				72E858481E7EE35B001EBB8B /* MSTTabBarCtrl.h */,
-				72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */,
-				72E8581E1E7EC735001EBB8B /* Main.storyboard */,
+				8DE343301EC1A6B900141C4B /* Base */,
 				72E8585F1E7EF56F001EBB8B /* Main */,
-				72E858211E7EC735001EBB8B /* Assets.xcassets */,
-				72E858231E7EC735001EBB8B /* LaunchScreen.storyboard */,
-				72E858261E7EC735001EBB8B /* Info.plist */,
 				72E858151E7EC735001EBB8B /* Supporting Files */,
 			);
 			path = AppTemplate;
@@ -228,8 +225,13 @@
 		72E858151E7EC735001EBB8B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				725EF1A01E8041180068DA36 /* Vendor */,
 				72E858161E7EC735001EBB8B /* main.m */,
+				72C309051E7F034600165EED /* Common.h */,
+				72E858211E7EC735001EBB8B /* Assets.xcassets */,
+				72E858261E7EC735001EBB8B /* Info.plist */,
+				72E858231E7EC735001EBB8B /* LaunchScreen.storyboard */,
+				72E8581E1E7EC735001EBB8B /* Main.storyboard */,
+				725EF1A01E8041180068DA36 /* Vendor */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -260,6 +262,17 @@
 				72C309081E801E5600165EED /* C */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		8DE343301EC1A6B900141C4B /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				72E858481E7EE35B001EBB8B /* MSTTabBarCtrl.h */,
+				72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */,
+				8DE3432D1EC1A5A500141C4B /* MSBaseNavigationController.h */,
+				8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
@@ -579,6 +592,7 @@
 				8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */,
 				8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */,
 				726600E21EC0B21400A7F48F /* MSTaskCreateViewController.m in Sources */,
+				8DE3432F1EC1A5A500141C4B /* MSBaseNavigationController.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
 				72C3090F1E801F5900165EED /* TableViewCell.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
