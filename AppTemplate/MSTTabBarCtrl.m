@@ -10,7 +10,6 @@
 #import "Common.h"
 #import "MSTaskHomeViewController.h"
 #import "MSTaskDashboardViewController.h"
-#import "MSTaskCreateViewController.h"
 #import "MSBigAddButton.h"
 #import <YPBubbleTransition.h>
 #import "MSBaseNavigationController.h"
@@ -99,7 +98,7 @@
 {
     if (!_transition) {
         _transition = [[YPBubbleTransition alloc] init];
-        _transition.duration = 0.25f;
+        _transition.duration = 0.35f;
     }
     return _transition;
 }
