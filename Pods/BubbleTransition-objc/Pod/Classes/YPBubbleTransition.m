@@ -35,12 +35,19 @@
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIView *containerView = [transitionContext containerView];
+    UIViewController *fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+    UIViewController *toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+    [fromViewController beginAppearanceTransition:NO animated:YES];
+    [toViewController beginAppearanceTransition:YES animated:YES];
     
     if (self.transitionMode == YPBubbleTransitionModePresent) {
         UIView *presentedControllerView = [transitionContext viewForKey:UITransitionContextToViewKey];
-        
-        CGPoint originalCenter = presentedControllerView.center;
-        CGSize originalSize = presentedControllerView.frame.size;
+        CGRect finalFrame = [transitionContext finalFrameForViewController:toViewController];
+        CGPoint  originalCenter = CGPointMake(finalFrame.size.width / 2, finalFrame.size.height / 2);
+        CGSize originalSize = finalFrame.size;
+
+//        CGPoint originalCenter = presentedControllerView.center;
+//        CGSize originalSize = presentedControllerView.frame.size;
         CGFloat lengthX = fmax(self.startPoint.x, originalSize.width - self.startPoint.x);
         CGFloat lengthY = fmax(self.startPoint.y, originalSize.height - self.startPoint.y);
         CGFloat offset = sqrt(lengthX * lengthX + lengthY * lengthY) * 2;
@@ -63,9 +70,12 @@
             presentedControllerView.transform = CGAffineTransformIdentity;
             presentedControllerView.alpha = 1;
             presentedControllerView.center = originalCenter;
+            presentedControllerView.frame = finalFrame;
             
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:finished];
+            [fromViewController endAppearanceTransition];
+            [toViewController endAppearanceTransition];
         }];
 
     }
@@ -81,6 +91,9 @@
             [returningControllerView removeFromSuperview];
             [self.bubble removeFromSuperview];
             [transitionContext completeTransition:finished];
+            [fromViewController endAppearanceTransition];
+            [toViewController endAppearanceTransition];
+
         }];
     }
     else {

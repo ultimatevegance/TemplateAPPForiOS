@@ -14,6 +14,7 @@
 #import "MSBigAddButton.h"
 #import <YPBubbleTransition.h>
 #import "MSBaseNavigationController.h"
+#import "MSTaskEditorViewController.h"
 @interface MSTTabBarCtrl ()<UIViewControllerTransitioningDelegate>
 @property (nonatomic, strong) YPBubbleTransition *transition;
 @property (nonatomic, strong) MSBigAddButton *addTaskButton;
@@ -67,9 +68,12 @@
 }
 
 - (void)addButtonClickd:(UIButton *)sender {
-    MSTaskCreateViewController *taskCreateVC = [[MSTaskCreateViewController alloc] initWithButtonFrame:_buttonFrame];
-    taskCreateVC.transitioningDelegate = self;
-    [self presentViewController:taskCreateVC animated:YES completion:nil];
+//    MSTaskCreateViewController *taskCreateVC = [[MSTaskCreateViewController alloc] initWithButtonFrame:_buttonFrame];
+//    taskCreateVC.transitioningDelegate = self;
+    MSTaskEditorViewController *taskEditorVC = [[MSTaskEditorViewController alloc] init];
+    taskEditorVC.buttonFrame = _buttonFrame;
+    taskEditorVC.transitioningDelegate = self;
+    [self presentViewController:taskEditorVC animated:YES completion:nil];
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

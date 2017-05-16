@@ -29,6 +29,8 @@
 		8D43C1A71EC05D0E0043F02A /* MSTaskHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */; };
 		8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */; };
 		8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */; };
+		8D6F63BB1ECAD8E100692883 /* MSTaskEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F63B91ECAD8E100692883 /* MSTaskEditorViewController.m */; };
+		8D6F63BC1ECAD8E100692883 /* MSTaskEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F63BA1ECAD8E100692883 /* MSTaskEditorViewController.xib */; };
 		8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDD2BE31EC067A900301111 /* MSBigAddButton.m */; };
 		8DE3432F1EC1A5A500141C4B /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
@@ -94,6 +96,9 @@
 		8D43C1A81EC05D2A0043F02A /* MSTaskDashboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskDashboardViewController.h; sourceTree = "<group>"; };
 		8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskDashboardViewController.m; sourceTree = "<group>"; };
 		8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskDashboardViewController.xib; sourceTree = "<group>"; };
+		8D6F63B81ECAD8E100692883 /* MSTaskEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskEditorViewController.h; sourceTree = "<group>"; };
+		8D6F63B91ECAD8E100692883 /* MSTaskEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskEditorViewController.m; sourceTree = "<group>"; };
+		8D6F63BA1ECAD8E100692883 /* MSTaskEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskEditorViewController.xib; sourceTree = "<group>"; };
 		8DDD2BE21EC067A900301111 /* MSBigAddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBigAddButton.h; sourceTree = "<group>"; };
 		8DDD2BE31EC067A900301111 /* MSBigAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBigAddButton.m; sourceTree = "<group>"; };
 		8DE3432D1EC1A5A500141C4B /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
@@ -184,6 +189,9 @@
 				726600DF1EC0B21400A7F48F /* MSTaskCreateViewController.h */,
 				726600E01EC0B21400A7F48F /* MSTaskCreateViewController.m */,
 				726600E11EC0B21400A7F48F /* MSTaskCreateViewController.xib */,
+				8D6F63B81ECAD8E100692883 /* MSTaskEditorViewController.h */,
+				8D6F63B91ECAD8E100692883 /* MSTaskEditorViewController.m */,
+				8D6F63BA1ECAD8E100692883 /* MSTaskEditorViewController.xib */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -418,6 +426,7 @@
 			files = (
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
+				8D6F63BC1ECAD8E100692883 /* MSTaskEditorViewController.xib in Resources */,
 				8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */,
 				72C309101E801F5900165EED /* TableViewCell.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
@@ -597,6 +606,7 @@
 				72C3090F1E801F5900165EED /* TableViewCell.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */,
+				8D6F63BB1ECAD8E100692883 /* MSTaskEditorViewController.m in Sources */,
 				8D43C1A61EC05D0E0043F02A /* MSTaskHomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
