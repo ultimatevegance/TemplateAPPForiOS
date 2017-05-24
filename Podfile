@@ -38,6 +38,7 @@ target 'AppTemplate' do
   pod 'DCAnimationKit'
   pod 'FTPopOverMenu'
   pod 'BubbleTransition-objc'
+  pod 'QMUIKit'
   target 'AppTemplateTests' do
     inherit! :search_paths
     # Pods for testing

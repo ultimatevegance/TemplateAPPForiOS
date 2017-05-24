@@ -23,14 +23,20 @@
 		72E8583B1E7EC735001EBB8B /* AppTemplateUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E8583A1E7EC735001EBB8B /* AppTemplateUITests.m */; };
 		72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */; };
 		7D10EA9835D37BC95810846F /* libPods-AppTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */; };
+		8D38880B1ECC02A20001F36C /* HSDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3888091ECC02A20001F36C /* HSDatePickerViewController.m */; };
+		8D38880C1ECC02A20001F36C /* HSDatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D38880A1ECC02A20001F36C /* HSDatePickerViewController.xib */; };
+		8D3888101ECC0F120001F36C /* MSPrioritySelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D38880F1ECC0F120001F36C /* MSPrioritySelectorView.m */; };
+		8D3888121ECC0F1D0001F36C /* MSPrioritySelectorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3888111ECC0F1D0001F36C /* MSPrioritySelectorView.xib */; };
+		8D3888161ECC29D30001F36C /* MSPriorityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3888141ECC29D30001F36C /* MSPriorityCell.m */; };
+		8D3888171ECC29D30001F36C /* MSPriorityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3888151ECC29D30001F36C /* MSPriorityCell.xib */; };
 		8D43C1A61EC05D0E0043F02A /* MSTaskHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43C1A41EC05D0E0043F02A /* MSTaskHomeViewController.m */; };
 		8D43C1A71EC05D0E0043F02A /* MSTaskHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */; };
 		8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */; };
 		8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */; };
 		8D6F63BB1ECAD8E100692883 /* MSTaskEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F63B91ECAD8E100692883 /* MSTaskEditorViewController.m */; };
 		8D6F63BC1ECAD8E100692883 /* MSTaskEditorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F63BA1ECAD8E100692883 /* MSTaskEditorViewController.xib */; };
-		8D6F63BF1ECAEEBD00692883 /* MSTaskCreateBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F63BE1ECAEEBD00692883 /* MSTaskCreateBoardView.m */; };
-		8D6F63C11ECAEEC800692883 /* MSTaskCreateBoardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D6F63C01ECAEEC800692883 /* MSTaskCreateBoardView.xib */; };
+		8D6F63C41ECB0BFA00692883 /* MSTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F63C31ECB0BFA00692883 /* MSTask.m */; };
+		8D6F63C71ECB0C0B00692883 /* MSProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F63C61ECB0C0B00692883 /* MSProject.m */; };
 		8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDD2BE31EC067A900301111 /* MSBigAddButton.m */; };
 		8DE3432F1EC1A5A500141C4B /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
@@ -87,6 +93,15 @@
 		72E8583C1E7EC735001EBB8B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72E858481E7EE35B001EBB8B /* MSTTabBarCtrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTTabBarCtrl.h; sourceTree = "<group>"; };
 		72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTTabBarCtrl.m; sourceTree = "<group>"; };
+		8D3888081ECC02A20001F36C /* HSDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSDatePickerViewController.h; sourceTree = "<group>"; };
+		8D3888091ECC02A20001F36C /* HSDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSDatePickerViewController.m; sourceTree = "<group>"; };
+		8D38880A1ECC02A20001F36C /* HSDatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HSDatePickerViewController.xib; sourceTree = "<group>"; };
+		8D38880E1ECC0F120001F36C /* MSPrioritySelectorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPrioritySelectorView.h; sourceTree = "<group>"; };
+		8D38880F1ECC0F120001F36C /* MSPrioritySelectorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPrioritySelectorView.m; sourceTree = "<group>"; };
+		8D3888111ECC0F1D0001F36C /* MSPrioritySelectorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSPrioritySelectorView.xib; sourceTree = "<group>"; };
+		8D3888131ECC29D30001F36C /* MSPriorityCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSPriorityCell.h; sourceTree = "<group>"; };
+		8D3888141ECC29D30001F36C /* MSPriorityCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSPriorityCell.m; sourceTree = "<group>"; };
+		8D3888151ECC29D30001F36C /* MSPriorityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSPriorityCell.xib; sourceTree = "<group>"; };
 		8D43C1A31EC05D0E0043F02A /* MSTaskHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskHomeViewController.h; sourceTree = "<group>"; };
 		8D43C1A41EC05D0E0043F02A /* MSTaskHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskHomeViewController.m; sourceTree = "<group>"; };
 		8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskHomeViewController.xib; sourceTree = "<group>"; };
@@ -96,9 +111,10 @@
 		8D6F63B81ECAD8E100692883 /* MSTaskEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskEditorViewController.h; sourceTree = "<group>"; };
 		8D6F63B91ECAD8E100692883 /* MSTaskEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskEditorViewController.m; sourceTree = "<group>"; };
 		8D6F63BA1ECAD8E100692883 /* MSTaskEditorViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskEditorViewController.xib; sourceTree = "<group>"; };
-		8D6F63BD1ECAEEBD00692883 /* MSTaskCreateBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTaskCreateBoardView.h; sourceTree = "<group>"; };
-		8D6F63BE1ECAEEBD00692883 /* MSTaskCreateBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTaskCreateBoardView.m; sourceTree = "<group>"; };
-		8D6F63C01ECAEEC800692883 /* MSTaskCreateBoardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSTaskCreateBoardView.xib; sourceTree = "<group>"; };
+		8D6F63C21ECB0BFA00692883 /* MSTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSTask.h; sourceTree = "<group>"; };
+		8D6F63C31ECB0BFA00692883 /* MSTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSTask.m; sourceTree = "<group>"; };
+		8D6F63C51ECB0C0B00692883 /* MSProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSProject.h; sourceTree = "<group>"; };
+		8D6F63C61ECB0C0B00692883 /* MSProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSProject.m; sourceTree = "<group>"; };
 		8DDD2BE21EC067A900301111 /* MSBigAddButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBigAddButton.h; sourceTree = "<group>"; };
 		8DDD2BE31EC067A900301111 /* MSBigAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBigAddButton.m; sourceTree = "<group>"; };
 		8DE3432D1EC1A5A500141C4B /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
@@ -139,6 +155,7 @@
 		725EF1A01E8041180068DA36 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8D3888071ECC02A20001F36C /* HSDatePickerViewController */,
 				72950D2B1E86F35800413E39 /* UIImage+animatedGIF */,
 			);
 			name = Vendor;
@@ -164,9 +181,12 @@
 				728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */,
 				8DDD2BE21EC067A900301111 /* MSBigAddButton.h */,
 				8DDD2BE31EC067A900301111 /* MSBigAddButton.m */,
-				8D6F63BD1ECAEEBD00692883 /* MSTaskCreateBoardView.h */,
-				8D6F63C01ECAEEC800692883 /* MSTaskCreateBoardView.xib */,
-				8D6F63BE1ECAEEBD00692883 /* MSTaskCreateBoardView.m */,
+				8D38880E1ECC0F120001F36C /* MSPrioritySelectorView.h */,
+				8D3888111ECC0F1D0001F36C /* MSPrioritySelectorView.xib */,
+				8D38880F1ECC0F120001F36C /* MSPrioritySelectorView.m */,
+				8D3888131ECC29D30001F36C /* MSPriorityCell.h */,
+				8D3888141ECC29D30001F36C /* MSPriorityCell.m */,
+				8D3888151ECC29D30001F36C /* MSPriorityCell.xib */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -176,6 +196,10 @@
 			children = (
 				72C309091E801E9E00165EED /* DataModel.h */,
 				72C3090A1E801E9E00165EED /* DataModel.m */,
+				8D6F63C21ECB0BFA00692883 /* MSTask.h */,
+				8D6F63C31ECB0BFA00692883 /* MSTask.m */,
+				8D6F63C51ECB0C0B00692883 /* MSProject.h */,
+				8D6F63C61ECB0C0B00692883 /* MSProject.m */,
 			);
 			name = M;
 			sourceTree = "<group>";
@@ -270,6 +294,16 @@
 				72C309081E801E5600165EED /* C */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		8D3888071ECC02A20001F36C /* HSDatePickerViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8D3888081ECC02A20001F36C /* HSDatePickerViewController.h */,
+				8D3888091ECC02A20001F36C /* HSDatePickerViewController.m */,
+				8D38880A1ECC02A20001F36C /* HSDatePickerViewController.xib */,
+			);
+			path = HSDatePickerViewController;
 			sourceTree = "<group>";
 		};
 		8DE343301EC1A6B900141C4B /* Base */ = {
@@ -427,10 +461,12 @@
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				8D6F63BC1ECAD8E100692883 /* MSTaskEditorViewController.xib in Resources */,
+				8D38880C1ECC02A20001F36C /* HSDatePickerViewController.xib in Resources */,
 				8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */,
-				8D6F63C11ECAEEC800692883 /* MSTaskCreateBoardView.xib in Resources */,
 				72C309101E801F5900165EED /* TableViewCell.xib in Resources */,
+				8D3888121ECC0F1D0001F36C /* MSPrioritySelectorView.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
+				8D3888171ECC29D30001F36C /* MSPriorityCell.xib in Resources */,
 				728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */,
 				8D43C1A71EC05D0E0043F02A /* MSTaskHomeViewController.xib in Resources */,
 			);
@@ -596,11 +632,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
-				8D6F63BF1ECAEEBD00692883 /* MSTaskCreateBoardView.m in Sources */,
+				8D3888101ECC0F120001F36C /* MSPrioritySelectorView.m in Sources */,
+				8D6F63C71ECB0C0B00692883 /* MSProject.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
 				8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */,
 				8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */,
+				8D3888161ECC29D30001F36C /* MSPriorityCell.m in Sources */,
+				8D6F63C41ECB0BFA00692883 /* MSTask.m in Sources */,
+				8D38880B1ECC02A20001F36C /* HSDatePickerViewController.m in Sources */,
 				8DE3432F1EC1A5A500141C4B /* MSBaseNavigationController.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
 				72C3090F1E801F5900165EED /* TableViewCell.m in Sources */,

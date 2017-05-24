@@ -12,6 +12,10 @@
 #import <Chameleon.h>
 #import "Canvas.h"
 #import "UIView+DCAnimationKit.h"
+#import <QuartzCore/QuartzCore.h>
+#import "HSDatePickerViewController.h"
+#import "QMUIKit.h"
+
 //Constants
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -27,5 +31,6 @@
 #define PrimaryFullViewColor [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:CGRectMake(0, 0,kScreenWidth , kScreenHeight) andColors:@[PrimaryColororangish,PrimaryColorbarbiePink]]
 
 
-
+//Notifications
+#define kPrioritySelectedNotification  @"PrioritySelectedNotification"
 #endif /* Common_h */

@@ -9,8 +9,11 @@
 #import "MSTaskEditorViewController.h"
 #import "MSBigAddButton.h"
 #import "Common.h"
+#import "MSTask.h"
+#import "MSProject.h"
+#import "MSPrioritySelectorView.h"
 
-@interface MSTaskEditorViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface MSTaskEditorViewController ()<UITableViewDelegate,UITableViewDataSource,UITextViewDelegate>
 @property (nonatomic, strong) MSBigAddButton *cancelButton;
 @property (weak, nonatomic) IBOutlet UIView *taskCreateBoardView;
 @property (weak, nonatomic) IBOutlet UIButton *createButton;
@@ -21,6 +24,9 @@
 @property (weak, nonatomic) IBOutlet UITextView *taskDescriptionTextView;
 @property (strong, nonatomic)NSArray *taskSettingTitles;
 @property (strong, nonatomic)NSArray *taskSettingIcons;
+@property (strong, nonatomic)NSString *taskTitle;
+@property (strong, nonatomic)NSString *taskDescription;
+
 
 @end
 
@@ -61,6 +67,10 @@ static NSString *mTableViewCellID = @"TaskSettingCell";
     _createButton.layer.masksToBounds = YES;
     
     [self configTableView];
+    _taskTitleTextView.delegate = self;
+    _taskDescriptionTextView.delegate = self;
+    
+    
 
 }
 
@@ -68,9 +78,71 @@ static NSString *mTableViewCellID = @"TaskSettingCell";
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:mTableViewCellID];
-    _taskSettingTitles = @[@"Due Date",@"Proirity",@"Reminder"];
-    _taskSettingIcons = @[@"dueIcon",@"priorityIcon",@"reminderIcon"];
+    _taskSettingTitles = @[@"Due Date",@"Proirity"];
+    _taskSettingIcons = @[@"dueIcon",@"priorityIcon"];
 }
+
+- (QMUIModalPresentationViewController *)newModalStyledVCWithContentView : (UIView *)contentView {
+    QMUIModalPresentationViewController *modalVC = [[QMUIModalPresentationViewController alloc] init];
+    contentView.layer.cornerRadius = 8;
+    contentView.layer.masksToBounds = YES;
+    modalVC.layoutBlock = ^(CGRect containerBounds, CGFloat keyboardHeight, CGRect contentViewDefaultFrame) {
+        contentView.frame = CGRectSetXY(CGRectMake(0, 0, contentView.frame.size.width - 5, contentView.frame.size.height), CGFloatGetCenter(CGRectGetWidth(containerBounds) + 5, CGRectGetWidth(contentView.frame)), CGRectGetHeight(containerBounds) - 10 - CGRectGetHeight(contentView.frame));};
+    modalVC.contentView =  contentView;
+    
+    modalVC.showingAnimation = ^(UIView *dimmingView, CGRect containerBounds, CGFloat keyboardHeight, CGRect contentViewFrame, void(^completion)(BOOL finished)) {
+        contentView.frame = CGRectSetY(contentView.frame, CGRectGetHeight(containerBounds));
+        dimmingView.alpha = 0;
+        [UIView animateWithDuration:.3 delay:0.0 options:QMUIViewAnimationOptionsCurveOut animations:^{
+            dimmingView.alpha = 1;
+            contentView.frame = contentViewFrame;
+        } completion:^(BOOL finished) {
+            if (completion) {
+                completion(finished);
+            }
+        }];
+    };
+    modalVC.hidingAnimation = ^(UIView *dimmingView, CGRect containerBounds, CGFloat keyboardHeight, void(^completion)(BOOL finished)) {
+        [UIView animateWithDuration:.3 delay:0.0 options:QMUIViewAnimationOptionsCurveOut animations:^{
+            dimmingView.alpha = 0.0;
+            contentView.frame = CGRectSetY(contentView.frame, CGRectGetHeight(containerBounds));
+        } completion:^(BOOL finished) {
+            if (completion) {
+                completion(finished);
+            }
+        }];
+    };
+    
+    [modalVC showWithAnimated:YES completion:nil];
+    return modalVC;
+
+}
+#pragma mark - Actions
+
+- (void)cancelButtonClickd:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)create:(UIButton *)sender {
+    //the task title cannot be nil ,if nil ,alert the user,if not ,create the task model and dismiss
+        if (![_taskTitleTextView.text isEqualToString:@""]) {
+            NSLog(@"task model created ");
+        } else {
+            NSLog(@"task title cannot be nil！");
+        }
+    
+}
+
+#pragma mark - UITextViewDelegate
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    _taskTitle = _taskTitleTextView.text;
+    _taskDescription = _taskDescriptionTextView.text;
+}
+
+
+#pragma mark - UITableViewDataSource
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [_tableView dequeueReusableCellWithIdentifier:mTableViewCellID forIndexPath:indexPath];
     cell.backgroundColor = [UIColor clearColor];
@@ -100,19 +172,19 @@ static NSString *mTableViewCellID = @"TaskSettingCell";
         
         }
         case 2:
-        {
-            UILabel *reminderLabel = [[UILabel alloc] init];
-            reminderLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:12];
-            reminderLabel.textAlignment = NSTextAlignmentRight;
-            reminderLabel.textColor = [UIColor darkGrayColor];
-            reminderLabel.frame = CGRectMake(0, 0, 100, 30);
-            [reminderLabel setText:@"Never"];
-            reminderLabel.textColor = PrimaryThemeColor;
-            cell.accessoryView = reminderLabel;
-
-            break;
-            
-        }
+//        {
+//            UILabel *reminderLabel = [[UILabel alloc] init];
+//            reminderLabel.font = [UIFont fontWithName:@"AvenirNext-Regular" size:12];
+//            reminderLabel.textAlignment = NSTextAlignmentRight;
+//            reminderLabel.textColor = [UIColor darkGrayColor];
+//            reminderLabel.frame = CGRectMake(0, 0, 100, 30);
+//            [reminderLabel setText:@"Never"];
+//            reminderLabel.textColor = PrimaryThemeColor;
+//            cell.accessoryView = reminderLabel;
+//
+//            break;
+//            
+//        }
     
         default:
             break;
@@ -125,6 +197,33 @@ static NSString *mTableViewCellID = @"TaskSettingCell";
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    switch (indexPath.row) {
+        case 0://due date selector
+        {
+            HSDatePickerViewController *datePickerVC = [[HSDatePickerViewController alloc] init];
+            datePickerVC.dismissOnCancelTouch = YES;
+            [self presentViewController:datePickerVC animated:YES completion:nil];
+            break;
+        }
+        case 1://priority selector
+        {
+            MSPrioritySelectorView *contentView = [[[NSBundle mainBundle] loadNibNamed:@"MSPrioritySelectorView" owner:self options:nil] firstObject];
+            [self newModalStyledVCWithContentView:contentView];
+            break;
+        }
+        case 2://reminder selector
+//        {
+//            UIView *contentView = [[[NSBundle mainBundle] loadNibNamed:@"MSPrioritySelectorView" owner:self options:nil] firstObject];
+//            [self newModalStyledVCWithContentView:contentView];
+//
+//            break;
+//        }
+        default:
+            break;
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -149,10 +248,6 @@ static NSString *mTableViewCellID = @"TaskSettingCell";
 
 - (UIStatusBarStyle) preferredStatusBarStyle {
     return UIStatusBarStyleLightContent;
-}
-
-- (void)cancelButtonClickd:(UIButton *)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
