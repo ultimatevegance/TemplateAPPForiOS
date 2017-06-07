@@ -17,20 +17,30 @@
 
 
 - (void)setAppearence {
-    [[UITabBar appearance ] setTintColor:PrimaryIconColor];
+    [[UITabBar appearance ] setTintColor:PrimaryThemeColor];
     [[UITabBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"barShadow"]];
-    [[UITabBar appearance ] setBarStyle:UIBarStyleDefault];
-    [[UILabel appearance] setTextColor:PrimaryBarColor];
+    [[UITabBarItem appearance] setTitleTextAttributes:@{NSFontAttributeName :UITabBarFont} forState:UIControlStateNormal];
+    [[UINavigationBar appearance] setTranslucent:NO];
+    [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
+    [[UINavigationBar appearance] setTintColor:PrimaryThemeColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : PrimaryThemeColor,NSFontAttributeName :UINavigationBarFont}];
+    [[UITabBar appearance ] setBarStyle:UIBarStyleBlack];
 }
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = [[MSTTabBarCtrl alloc]  init];
     [self.window makeKeyAndVisible ] ;
-    [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
     [self setAppearence];
-
-    
+    //print out all the font to find out the custom font name
+//    for (NSString* family in [UIFont familyNames])
+//    {
+//        NSLog(@"%@", family);
+//        
+//        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+//        {
+//            NSLog(@"  %@", name);
+//        }
+//    }
     return YES;
 }
 

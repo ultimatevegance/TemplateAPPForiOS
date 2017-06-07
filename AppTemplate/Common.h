@@ -14,13 +14,11 @@
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 //Colors
-#define PrimaryColororangish [UIColor colorWithRed:253.0f / 255.0f green:128.0f / 255.0f blue:65.0f / 255.0f alpha:1.0f]
-#define PrimaryColorbarbiePink [UIColor colorWithRed:255.0f / 255.0f green:76.0f / 255.0f blue:161.0f / 255.0f alpha:1.0f]
-
-#define PrimaryIconColor [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:CGRectMake(0, 0, 30, 30) andColors:@[PrimaryColororangish,PrimaryColorbarbiePink]]
-#define PrimaryBarColor [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:CGRectMake(0, 0,kScreenWidth , 100) andColors:@[PrimaryColororangish,PrimaryColorbarbiePink]]
-#define PrimaryFullViewColor [UIColor colorWithGradientStyle:UIGradientStyleLeftToRight withFrame:CGRectMake(0, 0,kScreenWidth , kScreenHeight) andColors:@[PrimaryColororangish,PrimaryColorbarbiePink]]
-
+#define PrimaryThemeColor [UIColor colorWithHexString:@"16DAFF" withAlpha:1]
+#define PrimaryBackgroundColor [UIColor colorWithHexString:@"121317" withAlpha:1]
+//Fonts
+#define UINavigationBarFont [UIFont fontWithName:@"HypatiaSansPro-Bold" size:20]
+#define UITabBarFont [UIFont fontWithName:@"HypatiaSansPro-Semibold" size:10]
 
 
 #endif /* Common_h */
