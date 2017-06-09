@@ -25,12 +25,15 @@
     [[UINavigationBar appearance] setTintColor:PrimaryThemeColor];
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : PrimaryThemeColor,NSFontAttributeName :UINavigationBarFont}];
     [[UITabBar appearance ] setBarStyle:UIBarStyleBlack];
+
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window.rootViewController = [[MSTTabBarCtrl alloc]  init];
     [self.window makeKeyAndVisible ] ;
     [self setAppearence];
+    [[JLTMDbClient sharedAPIInstance] setAPIKey:@"8a35532cc4b71203496a560589eb0358"];
+    [self loadImageURLConfig];
     //print out all the font to find out the custom font name
 //    for (NSString* family in [UIFont familyNames])
 //    {
@@ -42,6 +45,16 @@
 //        }
 //    }
     return YES;
+}
+
+- (void)loadImageURLConfig {
+    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbConfiguration withParameters:nil andResponseBlock:^(id response, NSError *error) {
+        if (!error)
+            self.imagesBaseUrlString = [response[@"images"][@"base_url"] stringByAppendingString:@"w300"];
+        else {
+        
+        };
+    }];
 }
 
 

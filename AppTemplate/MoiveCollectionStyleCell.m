@@ -9,6 +9,7 @@
 #import "MoiveCollectionStyleCell.h"
 @interface MoiveCollectionStyleCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *posterImageView;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end
 @implementation MoiveCollectionStyleCell
@@ -20,4 +21,11 @@
     _posterImageView.layer.masksToBounds = YES;
 }
 
+-(void)setMovieData:(MTSMovieData *)movieData {
+    _movieData = movieData;
+    _titleLabel.text = _movieData.title;
+    AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    NSString *imageUrl = [delegate.imagesBaseUrlString stringByAppendingString:_movieData.poster_path];
+    [_posterImageView yy_setImageWithURL:[NSURL URLWithString:imageUrl] placeholder:[UIImage imageNamed:@"DEFAULT_IMAGE"]];
+}
 @end

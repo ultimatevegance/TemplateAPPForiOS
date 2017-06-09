@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Common.h"
 @interface MoiveCollectionStyleCell : UICollectionViewCell
+
+@property(strong, nonatomic)MTSMovieData *movieData;
 
 @end

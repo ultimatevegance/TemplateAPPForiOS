@@ -36,6 +36,7 @@ target 'AppTemplate' do
 #   pod 'YYKit'
   pod 'Canvas'
   pod 'FTPopOverMenu'
+  pod 'JLTMDbClient'
   target 'AppTemplateTests' do
     inherit! :search_paths
     # Pods for testing
