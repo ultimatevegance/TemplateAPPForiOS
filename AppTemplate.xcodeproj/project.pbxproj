@@ -20,6 +20,8 @@
 		7281C2F3489597CCB622F211 /* libPods-AppTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */; };
 		72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 72950D2D1E86F35800413E39 /* UIImage+animatedGIF.m */; };
 		72C3090B1E801E9E00165EED /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3090A1E801E9E00165EED /* DataModel.m */; };
+		72DE59D01EEABB6800AA21EC /* MoiveCollectionStyleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72DE59CE1EEABB6800AA21EC /* MoiveCollectionStyleCell.m */; };
+		72DE59D11EEABB6800AA21EC /* MoiveCollectionStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DE59CF1EEABB6800AA21EC /* MoiveCollectionStyleCell.xib */; };
 		72E858171E7EC735001EBB8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858161E7EC735001EBB8B /* main.m */; };
 		72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858191E7EC735001EBB8B /* AppDelegate.m */; };
 		72E858201E7EC735001EBB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E8581E1E7EC735001EBB8B /* Main.storyboard */; };
@@ -75,6 +77,9 @@
 		72C309051E7F034600165EED /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		72C309091E801E9E00165EED /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		72C3090A1E801E9E00165EED /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		72DE59CD1EEABB6800AA21EC /* MoiveCollectionStyleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoiveCollectionStyleCell.h; sourceTree = "<group>"; };
+		72DE59CE1EEABB6800AA21EC /* MoiveCollectionStyleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoiveCollectionStyleCell.m; sourceTree = "<group>"; };
+		72DE59CF1EEABB6800AA21EC /* MoiveCollectionStyleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MoiveCollectionStyleCell.xib; sourceTree = "<group>"; };
 		72E858121E7EC735001EBB8B /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E858161E7EC735001EBB8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72E858181E7EC735001EBB8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -184,6 +189,9 @@
 		72C309061E801E4600165EED /* V */ = {
 			isa = PBXGroup;
 			children = (
+				72DE59CD1EEABB6800AA21EC /* MoiveCollectionStyleCell.h */,
+				72DE59CE1EEABB6800AA21EC /* MoiveCollectionStyleCell.m */,
+				72DE59CF1EEABB6800AA21EC /* MoiveCollectionStyleCell.xib */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -435,6 +443,7 @@
 				7228D9CB1EE838DB00A847A3 /* MTSMoviesViewController.xib in Resources */,
 				7228D9DD1EE83E6100A847A3 /* Hypatia-Sans-Pro-Bold.ttf in Resources */,
 				7228D9D51EE8390C00A847A3 /* MTSWatchListViewController.xib in Resources */,
+				72DE59D11EEABB6800AA21EC /* MoiveCollectionStyleCell.xib in Resources */,
 				7228D9D01EE838ED00A847A3 /* MTSTVShowsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -591,6 +600,7 @@
 				7228D9CA1EE838DB00A847A3 /* MTSMoviesViewController.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				7228D9C51EE834DA00A847A3 /* MTSProfileViewController.m in Sources */,
+				72DE59D01EEABB6800AA21EC /* MoiveCollectionStyleCell.m in Sources */,
 				72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
