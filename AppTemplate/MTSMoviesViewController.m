@@ -9,12 +9,14 @@
 #import "MTSMoviesViewController.h"
 #import "MoiveCollectionStyleCell.h"
 #import "Common.h"
+#import "HMSegmentedControl.h"
 static NSString *mMoiveCollectionStyleCellID = @"MoiveCollectionStyleCell";
 static NSInteger cellMargin = 13;
 
 @interface MTSMoviesViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (weak, nonatomic) IBOutlet HMSegmentedControl *segmentCtrl;
 
 @end
 
@@ -23,12 +25,19 @@ static NSInteger cellMargin = 13;
 - (void)viewDidLoad {
     [super viewDidLoad];
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    _collectionView.collectionViewLayout = layout;
     [_collectionView registerNib:[UINib nibWithNibName:mMoiveCollectionStyleCellID bundle:nil] forCellWithReuseIdentifier:mMoiveCollectionStyleCellID];
+    _collectionView.collectionViewLayout = layout;
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
     _collectionView.contentInset = UIEdgeInsetsMake(kScreenHeight * 0.175 - 20, 0, 0, 0);
     _collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(kScreenHeight * 0.175 - 20, 0, 0, 0);
+    
+    _segmentCtrl.sectionTitles = @[@"POPULAR",@"LATEST",@"UPCOMING"];
+    _segmentCtrl.backgroundColor = [UIColor clearColor];
+    _segmentCtrl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
+    _segmentCtrl.selectionIndicatorHeight = 2.f;
+    _segmentCtrl.selectionIndicatorColor = PrimaryThemeColor;
+    _segmentCtrl.titleTextAttributes = @{NSForegroundColorAttributeName : PrimaryThemeColor,NSFontAttributeName :UISegmentControlFont};
     
 }
 

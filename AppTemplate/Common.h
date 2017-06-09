@@ -18,6 +18,7 @@
 #define PrimaryBackgroundColor [UIColor colorWithHexString:@"121317" withAlpha:1]
 //Fonts
 #define UINavigationBarFont [UIFont fontWithName:@"HypatiaSansPro-Bold" size:20]
+#define UISegmentControlFont [UIFont fontWithName:@"HypatiaSansPro-Bold" size:15]
 #define UITabBarFont [UIFont fontWithName:@"HypatiaSansPro-Semibold" size:10]
 
 

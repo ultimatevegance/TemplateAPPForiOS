@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTSMoviesViewController">
             <connections>
                 <outlet property="collectionView" destination="AZ8-bl-ghX" id="DhD-DF-cg8"/>
+                <outlet property="segmentCtrl" destination="kTy-Q9-OMC" id="O4Y-gK-hkA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -81,11 +82,19 @@
                                     <constraint firstItem="yVx-I3-YOZ" firstAttribute="top" secondItem="ozh-T3-37s" secondAttribute="top" constant="9" id="yU9-HU-i40"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTy-Q9-OMC" customClass="HMSegmentedControl">
+                                <rect key="frame" x="0.0" y="76" width="375" height="36"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kTy-Q9-OMC" secondAttribute="trailing" id="JvS-o7-pOE"/>
                             <constraint firstItem="ozh-T3-37s" firstAttribute="top" secondItem="f8L-uN-l3w" secondAttribute="top" constant="20" id="Lo1-5z-ofC"/>
+                            <constraint firstItem="kTy-Q9-OMC" firstAttribute="top" secondItem="ozh-T3-37s" secondAttribute="bottom" constant="8" id="MSg-tm-P1z"/>
                             <constraint firstItem="ozh-T3-37s" firstAttribute="leading" secondItem="f8L-uN-l3w" secondAttribute="leading" id="W6Y-EB-arM"/>
+                            <constraint firstAttribute="bottom" secondItem="kTy-Q9-OMC" secondAttribute="bottom" constant="4" id="cVr-MA-W3n"/>
                             <constraint firstAttribute="trailing" secondItem="ozh-T3-37s" secondAttribute="trailing" id="eoe-mG-6iY"/>
+                            <constraint firstItem="kTy-Q9-OMC" firstAttribute="leading" secondItem="f8L-uN-l3w" secondAttribute="leading" id="hTV-oH-4KJ"/>
                         </constraints>
                     </view>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
