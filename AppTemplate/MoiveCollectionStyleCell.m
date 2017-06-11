@@ -25,7 +25,9 @@
     _movieData = movieData;
     _titleLabel.text = _movieData.title;
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    NSString *imageUrl = [delegate.imagesBaseUrlString stringByAppendingString:_movieData.poster_path];
-    [_posterImageView yy_setImageWithURL:[NSURL URLWithString:imageUrl] placeholder:[UIImage imageNamed:@"DEFAULT_IMAGE"]];
+    if (_movieData.poster_path) {
+        NSString *imageUrl = [delegate.imagesBaseUrlString stringByAppendingString:_movieData.poster_path];
+        [_posterImageView yy_setImageWithURL:[NSURL URLWithString:imageUrl] placeholder:[UIImage imageNamed:@"DEFAULT_IMAGE"]];
+       }
 }
 @end

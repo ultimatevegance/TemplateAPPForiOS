@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTSMoviesViewController">
             <connections>
                 <outlet property="collectionView" destination="AZ8-bl-ghX" id="DhD-DF-cg8"/>
+                <outlet property="scrollView" destination="Euc-Pv-7XI" id="7Qw-Kp-u2K"/>
                 <outlet property="segmentCtrl" destination="kTy-Q9-OMC" id="O4Y-gK-hkA"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -37,6 +38,10 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Euc-Pv-7XI">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </scrollView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xva-lf-yZU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="f8L-uN-l3w">
@@ -106,14 +111,23 @@
             </subviews>
             <color key="backgroundColor" red="0.086274509803921567" green="0.090196078431372548" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="Euc-Pv-7XI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1WU-sU-cit"/>
+                <constraint firstItem="Euc-Pv-7XI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1l0-bQ-4eG"/>
                 <constraint firstAttribute="trailing" secondItem="AZ8-bl-ghX" secondAttribute="trailing" id="3b1-yD-spE"/>
                 <constraint firstAttribute="bottom" secondItem="AZ8-bl-ghX" secondAttribute="bottom" id="6om-Fj-Rj3"/>
                 <constraint firstItem="xva-lf-yZU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9r8-r8-sdD"/>
+                <constraint firstAttribute="trailing" secondItem="Euc-Pv-7XI" secondAttribute="trailing" id="AK1-EB-rAL"/>
                 <constraint firstAttribute="trailing" secondItem="xva-lf-yZU" secondAttribute="trailing" id="Lnb-Hy-XrK"/>
                 <constraint firstItem="xva-lf-yZU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qus-M9-sz3"/>
                 <constraint firstItem="AZ8-bl-ghX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YfI-MI-Q6N"/>
                 <constraint firstItem="AZ8-bl-ghX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mIR-lA-9gc"/>
+                <constraint firstAttribute="bottom" secondItem="Euc-Pv-7XI" secondAttribute="bottom" id="xDt-Ol-BY7"/>
             </constraints>
+            <variation key="default">
+                <mask key="subviews">
+                    <exclude reference="AZ8-bl-ghX"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>
     </objects>
