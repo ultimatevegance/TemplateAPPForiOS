@@ -17,8 +17,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MTSMoviesViewController">
             <connections>
-                <outlet property="collectionView" destination="AZ8-bl-ghX" id="DhD-DF-cg8"/>
-                <outlet property="segmentCtrl" destination="kTy-Q9-OMC" id="O4Y-gK-hkA"/>
+                <outlet property="blurTopBarView" destination="xva-lf-yZU" id="0NH-X6-Vud"/>
+                <outlet property="sgView" destination="kTy-Q9-OMC" id="pZG-v6-XEe"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,16 +27,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="AZ8-bl-ghX">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BAx-E0-zJt">
-                        <size key="itemSize" width="50" height="50"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xva-lf-yZU">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="f8L-uN-l3w">
@@ -82,17 +72,17 @@
                                     <constraint firstItem="yVx-I3-YOZ" firstAttribute="top" secondItem="ozh-T3-37s" secondAttribute="top" constant="9" id="yU9-HU-i40"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTy-Q9-OMC" customClass="HMSegmentedControl">
-                                <rect key="frame" x="0.0" y="76" width="375" height="36"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kTy-Q9-OMC">
+                                <rect key="frame" x="0.0" y="68" width="375" height="48"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="kTy-Q9-OMC" secondAttribute="trailing" id="JvS-o7-pOE"/>
                             <constraint firstItem="ozh-T3-37s" firstAttribute="top" secondItem="f8L-uN-l3w" secondAttribute="top" constant="20" id="Lo1-5z-ofC"/>
-                            <constraint firstItem="kTy-Q9-OMC" firstAttribute="top" secondItem="ozh-T3-37s" secondAttribute="bottom" constant="8" id="MSg-tm-P1z"/>
+                            <constraint firstItem="kTy-Q9-OMC" firstAttribute="top" secondItem="ozh-T3-37s" secondAttribute="bottom" id="MSg-tm-P1z"/>
                             <constraint firstItem="ozh-T3-37s" firstAttribute="leading" secondItem="f8L-uN-l3w" secondAttribute="leading" id="W6Y-EB-arM"/>
-                            <constraint firstAttribute="bottom" secondItem="kTy-Q9-OMC" secondAttribute="bottom" constant="4" id="cVr-MA-W3n"/>
+                            <constraint firstAttribute="bottom" secondItem="kTy-Q9-OMC" secondAttribute="bottom" id="cVr-MA-W3n"/>
                             <constraint firstAttribute="trailing" secondItem="ozh-T3-37s" secondAttribute="trailing" id="eoe-mG-6iY"/>
                             <constraint firstItem="kTy-Q9-OMC" firstAttribute="leading" secondItem="f8L-uN-l3w" secondAttribute="leading" id="hTV-oH-4KJ"/>
                         </constraints>
@@ -106,13 +96,9 @@
             </subviews>
             <color key="backgroundColor" red="0.086274509803921567" green="0.090196078431372548" blue="0.10588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="AZ8-bl-ghX" secondAttribute="trailing" id="3b1-yD-spE"/>
-                <constraint firstAttribute="bottom" secondItem="AZ8-bl-ghX" secondAttribute="bottom" id="6om-Fj-Rj3"/>
                 <constraint firstItem="xva-lf-yZU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9r8-r8-sdD"/>
                 <constraint firstAttribute="trailing" secondItem="xva-lf-yZU" secondAttribute="trailing" id="Lnb-Hy-XrK"/>
                 <constraint firstItem="xva-lf-yZU" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qus-M9-sz3"/>
-                <constraint firstItem="AZ8-bl-ghX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YfI-MI-Q6N"/>
-                <constraint firstItem="AZ8-bl-ghX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mIR-lA-9gc"/>
             </constraints>
             <point key="canvasLocation" x="34.5" y="53.5"/>
         </view>

@@ -9,125 +9,67 @@
 #import "MTSMoviesViewController.h"
 #import "MoiveCollectionStyleCell.h"
 #import "Common.h"
-#import "HMSegmentedControl.h"
+#import "SGPageView.h"
+#import "MTSMoviePopularViewController.h"
+#import "MTSMovieTopRatedViewController.h"
+#import "MTSMovieUpcomingViewController.h"
 
-static NSString *mMoiveCollectionStyleCellID = @"MoiveCollectionStyleCell";
-static NSInteger cellMargin = 13;
-
-@interface MTSMoviesViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (weak, nonatomic) IBOutlet HMSegmentedControl *segmentCtrl;
-@property (strong, nonatomic) NSMutableArray *movies;
-@property (assign, nonatomic) NSInteger currentPage;
-
-
+@interface MTSMoviesViewController ()<SGPageTitleViewDelegate, SGPageContentViewDelegare>
+@property (weak, nonatomic) IBOutlet UIVisualEffectView *blurTopBarView;
+@property (weak, nonatomic) IBOutlet UIView *sgView;
+@property (nonatomic, strong) SGPageContentView *pageContentView;
+@property (nonatomic, strong) SGPageTitleView *pageTitleView;
 
 @end
 
-#pragma mark - LIFE CYCLE
 @implementation MTSMoviesViewController
+
+#pragma mark - LIFE CYCLE
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    [_collectionView registerNib:[UINib nibWithNibName:mMoiveCollectionStyleCellID bundle:nil] forCellWithReuseIdentifier:mMoiveCollectionStyleCellID];
-    _collectionView.collectionViewLayout = layout;
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
-    _collectionView.contentInset = UIEdgeInsetsMake(kScreenHeight * 0.175 - 20, 0, 0, 0);
-    _collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(kScreenHeight * 0.175 - 20, 0, 0, 0);
-
-    _collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self refreshData];
-    }];
-    _collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [self requestNewData];
-    }];
-
-    _segmentCtrl.sectionTitles = @[@"POPULAR",@"LATEST",@"UPCOMING"];
-    _segmentCtrl.backgroundColor = [UIColor clearColor];
-    _segmentCtrl.selectionIndicatorLocation = HMSegmentedControlSelectionIndicatorLocationDown;
-    _segmentCtrl.selectionIndicatorHeight = 2.f;
-    _segmentCtrl.selectionIndicatorColor = PrimaryThemeColor;
-    _segmentCtrl.titleTextAttributes = @{NSForegroundColorAttributeName : PrimaryThemeColor,NSFontAttributeName :UISegmentControlFont};
     
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    
+    MTSMoviePopularViewController *moviePopularVC = [[MTSMoviePopularViewController alloc] init];
+    MTSMovieTopRatedViewController *movieTopRatedVC = [[MTSMovieTopRatedViewController alloc] init];
+    MTSMovieUpcomingViewController *movieUpcomingVC = [[MTSMovieUpcomingViewController alloc] init];
+    NSArray *childArr = @[moviePopularVC,movieTopRatedVC,movieUpcomingVC];
+    NSArray *titleArr = @[@"POPULAR", @"TOP", @"UPCOMING"];
+    
+    /// pageContentView
+    self.pageContentView = [[SGPageContentView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) parentVC:self childVCs:childArr];
+    _pageContentView.delegatePageContentView = self;
+    [self.view insertSubview:_pageContentView belowSubview:_blurTopBarView];
+    
+    _pageTitleView = [[SGPageTitleView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44) delegate:self titleNames:titleArr];
+    [_sgView addSubview:_pageTitleView];
+    _pageTitleView.isIndicatorScroll = NO;
+    _pageTitleView.isTitleGradientEffect = NO;
+    _pageTitleView.isShowBottomSeparator = NO;
+    _pageTitleView.indicatorLengthStyle = SGIndicatorLengthTypeEqual;
+    _pageTitleView.indicatorColor = PrimaryThemeColor;
+    _pageTitleView.indicatorHeight = 2;
+    _pageTitleView.backgroundColor = [UIColor clearColor];
+    _pageTitleView.titleColorStateNormal = PrimaryThemeColor;
+    _pageTitleView.titleColorStateSelected = PrimaryThemeColor;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.navigationController.navigationBar.hidden = YES;
-    _currentPage = 1;
-    [self requestData];
 
 }
 
-#pragma mark - DATA PARSING
+#pragma mark - SGPAGEVIEW
 
-- (void)requestData {
-    _movies = [NSMutableArray array];
-    _movies = @[].mutableCopy;
-    [self requestNewData];
+- (void)SGPageTitleView:(SGPageTitleView *)SGPageTitleView selectedIndex:(NSInteger)selectedIndex {
+    [self.pageContentView setPageCententViewCurrentIndex:selectedIndex];
 }
 
-- (void)refreshData {
-    [_movies removeAllObjects];
-    _currentPage = 1;
-    [self requestNewData];
+- (void)SGPageContentView:(SGPageContentView *)SGPageContentView progress:(CGFloat)progress originalIndex:(NSInteger)originalIndex targetIndex:(NSInteger)targetIndex {
+    [self.pageTitleView setPageTitleViewWithProgress:progress originalIndex:originalIndex targetIndex:targetIndex];
 }
-
-- (void)requestNewData {
-    [[JLTMDbClient sharedAPIInstance] GET:kJLTMDbMoviePopular withParameters:@{@"page" : @(_currentPage)} andResponseBlock:^(id response, NSError *error) {
-        if (response) {
-            _currentPage = [[response objectForKey:@"page"] integerValue];
-            _currentPage += 1;
-            NSArray *requestedMovies = [MTLJSONAdapter modelsOfClass:[MTSMovieData class] fromJSONArray:response[@"results"] error:&error];
-            if ([requestedMovies count]) {
-                [_movies addObjectsFromArray:requestedMovies];
-            }
-        }
-        [_collectionView reloadData];
-        [_collectionView.mj_footer endRefreshing];
-        [_collectionView.mj_header endRefreshing];
-    }];
-}
-
-#pragma mark - UICollectionViewDataSource
-//cell config
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MoiveCollectionStyleCell *collectionStyleCell = [self.collectionView dequeueReusableCellWithReuseIdentifier:mMoiveCollectionStyleCellID forIndexPath:indexPath];
-    collectionStyleCell.movieData = _movies[indexPath.row];
-    return  collectionStyleCell;
-}
-// items number for section
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return _movies.count;
-}
-// sections number
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-#pragma mark - UICollectionViewDelegateFlowLayout
-// cell margins
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
-{
-    return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
-}
-// cell size
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
-{
-    CGFloat cellWidth = (kScreenWidth - cellMargin * 4) / 3;
-    CGFloat cellHeight = cellWidth * 1.80;
-    return CGSizeMake(cellWidth, cellHeight);
-}
-
-#pragma mark - UICollectionViewDelegate
-
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-}
-- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-}
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

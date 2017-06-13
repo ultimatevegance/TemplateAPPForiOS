@@ -34,6 +34,15 @@
 		72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858491E7EE35B001EBB8B /* MSTTabBarCtrl.m */; };
 		72FDA1231EEAF98600EF838E /* MTSMovieData.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA1221EEAF98600EF838E /* MTSMovieData.m */; };
 		72FDA1261EEAFD4000EF838E /* MTSMovieDetailData.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA1251EEAFD4000EF838E /* MTSMovieDetailData.m */; };
+		72FDA1491EF05FFB00EF838E /* SGPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA1431EF05FFB00EF838E /* SGPageContentView.m */; };
+		72FDA14A1EF05FFB00EF838E /* SGPageTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA1451EF05FFB00EF838E /* SGPageTitleView.m */; };
+		72FDA14B1EF05FFB00EF838E /* UIView+SGFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA1481EF05FFB00EF838E /* UIView+SGFrame.m */; };
+		72FDA14F1EF0613300EF838E /* MTSMoviePopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA14D1EF0613300EF838E /* MTSMoviePopularViewController.m */; };
+		72FDA1501EF0613300EF838E /* MTSMoviePopularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDA14E1EF0613300EF838E /* MTSMoviePopularViewController.xib */; };
+		72FDA1541EF0615900EF838E /* MTSMovieTopRatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA1521EF0615900EF838E /* MTSMovieTopRatedViewController.m */; };
+		72FDA1551EF0615900EF838E /* MTSMovieTopRatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDA1531EF0615900EF838E /* MTSMovieTopRatedViewController.xib */; };
+		72FDA1591EF0617000EF838E /* MTSMovieUpcomingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDA1571EF0617000EF838E /* MTSMovieUpcomingViewController.m */; };
+		72FDA15A1EF0617000EF838E /* MTSMovieUpcomingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDA1581EF0617000EF838E /* MTSMovieUpcomingViewController.xib */; };
 		7D10EA9835D37BC95810846F /* libPods-AppTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
@@ -107,6 +116,22 @@
 		72FDA1221EEAF98600EF838E /* MTSMovieData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSMovieData.m; sourceTree = "<group>"; };
 		72FDA1241EEAFD4000EF838E /* MTSMovieDetailData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSMovieDetailData.h; sourceTree = "<group>"; };
 		72FDA1251EEAFD4000EF838E /* MTSMovieDetailData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSMovieDetailData.m; sourceTree = "<group>"; };
+		72FDA1421EF05FFB00EF838E /* SGPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageContentView.h; sourceTree = "<group>"; };
+		72FDA1431EF05FFB00EF838E /* SGPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageContentView.m; sourceTree = "<group>"; };
+		72FDA1441EF05FFB00EF838E /* SGPageTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleView.h; sourceTree = "<group>"; };
+		72FDA1451EF05FFB00EF838E /* SGPageTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleView.m; sourceTree = "<group>"; };
+		72FDA1461EF05FFB00EF838E /* SGPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageView.h; sourceTree = "<group>"; };
+		72FDA1471EF05FFB00EF838E /* UIView+SGFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGFrame.h"; sourceTree = "<group>"; };
+		72FDA1481EF05FFB00EF838E /* UIView+SGFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGFrame.m"; sourceTree = "<group>"; };
+		72FDA14C1EF0613300EF838E /* MTSMoviePopularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSMoviePopularViewController.h; sourceTree = "<group>"; };
+		72FDA14D1EF0613300EF838E /* MTSMoviePopularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSMoviePopularViewController.m; sourceTree = "<group>"; };
+		72FDA14E1EF0613300EF838E /* MTSMoviePopularViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSMoviePopularViewController.xib; sourceTree = "<group>"; };
+		72FDA1511EF0615900EF838E /* MTSMovieTopRatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSMovieTopRatedViewController.h; sourceTree = "<group>"; };
+		72FDA1521EF0615900EF838E /* MTSMovieTopRatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSMovieTopRatedViewController.m; sourceTree = "<group>"; };
+		72FDA1531EF0615900EF838E /* MTSMovieTopRatedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSMovieTopRatedViewController.xib; sourceTree = "<group>"; };
+		72FDA1561EF0617000EF838E /* MTSMovieUpcomingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSMovieUpcomingViewController.h; sourceTree = "<group>"; };
+		72FDA1571EF0617000EF838E /* MTSMovieUpcomingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSMovieUpcomingViewController.m; sourceTree = "<group>"; };
+		72FDA1581EF0617000EF838E /* MTSMovieUpcomingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSMovieUpcomingViewController.xib; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +172,15 @@
 				7228D9C71EE838DB00A847A3 /* MTSMoviesViewController.h */,
 				7228D9C81EE838DB00A847A3 /* MTSMoviesViewController.m */,
 				7228D9C91EE838DB00A847A3 /* MTSMoviesViewController.xib */,
+				72FDA14C1EF0613300EF838E /* MTSMoviePopularViewController.h */,
+				72FDA14D1EF0613300EF838E /* MTSMoviePopularViewController.m */,
+				72FDA14E1EF0613300EF838E /* MTSMoviePopularViewController.xib */,
+				72FDA1511EF0615900EF838E /* MTSMovieTopRatedViewController.h */,
+				72FDA1521EF0615900EF838E /* MTSMovieTopRatedViewController.m */,
+				72FDA1531EF0615900EF838E /* MTSMovieTopRatedViewController.xib */,
+				72FDA1561EF0617000EF838E /* MTSMovieUpcomingViewController.h */,
+				72FDA1571EF0617000EF838E /* MTSMovieUpcomingViewController.m */,
+				72FDA1581EF0617000EF838E /* MTSMovieUpcomingViewController.xib */,
 			);
 			name = Movies;
 			sourceTree = "<group>";
@@ -184,6 +218,7 @@
 		725EF1A01E8041180068DA36 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				72FDA1411EF05FFB00EF838E /* SGPageView */,
 				7293DC5C1EEAE8370070EE4C /* HMSegmentedControl */,
 				72950D2B1E86F35800413E39 /* UIImage+animatedGIF */,
 			);
@@ -319,6 +354,20 @@
 				72C309081E801E5600165EED /* C */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		72FDA1411EF05FFB00EF838E /* SGPageView */ = {
+			isa = PBXGroup;
+			children = (
+				72FDA1421EF05FFB00EF838E /* SGPageContentView.h */,
+				72FDA1431EF05FFB00EF838E /* SGPageContentView.m */,
+				72FDA1441EF05FFB00EF838E /* SGPageTitleView.h */,
+				72FDA1451EF05FFB00EF838E /* SGPageTitleView.m */,
+				72FDA1461EF05FFB00EF838E /* SGPageView.h */,
+				72FDA1471EF05FFB00EF838E /* UIView+SGFrame.h */,
+				72FDA1481EF05FFB00EF838E /* UIView+SGFrame.m */,
+			);
+			path = SGPageView;
 			sourceTree = "<group>";
 		};
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
@@ -467,7 +516,10 @@
 				7228D9DB1EE83E5000A847A3 /* Hypatia-Sans-Pro-Semibold.ttf in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				7228D9C61EE834DA00A847A3 /* MTSProfileViewController.xib in Resources */,
+				72FDA1501EF0613300EF838E /* MTSMoviePopularViewController.xib in Resources */,
+				72FDA1551EF0615900EF838E /* MTSMovieTopRatedViewController.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
+				72FDA15A1EF0617000EF838E /* MTSMovieUpcomingViewController.xib in Resources */,
 				7228D9CB1EE838DB00A847A3 /* MTSMoviesViewController.xib in Resources */,
 				7228D9DD1EE83E6100A847A3 /* Hypatia-Sans-Pro-Bold.ttf in Resources */,
 				7228D9D51EE8390C00A847A3 /* MTSWatchListViewController.xib in Resources */,
@@ -639,13 +691,19 @@
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
+				72FDA14B1EF05FFB00EF838E /* UIView+SGFrame.m in Sources */,
+				72FDA1591EF0617000EF838E /* MTSMovieUpcomingViewController.m in Sources */,
 				7228D9D41EE8390C00A847A3 /* MTSWatchListViewController.m in Sources */,
+				72FDA14F1EF0613300EF838E /* MTSMoviePopularViewController.m in Sources */,
 				7228D9CA1EE838DB00A847A3 /* MTSMoviesViewController.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				7293DC5F1EEAE8370070EE4C /* HMSegmentedControl.m in Sources */,
 				72FDA1261EEAFD4000EF838E /* MTSMovieDetailData.m in Sources */,
+				72FDA14A1EF05FFB00EF838E /* SGPageTitleView.m in Sources */,
 				7228D9C51EE834DA00A847A3 /* MTSProfileViewController.m in Sources */,
 				72DE59D01EEABB6800AA21EC /* MoiveCollectionStyleCell.m in Sources */,
+				72FDA1541EF0615900EF838E /* MTSMovieTopRatedViewController.m in Sources */,
+				72FDA1491EF05FFB00EF838E /* SGPageContentView.m in Sources */,
 				72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */,
 				72FDA1231EEAF98600EF838E /* MTSMovieData.m in Sources */,
 			);
