@@ -15,6 +15,7 @@
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
 //Colors
 #define PrimaryThemeColor [UIColor colorWithHexString:@"16DAFF" withAlpha:1]
+#define PrimaryThemeColor2 [UIColor colorWithHexString:@"F21C4B" withAlpha:1]
 #define PrimaryBackgroundColor [UIColor colorWithHexString:@"121317" withAlpha:1]
 //Fonts
 #define UINavigationBarFont [UIFont fontWithName:@"HypatiaSansPro-Bold" size:20]

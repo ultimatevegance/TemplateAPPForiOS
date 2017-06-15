@@ -52,6 +52,13 @@ static NSString * const kJLTMDbMovieNowPlaying = @"movie/now_playing";
 static NSString * const kJLTMDbMoviePopular = @"movie/popular";
 static NSString * const kJLTMDbMovieTopRated = @"movie/top_rated";
 
+#pragma mark - TV
+
+static NSString * const kJLTMDbTVONTheAir = @"tv/on_the_air";
+static NSString * const kJLTMDbTVPopular = @"tv/popular";
+static NSString * const kJLTMDbTVTopRated = @"tv/top_rated";
+
+
 #pragma mark - People
 //Documentation: http://docs.themoviedb.apiary.io/#people
 static NSString * const kJLTMDbPerson = @"person/{id}";

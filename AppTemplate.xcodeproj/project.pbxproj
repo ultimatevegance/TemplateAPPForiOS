@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		721776C91EF2EDB900302F3B /* MTSTVOnTheAirViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721776C71EF2EDB900302F3B /* MTSTVOnTheAirViewController.m */; };
+		721776CA1EF2EDB900302F3B /* MTSTVOnTheAirViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721776C81EF2EDB900302F3B /* MTSTVOnTheAirViewController.xib */; };
+		721776CE1EF2EDD000302F3B /* MTSTVTopRatedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721776CC1EF2EDD000302F3B /* MTSTVTopRatedViewController.m */; };
+		721776CF1EF2EDD000302F3B /* MTSTVTopRatedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721776CD1EF2EDD000302F3B /* MTSTVTopRatedViewController.xib */; };
+		721776D31EF2EDE600302F3B /* MTSTVPopularViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 721776D11EF2EDE600302F3B /* MTSTVPopularViewController.m */; };
+		721776D41EF2EDE600302F3B /* MTSTVPopularViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721776D21EF2EDE600302F3B /* MTSTVPopularViewController.xib */; };
+		721776D81EF2F23200302F3B /* MTSTVListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 721776D61EF2F23200302F3B /* MTSTVListCell.m */; };
+		721776D91EF2F23200302F3B /* MTSTVListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 721776D71EF2F23200302F3B /* MTSTVListCell.xib */; };
 		7228D9C51EE834DA00A847A3 /* MTSProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7228D9C31EE834DA00A847A3 /* MTSProfileViewController.m */; };
 		7228D9C61EE834DA00A847A3 /* MTSProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7228D9C41EE834DA00A847A3 /* MTSProfileViewController.xib */; };
 		7228D9CA1EE838DB00A847A3 /* MTSMoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7228D9C81EE838DB00A847A3 /* MTSMoviesViewController.m */; };
@@ -71,6 +79,18 @@
 		4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EE46CF075FE7B30045567C /* Pods-AppTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		721776C61EF2EDB900302F3B /* MTSTVOnTheAirViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSTVOnTheAirViewController.h; sourceTree = "<group>"; };
+		721776C71EF2EDB900302F3B /* MTSTVOnTheAirViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTVOnTheAirViewController.m; sourceTree = "<group>"; };
+		721776C81EF2EDB900302F3B /* MTSTVOnTheAirViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSTVOnTheAirViewController.xib; sourceTree = "<group>"; };
+		721776CB1EF2EDD000302F3B /* MTSTVTopRatedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSTVTopRatedViewController.h; sourceTree = "<group>"; };
+		721776CC1EF2EDD000302F3B /* MTSTVTopRatedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTVTopRatedViewController.m; sourceTree = "<group>"; };
+		721776CD1EF2EDD000302F3B /* MTSTVTopRatedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSTVTopRatedViewController.xib; sourceTree = "<group>"; };
+		721776D01EF2EDE600302F3B /* MTSTVPopularViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSTVPopularViewController.h; sourceTree = "<group>"; };
+		721776D11EF2EDE600302F3B /* MTSTVPopularViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTVPopularViewController.m; sourceTree = "<group>"; };
+		721776D21EF2EDE600302F3B /* MTSTVPopularViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSTVPopularViewController.xib; sourceTree = "<group>"; };
+		721776D51EF2F23200302F3B /* MTSTVListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSTVListCell.h; sourceTree = "<group>"; };
+		721776D61EF2F23200302F3B /* MTSTVListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSTVListCell.m; sourceTree = "<group>"; };
+		721776D71EF2F23200302F3B /* MTSTVListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSTVListCell.xib; sourceTree = "<group>"; };
 		7228D9C21EE834DA00A847A3 /* MTSProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSProfileViewController.h; sourceTree = "<group>"; };
 		7228D9C31EE834DA00A847A3 /* MTSProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSProfileViewController.m; sourceTree = "<group>"; };
 		7228D9C41EE834DA00A847A3 /* MTSProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSProfileViewController.xib; sourceTree = "<group>"; };
@@ -201,6 +221,15 @@
 				7228D9CC1EE838ED00A847A3 /* MTSTVShowsViewController.h */,
 				7228D9CD1EE838ED00A847A3 /* MTSTVShowsViewController.m */,
 				7228D9CE1EE838ED00A847A3 /* MTSTVShowsViewController.xib */,
+				721776C61EF2EDB900302F3B /* MTSTVOnTheAirViewController.h */,
+				721776C71EF2EDB900302F3B /* MTSTVOnTheAirViewController.m */,
+				721776C81EF2EDB900302F3B /* MTSTVOnTheAirViewController.xib */,
+				721776CB1EF2EDD000302F3B /* MTSTVTopRatedViewController.h */,
+				721776CC1EF2EDD000302F3B /* MTSTVTopRatedViewController.m */,
+				721776CD1EF2EDD000302F3B /* MTSTVTopRatedViewController.xib */,
+				721776D01EF2EDE600302F3B /* MTSTVPopularViewController.h */,
+				721776D11EF2EDE600302F3B /* MTSTVPopularViewController.m */,
+				721776D21EF2EDE600302F3B /* MTSTVPopularViewController.xib */,
 			);
 			name = TVShows;
 			sourceTree = "<group>";
@@ -249,6 +278,9 @@
 				72DE59CD1EEABB6800AA21EC /* MoiveCollectionStyleCell.h */,
 				72DE59CE1EEABB6800AA21EC /* MoiveCollectionStyleCell.m */,
 				72DE59CF1EEABB6800AA21EC /* MoiveCollectionStyleCell.xib */,
+				721776D51EF2F23200302F3B /* MTSTVListCell.h */,
+				721776D61EF2F23200302F3B /* MTSTVListCell.m */,
+				721776D71EF2F23200302F3B /* MTSTVListCell.xib */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -516,6 +548,7 @@
 				7228D9DB1EE83E5000A847A3 /* Hypatia-Sans-Pro-Semibold.ttf in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				7228D9C61EE834DA00A847A3 /* MTSProfileViewController.xib in Resources */,
+				721776CF1EF2EDD000302F3B /* MTSTVTopRatedViewController.xib in Resources */,
 				72FDA1501EF0613300EF838E /* MTSMoviePopularViewController.xib in Resources */,
 				72FDA1551EF0615900EF838E /* MTSMovieTopRatedViewController.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
@@ -525,6 +558,9 @@
 				7228D9D51EE8390C00A847A3 /* MTSWatchListViewController.xib in Resources */,
 				72DE59D11EEABB6800AA21EC /* MoiveCollectionStyleCell.xib in Resources */,
 				7228D9D01EE838ED00A847A3 /* MTSTVShowsViewController.xib in Resources */,
+				721776CA1EF2EDB900302F3B /* MTSTVOnTheAirViewController.xib in Resources */,
+				721776D91EF2F23200302F3B /* MTSTVListCell.xib in Resources */,
+				721776D41EF2EDE600302F3B /* MTSTVPopularViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,13 +730,17 @@
 				72FDA14B1EF05FFB00EF838E /* UIView+SGFrame.m in Sources */,
 				72FDA1591EF0617000EF838E /* MTSMovieUpcomingViewController.m in Sources */,
 				7228D9D41EE8390C00A847A3 /* MTSWatchListViewController.m in Sources */,
+				721776C91EF2EDB900302F3B /* MTSTVOnTheAirViewController.m in Sources */,
 				72FDA14F1EF0613300EF838E /* MTSMoviePopularViewController.m in Sources */,
 				7228D9CA1EE838DB00A847A3 /* MTSMoviesViewController.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
+				721776D31EF2EDE600302F3B /* MTSTVPopularViewController.m in Sources */,
 				7293DC5F1EEAE8370070EE4C /* HMSegmentedControl.m in Sources */,
 				72FDA1261EEAFD4000EF838E /* MTSMovieDetailData.m in Sources */,
+				721776CE1EF2EDD000302F3B /* MTSTVTopRatedViewController.m in Sources */,
 				72FDA14A1EF05FFB00EF838E /* SGPageTitleView.m in Sources */,
 				7228D9C51EE834DA00A847A3 /* MTSProfileViewController.m in Sources */,
+				721776D81EF2F23200302F3B /* MTSTVListCell.m in Sources */,
 				72DE59D01EEABB6800AA21EC /* MoiveCollectionStyleCell.m in Sources */,
 				72FDA1541EF0615900EF838E /* MTSMovieTopRatedViewController.m in Sources */,
 				72FDA1491EF05FFB00EF838E /* SGPageContentView.m in Sources */,

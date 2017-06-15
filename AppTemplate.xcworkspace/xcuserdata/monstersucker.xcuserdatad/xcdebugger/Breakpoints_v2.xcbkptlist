@@ -79,38 +79,6 @@
             endingLineNumber = "84"
             landmarkName = "@implementation MTSMoviesViewController"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MTSMoviesViewController requestNewDataWithColumnIndex:]"
-                  moduleName = "AppTemplate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/monstersucker/Documents/REGULAR%20FILES/ProjectRepo/gifmoment_ios_community/AppTemplate/MTSMoviesViewController.m"
-                  timestampString = "518895994.814558"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "168">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__57-[MTSMoviesViewController requestNewDataWithColumnIndex:]_block_invoke"
-                  moduleName = "AppTemplate"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/monstersucker/Documents/REGULAR%20FILES/ProjectRepo/gifmoment_ios_community/AppTemplate/MTSMoviesViewController.m"
-                  timestampString = "518895994.815953"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "143"
-                  endingLineNumber = "143"
-                  offsetFromSymbolStart = "80">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
