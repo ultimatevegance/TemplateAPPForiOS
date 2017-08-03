@@ -7,6 +7,8 @@
 //
 
 #import "MSTaskHomeViewController.h"
+#import "MSCalendarViewController.h"
+#import "MSArchivedTasksViewController.h"
 #import "TableViewCell.h"
 
 @interface MSTaskHomeViewController () <UITableViewDelegate,UITableViewDataSource>
@@ -23,7 +25,9 @@ static NSString *mTaskCellID = @"TableViewCell";
     if (self) {
         self.tabBarItem = [[UITabBarItem alloc] initWithTitle:nil image:[UIImage imageNamed:@"home"] selectedImage:[UIImage imageNamed:@"home_s"]];
         self.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+        //navigation items configuration
         self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"calendar"] style:UIBarButtonItemStylePlain target:self action:@selector(calendar:)];
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"safebox"] style:UIBarButtonItemStylePlain target:self action:@selector(safebox:)];
     }
     
     return self;
@@ -45,8 +49,16 @@ static NSString *mTaskCellID = @"TableViewCell";
 }
 
 - (void)calendar:(UIBarButtonItem *)sender {
-    
+    MSCalendarViewController *calendarVC = [[MSCalendarViewController alloc] init];
+    [self.navigationController pushViewController:calendarVC animated:YES];
 }
+
+- (void)safebox:(UIBarButtonItem *)sender {
+    MSArchivedTasksViewController *archivedTaskVC = [[MSArchivedTasksViewController alloc] init];
+    [self.navigationController pushViewController:archivedTaskVC animated:YES];
+}
+
+#pragma mark UITableview
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 10;

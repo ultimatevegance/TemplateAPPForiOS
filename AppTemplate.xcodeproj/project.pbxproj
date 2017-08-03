@@ -39,6 +39,12 @@
 		8D6F63C71ECB0C0B00692883 /* MSProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D6F63C61ECB0C0B00692883 /* MSProject.m */; };
 		8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DDD2BE31EC067A900301111 /* MSBigAddButton.m */; };
 		8DE3432F1EC1A5A500141C4B /* MSBaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */; };
+		8DEFE6F81F31D99F005B6DCF /* MSArchivedTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFE6F61F31D99F005B6DCF /* MSArchivedTasksViewController.m */; };
+		8DEFE6F91F31D99F005B6DCF /* MSArchivedTasksViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFE6F71F31D99F005B6DCF /* MSArchivedTasksViewController.xib */; };
+		8DEFE6FD1F31D9BE005B6DCF /* MSCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFE6FB1F31D9BE005B6DCF /* MSCalendarViewController.m */; };
+		8DEFE6FE1F31D9BE005B6DCF /* MSCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFE6FC1F31D9BE005B6DCF /* MSCalendarViewController.xib */; };
+		8DEFE7021F31D9D0005B6DCF /* MSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFE7001F31D9D0005B6DCF /* MSSettingViewController.m */; };
+		8DEFE7031F31D9D0005B6DCF /* MSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFE7011F31D9D0005B6DCF /* MSSettingViewController.xib */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -119,6 +125,15 @@
 		8DDD2BE31EC067A900301111 /* MSBigAddButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBigAddButton.m; sourceTree = "<group>"; };
 		8DE3432D1EC1A5A500141C4B /* MSBaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSBaseNavigationController.h; sourceTree = "<group>"; };
 		8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSBaseNavigationController.m; sourceTree = "<group>"; };
+		8DEFE6F51F31D99F005B6DCF /* MSArchivedTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSArchivedTasksViewController.h; sourceTree = "<group>"; };
+		8DEFE6F61F31D99F005B6DCF /* MSArchivedTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSArchivedTasksViewController.m; sourceTree = "<group>"; };
+		8DEFE6F71F31D99F005B6DCF /* MSArchivedTasksViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSArchivedTasksViewController.xib; sourceTree = "<group>"; };
+		8DEFE6FA1F31D9BE005B6DCF /* MSCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSCalendarViewController.h; sourceTree = "<group>"; };
+		8DEFE6FB1F31D9BE005B6DCF /* MSCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSCalendarViewController.m; sourceTree = "<group>"; };
+		8DEFE6FC1F31D9BE005B6DCF /* MSCalendarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSCalendarViewController.xib; sourceTree = "<group>"; };
+		8DEFE6FF1F31D9D0005B6DCF /* MSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingViewController.h; sourceTree = "<group>"; };
+		8DEFE7001F31D9D0005B6DCF /* MSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSettingViewController.m; sourceTree = "<group>"; };
+		8DEFE7011F31D9D0005B6DCF /* MSSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSSettingViewController.xib; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,15 +222,9 @@
 		72C309081E801E5600165EED /* C */ = {
 			isa = PBXGroup;
 			children = (
-				8D43C1A31EC05D0E0043F02A /* MSTaskHomeViewController.h */,
-				8D43C1A41EC05D0E0043F02A /* MSTaskHomeViewController.m */,
-				8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */,
-				8D43C1A81EC05D2A0043F02A /* MSTaskDashboardViewController.h */,
-				8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */,
-				8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */,
-				8D6F63B81ECAD8E100692883 /* MSTaskEditorViewController.h */,
-				8D6F63B91ECAD8E100692883 /* MSTaskEditorViewController.m */,
-				8D6F63BA1ECAD8E100692883 /* MSTaskEditorViewController.xib */,
+				8DEFE7041F31D9E6005B6DCF /* TASKS */,
+				8DEFE7051F31DA20005B6DCF /* DASHBOARD */,
+				8DEFE7061F31DA38005B6DCF /* Settings */,
 			);
 			name = C;
 			sourceTree = "<group>";
@@ -315,6 +324,45 @@
 				8DE3432E1EC1A5A500141C4B /* MSBaseNavigationController.m */,
 			);
 			name = Base;
+			sourceTree = "<group>";
+		};
+		8DEFE7041F31D9E6005B6DCF /* TASKS */ = {
+			isa = PBXGroup;
+			children = (
+				8D6F63B81ECAD8E100692883 /* MSTaskEditorViewController.h */,
+				8D6F63B91ECAD8E100692883 /* MSTaskEditorViewController.m */,
+				8D6F63BA1ECAD8E100692883 /* MSTaskEditorViewController.xib */,
+				8D43C1A31EC05D0E0043F02A /* MSTaskHomeViewController.h */,
+				8D43C1A41EC05D0E0043F02A /* MSTaskHomeViewController.m */,
+				8D43C1A51EC05D0E0043F02A /* MSTaskHomeViewController.xib */,
+				8DEFE6F51F31D99F005B6DCF /* MSArchivedTasksViewController.h */,
+				8DEFE6F61F31D99F005B6DCF /* MSArchivedTasksViewController.m */,
+				8DEFE6F71F31D99F005B6DCF /* MSArchivedTasksViewController.xib */,
+				8DEFE6FA1F31D9BE005B6DCF /* MSCalendarViewController.h */,
+				8DEFE6FB1F31D9BE005B6DCF /* MSCalendarViewController.m */,
+				8DEFE6FC1F31D9BE005B6DCF /* MSCalendarViewController.xib */,
+			);
+			name = TASKS;
+			sourceTree = "<group>";
+		};
+		8DEFE7051F31DA20005B6DCF /* DASHBOARD */ = {
+			isa = PBXGroup;
+			children = (
+				8D43C1A81EC05D2A0043F02A /* MSTaskDashboardViewController.h */,
+				8D43C1A91EC05D2A0043F02A /* MSTaskDashboardViewController.m */,
+				8D43C1AA1EC05D2A0043F02A /* MSTaskDashboardViewController.xib */,
+			);
+			name = DASHBOARD;
+			sourceTree = "<group>";
+		};
+		8DEFE7061F31DA38005B6DCF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				8DEFE6FF1F31D9D0005B6DCF /* MSSettingViewController.h */,
+				8DEFE7001F31D9D0005B6DCF /* MSSettingViewController.m */,
+				8DEFE7011F31D9D0005B6DCF /* MSSettingViewController.xib */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
@@ -461,10 +509,13 @@
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				8D6F63BC1ECAD8E100692883 /* MSTaskEditorViewController.xib in Resources */,
+				8DEFE6F91F31D99F005B6DCF /* MSArchivedTasksViewController.xib in Resources */,
 				8D38880C1ECC02A20001F36C /* HSDatePickerViewController.xib in Resources */,
 				8D43C1AC1EC05D2A0043F02A /* MSTaskDashboardViewController.xib in Resources */,
 				72C309101E801F5900165EED /* TableViewCell.xib in Resources */,
 				8D3888121ECC0F1D0001F36C /* MSPrioritySelectorView.xib in Resources */,
+				8DEFE6FE1F31D9BE005B6DCF /* MSCalendarViewController.xib in Resources */,
+				8DEFE7031F31D9D0005B6DCF /* MSSettingViewController.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
 				8D3888171ECC29D30001F36C /* MSPriorityCell.xib in Resources */,
 				728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */,
@@ -632,12 +683,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
+				8DEFE6F81F31D99F005B6DCF /* MSArchivedTasksViewController.m in Sources */,
 				8D3888101ECC0F120001F36C /* MSPrioritySelectorView.m in Sources */,
 				8D6F63C71ECB0C0B00692883 /* MSProject.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
 				8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */,
 				8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */,
+				8DEFE6FD1F31D9BE005B6DCF /* MSCalendarViewController.m in Sources */,
 				8D3888161ECC29D30001F36C /* MSPriorityCell.m in Sources */,
 				8D6F63C41ECB0BFA00692883 /* MSTask.m in Sources */,
 				8D38880B1ECC02A20001F36C /* HSDatePickerViewController.m in Sources */,
@@ -646,6 +699,7 @@
 				72C3090F1E801F5900165EED /* TableViewCell.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				72E8584B1E7EE35B001EBB8B /* MSTTabBarCtrl.m in Sources */,
+				8DEFE7021F31D9D0005B6DCF /* MSSettingViewController.m in Sources */,
 				8D6F63BB1ECAD8E100692883 /* MSTaskEditorViewController.m in Sources */,
 				8D43C1A61EC05D0E0043F02A /* MSTaskHomeViewController.m in Sources */,
 			);

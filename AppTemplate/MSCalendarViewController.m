@@ -1,26 +1,22 @@
 //
-//  MSBaseNavigationController.m
+//  MSCalendarViewController.m
 //  AppTemplate
 //
-//  Created by Monster on 09/05/2017.
+//  Created by Monster on 02/08/2017.
 //  Copyright © 2017 MonsterTechStudio. All rights reserved.
 //
 
-#import "MSBaseNavigationController.h"
+#import "MSCalendarViewController.h"
 
-@interface MSBaseNavigationController ()
+@interface MSCalendarViewController ()
 
 @end
 
-@implementation MSBaseNavigationController
+@implementation MSCalendarViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    self.navigationBar.layer.shadowColor = [UIColor blackColor].CGColor;
-//    self.navigationBar.layer.shadowRadius = 10;
-//    self.navigationBar.layer.shadowOpacity = 0.2;
-//    self.navigationBar.layer.shadowOffset = CGSizeMake(2, 2);
+    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)didReceiveMemoryWarning {

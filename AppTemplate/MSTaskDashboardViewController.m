@@ -7,6 +7,7 @@
 //
 
 #import "MSTaskDashboardViewController.h"
+#import "MSSettingViewController.h"
 #import "CollectionViewCell.h"
 #import "Common.h"
 @interface MSTaskDashboardViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
@@ -49,7 +50,8 @@ static NSString *dashboardCellID = @"CollectionViewCell";
 }
 
 - (void)setting:(UIBarButtonItem *)sender {
-    
+    MSSettingViewController *settingVC = [[MSSettingViewController alloc] init];
+    [self.navigationController pushViewController:settingVC animated:YES];
 }
 
 - (void)statics:(UIBarButtonItem *)sender {
