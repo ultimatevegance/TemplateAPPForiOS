@@ -10,9 +10,11 @@
 #import "MSCalendarViewController.h"
 #import "MSArchivedTasksViewController.h"
 #import "TableViewCell.h"
+#import "Common.h"
 
 @interface MSTaskHomeViewController () <UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIImageView *BackgroundImageView;
 
 @end
 
@@ -43,9 +45,15 @@ static NSString *mTaskCellID = @"TableViewCell";
     [_tableView registerNib:[UINib nibWithNibName:mTaskCellID bundle:nil] forCellReuseIdentifier:mTaskCellID];
     _tableView.estimatedRowHeight = 150;
     _tableView.rowHeight = UITableViewAutomaticDimension;
+    _BackgroundImageView.backgroundColor = GradientThemeColor;
     
-    
-    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+
 }
 
 - (void)calendar:(UIBarButtonItem *)sender {
@@ -75,22 +83,22 @@ static NSString *mTaskCellID = @"TableViewCell";
     
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
-        return @"TODAY";
-    }
-    if (section == 1) {
-        return @"MONDAY";
-    }
-
-    if (section == 2) {
-        return @"TUESDAY";
-    }
-    else {
-        return @"";
-    }
-    
-}
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//    if (section == 0) {
+//        return @"TODAY";
+//    }
+//    if (section == 1) {
+//        return @"MONDAY";
+//    }
+//
+//    if (section == 2) {
+//        return @"TUESDAY";
+//    }
+//    else {
+//        return @"";
+//    }
+//    
+//}
 
 
 

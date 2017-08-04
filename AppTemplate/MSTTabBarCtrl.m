@@ -52,7 +52,7 @@
     _addTaskButton = [MSBigAddButton buttonWithType:UIButtonTypeCustom];
     [_addTaskButton setFrame:CGRectMake(0, 0, kScreenWidth * 0.15, kScreenWidth * 0.15)];
     _addTaskButton.layer.cornerRadius = CGRectGetHeight(_addTaskButton.frame) / 2;
-    _addTaskButton.layer.shadowColor = PrimaryThemeColor.CGColor;
+    _addTaskButton.layer.shadowColor = GradientThemeColor.CGColor;
     _addTaskButton.layer.shadowOffset = CGSizeMake(0, 8);
     _addTaskButton.layer.shadowOpacity = 0.6;
     _addTaskButton.layer.shadowRadius = 6;
@@ -62,7 +62,7 @@
     [_addTaskButton addTarget: self action:@selector(addButtonClickd:) forControlEvents:UIControlEventTouchUpInside];
     _addTaskButton.center = center;
     _buttonFrame = _addTaskButton.frame;
-    [_addTaskButton setBackgroundColor:PrimaryThemeColor];
+    [_addTaskButton setBackgroundColor:GradientThemeColor];
     [self.view addSubview:_addTaskButton];
 }
 
