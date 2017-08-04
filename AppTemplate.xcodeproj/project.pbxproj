@@ -45,6 +45,8 @@
 		8DEFE6FE1F31D9BE005B6DCF /* MSCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFE6FC1F31D9BE005B6DCF /* MSCalendarViewController.xib */; };
 		8DEFE7021F31D9D0005B6DCF /* MSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFE7001F31D9D0005B6DCF /* MSSettingViewController.m */; };
 		8DEFE7031F31D9D0005B6DCF /* MSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DEFE7011F31D9D0005B6DCF /* MSSettingViewController.xib */; };
+		8DEFE7171F344ECB005B6DCF /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFE7131F344ECB005B6DCF /* MGSwipeButton.m */; };
+		8DEFE7181F344ECB005B6DCF /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DEFE7151F344ECB005B6DCF /* MGSwipeTableCell.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -134,6 +136,10 @@
 		8DEFE6FF1F31D9D0005B6DCF /* MSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingViewController.h; sourceTree = "<group>"; };
 		8DEFE7001F31D9D0005B6DCF /* MSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSettingViewController.m; sourceTree = "<group>"; };
 		8DEFE7011F31D9D0005B6DCF /* MSSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSSettingViewController.xib; sourceTree = "<group>"; };
+		8DEFE7121F344ECB005B6DCF /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		8DEFE7131F344ECB005B6DCF /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		8DEFE7141F344ECB005B6DCF /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		8DEFE7151F344ECB005B6DCF /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +176,7 @@
 		725EF1A01E8041180068DA36 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8DEFE7101F344ECB005B6DCF /* MGSwipeTableCell */,
 				8D3888071ECC02A20001F36C /* HSDatePickerViewController */,
 				72950D2B1E86F35800413E39 /* UIImage+animatedGIF */,
 			);
@@ -363,6 +370,17 @@
 				8DEFE7011F31D9D0005B6DCF /* MSSettingViewController.xib */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		8DEFE7101F344ECB005B6DCF /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				8DEFE7121F344ECB005B6DCF /* MGSwipeButton.h */,
+				8DEFE7131F344ECB005B6DCF /* MGSwipeButton.m */,
+				8DEFE7141F344ECB005B6DCF /* MGSwipeTableCell.h */,
+				8DEFE7151F344ECB005B6DCF /* MGSwipeTableCell.m */,
+			);
+			path = MGSwipeTableCell;
 			sourceTree = "<group>";
 		};
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
@@ -685,9 +703,11 @@
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
 				8DEFE6F81F31D99F005B6DCF /* MSArchivedTasksViewController.m in Sources */,
 				8D3888101ECC0F120001F36C /* MSPrioritySelectorView.m in Sources */,
+				8DEFE7181F344ECB005B6DCF /* MGSwipeTableCell.m in Sources */,
 				8D6F63C71ECB0C0B00692883 /* MSProject.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
+				8DEFE7171F344ECB005B6DCF /* MGSwipeButton.m in Sources */,
 				8D43C1AB1EC05D2A0043F02A /* MSTaskDashboardViewController.m in Sources */,
 				8DDD2BE41EC067A900301111 /* MSBigAddButton.m in Sources */,
 				8DEFE6FD1F31D9BE005B6DCF /* MSCalendarViewController.m in Sources */,

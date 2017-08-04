@@ -79,6 +79,16 @@ static NSString *mTaskCellID = @"TableViewCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *taskCell = [_tableView dequeueReusableCellWithIdentifier:mTaskCellID forIndexPath:indexPath];
     taskCell.selectionStyle = UITableViewCellSelectionStyleNone;
+    //configure left buttons
+    taskCell.leftButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"completeIcon"] backgroundColor:[UIColor clearColor]]
+                         ];
+    taskCell.leftSwipeSettings.transition = MGSwipeTransition3D;
+    
+    //configure right buttons
+    taskCell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"deleteIcon"] backgroundColor:[UIColor clearColor]],[MGSwipeButton buttonWithTitle:@"" icon:[UIImage imageNamed:@"editIcon"] backgroundColor:[UIColor clearColor]]
+                          ];
+    taskCell.rightSwipeSettings.transition = MGSwipeTransition3D;
+
     return taskCell;
     
 }

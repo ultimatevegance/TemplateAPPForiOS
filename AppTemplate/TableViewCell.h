@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DataModel.h"
+#import "MGSwipeTableCell.h"
 
-@interface TableViewCell : UITableViewCell
+@interface TableViewCell : MGSwipeTableCell
 @property (weak, nonatomic) IBOutlet UIButton *checkButton;
 @property(nonatomic,strong) DataModel *data;
 @end
