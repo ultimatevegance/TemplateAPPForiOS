@@ -12,6 +12,21 @@
 		728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */; };
 		72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 72950D2D1E86F35800413E39 /* UIImage+animatedGIF.m */; };
 		72C3090B1E801E9E00165EED /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C3090A1E801E9E00165EED /* DataModel.m */; };
+		72C619D71F583B4F008742F6 /* TYTabPagerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619C61F583B4F008742F6 /* TYTabPagerBar.m */; };
+		72C619D81F583B4F008742F6 /* TYTabPagerBarCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619C81F583B4F008742F6 /* TYTabPagerBarCell.m */; };
+		72C619D91F583B4F008742F6 /* TYTabPagerBarLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619CA1F583B4F008742F6 /* TYTabPagerBarLayout.m */; };
+		72C619DA1F583B4F008742F6 /* TYTabPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619CC1F583B4F008742F6 /* TYTabPagerController.m */; };
+		72C619DB1F583B4F008742F6 /* TYTabPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619CE1F583B4F008742F6 /* TYTabPagerView.m */; };
+		72C619DC1F583B4F008742F6 /* TYPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619D01F583B4F008742F6 /* TYPagerController.m */; };
+		72C619DD1F583B4F008742F6 /* TYPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619D21F583B4F008742F6 /* TYPagerView.m */; };
+		72C619DE1F583B4F008742F6 /* TYPagerViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C619D41F583B4F008742F6 /* TYPagerViewLayout.m */; };
+		72D657C81F586BA900A8BCA6 /* MTSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657C61F586BA900A8BCA6 /* MTSHomeViewController.m */; };
+		72D657C91F586BA900A8BCA6 /* MTSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D657C71F586BA900A8BCA6 /* MTSHomeViewController.xib */; };
+		72D657D91F586EB000A8BCA6 /* UIView+SGFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657CD1F586EB000A8BCA6 /* UIView+SGFrame.m */; };
+		72D657DA1F586EB000A8BCA6 /* SGPageContentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657D01F586EB000A8BCA6 /* SGPageContentScrollView.m */; };
+		72D657DB1F586EB000A8BCA6 /* SGPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657D21F586EB000A8BCA6 /* SGPageContentView.m */; };
+		72D657DC1F586EB000A8BCA6 /* SGPageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657D51F586EB000A8BCA6 /* SGPageTitleButton.m */; };
+		72D657DD1F586EB000A8BCA6 /* SGPageTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657D71F586EB000A8BCA6 /* SGPageTitleView.m */; };
 		72E858171E7EC735001EBB8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858161E7EC735001EBB8B /* main.m */; };
 		72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858191E7EC735001EBB8B /* AppDelegate.m */; };
 		72E858201E7EC735001EBB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E8581E1E7EC735001EBB8B /* Main.storyboard */; };
@@ -22,11 +37,6 @@
 		7D10EA9835D37BC95810846F /* libPods-AppTemplate.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */; };
 		8D3F48281F57F2260052B612 /* PictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F48261F57F2260052B612 /* PictureCollectionViewController.m */; };
 		8D3F48291F57F2260052B612 /* PictureCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3F48271F57F2260052B612 /* PictureCollectionViewController.xib */; };
-		8D3F48321F57F3200052B612 /* SGPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F482C1F57F3200052B612 /* SGPageContentView.m */; };
-		8D3F48331F57F3200052B612 /* SGPageTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F482E1F57F3200052B612 /* SGPageTitleView.m */; };
-		8D3F48341F57F3200052B612 /* UIView+SGFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F48311F57F3200052B612 /* UIView+SGFrame.m */; };
-		8D3F483D1F57F3E80052B612 /* MSMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F483B1F57F3E80052B612 /* MSMainViewController.m */; };
-		8D3F483E1F57F3E80052B612 /* MSMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3F483C1F57F3E80052B612 /* MSMainViewController.xib */; };
 		8D3F48421F5805FB0052B612 /* WallpaperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D3F48401F5805FB0052B612 /* WallpaperListViewController.m */; };
 		8D3F48431F5805FB0052B612 /* WallpaperListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D3F48411F5805FB0052B612 /* WallpaperListViewController.xib */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
@@ -64,6 +74,36 @@
 		72C309051E7F034600165EED /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		72C309091E801E9E00165EED /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		72C3090A1E801E9E00165EED /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
+		72C619C51F583B4F008742F6 /* TYTabPagerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerBar.h; sourceTree = "<group>"; };
+		72C619C61F583B4F008742F6 /* TYTabPagerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerBar.m; sourceTree = "<group>"; };
+		72C619C71F583B4F008742F6 /* TYTabPagerBarCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerBarCell.h; sourceTree = "<group>"; };
+		72C619C81F583B4F008742F6 /* TYTabPagerBarCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerBarCell.m; sourceTree = "<group>"; };
+		72C619C91F583B4F008742F6 /* TYTabPagerBarLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerBarLayout.h; sourceTree = "<group>"; };
+		72C619CA1F583B4F008742F6 /* TYTabPagerBarLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerBarLayout.m; sourceTree = "<group>"; };
+		72C619CB1F583B4F008742F6 /* TYTabPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerController.h; sourceTree = "<group>"; };
+		72C619CC1F583B4F008742F6 /* TYTabPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerController.m; sourceTree = "<group>"; };
+		72C619CD1F583B4F008742F6 /* TYTabPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYTabPagerView.h; sourceTree = "<group>"; };
+		72C619CE1F583B4F008742F6 /* TYTabPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYTabPagerView.m; sourceTree = "<group>"; };
+		72C619CF1F583B4F008742F6 /* TYPagerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerController.h; sourceTree = "<group>"; };
+		72C619D01F583B4F008742F6 /* TYPagerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerController.m; sourceTree = "<group>"; };
+		72C619D11F583B4F008742F6 /* TYPagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerView.h; sourceTree = "<group>"; };
+		72C619D21F583B4F008742F6 /* TYPagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerView.m; sourceTree = "<group>"; };
+		72C619D31F583B4F008742F6 /* TYPagerViewLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYPagerViewLayout.h; sourceTree = "<group>"; };
+		72C619D41F583B4F008742F6 /* TYPagerViewLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYPagerViewLayout.m; sourceTree = "<group>"; };
+		72D657C51F586BA900A8BCA6 /* MTSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSHomeViewController.h; sourceTree = "<group>"; };
+		72D657C61F586BA900A8BCA6 /* MTSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSHomeViewController.m; sourceTree = "<group>"; };
+		72D657C71F586BA900A8BCA6 /* MTSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSHomeViewController.xib; sourceTree = "<group>"; };
+		72D657CC1F586EB000A8BCA6 /* UIView+SGFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGFrame.h"; sourceTree = "<group>"; };
+		72D657CD1F586EB000A8BCA6 /* UIView+SGFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGFrame.m"; sourceTree = "<group>"; };
+		72D657CF1F586EB000A8BCA6 /* SGPageContentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageContentScrollView.h; sourceTree = "<group>"; };
+		72D657D01F586EB000A8BCA6 /* SGPageContentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageContentScrollView.m; sourceTree = "<group>"; };
+		72D657D11F586EB000A8BCA6 /* SGPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageContentView.h; sourceTree = "<group>"; };
+		72D657D21F586EB000A8BCA6 /* SGPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageContentView.m; sourceTree = "<group>"; };
+		72D657D41F586EB000A8BCA6 /* SGPageTitleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleButton.h; sourceTree = "<group>"; };
+		72D657D51F586EB000A8BCA6 /* SGPageTitleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleButton.m; sourceTree = "<group>"; };
+		72D657D61F586EB000A8BCA6 /* SGPageTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleView.h; sourceTree = "<group>"; };
+		72D657D71F586EB000A8BCA6 /* SGPageTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleView.m; sourceTree = "<group>"; };
+		72D657D81F586EB000A8BCA6 /* SGPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPagingView.h; sourceTree = "<group>"; };
 		72E858121E7EC735001EBB8B /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E858161E7EC735001EBB8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72E858181E7EC735001EBB8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -81,16 +121,6 @@
 		8D3F48251F57F2260052B612 /* PictureCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewController.h; sourceTree = "<group>"; };
 		8D3F48261F57F2260052B612 /* PictureCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewController.m; sourceTree = "<group>"; };
 		8D3F48271F57F2260052B612 /* PictureCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCollectionViewController.xib; sourceTree = "<group>"; };
-		8D3F482B1F57F3200052B612 /* SGPageContentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageContentView.h; sourceTree = "<group>"; };
-		8D3F482C1F57F3200052B612 /* SGPageContentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageContentView.m; sourceTree = "<group>"; };
-		8D3F482D1F57F3200052B612 /* SGPageTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleView.h; sourceTree = "<group>"; };
-		8D3F482E1F57F3200052B612 /* SGPageTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleView.m; sourceTree = "<group>"; };
-		8D3F482F1F57F3200052B612 /* SGPageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageView.h; sourceTree = "<group>"; };
-		8D3F48301F57F3200052B612 /* UIView+SGFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SGFrame.h"; sourceTree = "<group>"; };
-		8D3F48311F57F3200052B612 /* UIView+SGFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SGFrame.m"; sourceTree = "<group>"; };
-		8D3F483A1F57F3E80052B612 /* MSMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSMainViewController.h; sourceTree = "<group>"; };
-		8D3F483B1F57F3E80052B612 /* MSMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSMainViewController.m; sourceTree = "<group>"; };
-		8D3F483C1F57F3E80052B612 /* MSMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSMainViewController.xib; sourceTree = "<group>"; };
 		8D3F483F1F5805FB0052B612 /* WallpaperListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallpaperListViewController.h; sourceTree = "<group>"; };
 		8D3F48401F5805FB0052B612 /* WallpaperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallpaperListViewController.m; sourceTree = "<group>"; };
 		8D3F48411F5805FB0052B612 /* WallpaperListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallpaperListViewController.xib; sourceTree = "<group>"; };
@@ -130,7 +160,8 @@
 		725EF1A01E8041180068DA36 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				8D3F482A1F57F3200052B612 /* SGPageView */,
+				72D657CA1F586EB000A8BCA6 /* SGPagingView */,
+				72C619BF1F583B4F008742F6 /* TYPagerController */,
 				72950D2B1E86F35800413E39 /* UIImage+animatedGIF */,
 			);
 			name = Vendor;
@@ -167,17 +198,106 @@
 		72C309081E801E5600165EED /* C */ = {
 			isa = PBXGroup;
 			children = (
-				8D3F483A1F57F3E80052B612 /* MSMainViewController.h */,
-				8D3F483B1F57F3E80052B612 /* MSMainViewController.m */,
-				8D3F483C1F57F3E80052B612 /* MSMainViewController.xib */,
 				8D3F48251F57F2260052B612 /* PictureCollectionViewController.h */,
 				8D3F48261F57F2260052B612 /* PictureCollectionViewController.m */,
 				8D3F48271F57F2260052B612 /* PictureCollectionViewController.xib */,
 				8D3F483F1F5805FB0052B612 /* WallpaperListViewController.h */,
 				8D3F48401F5805FB0052B612 /* WallpaperListViewController.m */,
 				8D3F48411F5805FB0052B612 /* WallpaperListViewController.xib */,
+				72D657C51F586BA900A8BCA6 /* MTSHomeViewController.h */,
+				72D657C61F586BA900A8BCA6 /* MTSHomeViewController.m */,
+				72D657C71F586BA900A8BCA6 /* MTSHomeViewController.xib */,
 			);
 			name = C;
+			sourceTree = "<group>";
+		};
+		72C619BF1F583B4F008742F6 /* TYPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				72C619C21F583B4F008742F6 /* TYPagerControllerDemo */,
+			);
+			path = TYPagerController;
+			sourceTree = "<group>";
+		};
+		72C619C21F583B4F008742F6 /* TYPagerControllerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				72C619C31F583B4F008742F6 /* TYPagerController */,
+			);
+			path = TYPagerControllerDemo;
+			sourceTree = "<group>";
+		};
+		72C619C31F583B4F008742F6 /* TYPagerController */ = {
+			isa = PBXGroup;
+			children = (
+				72C619C41F583B4F008742F6 /* TabPager */,
+				72C619CF1F583B4F008742F6 /* TYPagerController.h */,
+				72C619D01F583B4F008742F6 /* TYPagerController.m */,
+				72C619D11F583B4F008742F6 /* TYPagerView.h */,
+				72C619D21F583B4F008742F6 /* TYPagerView.m */,
+				72C619D31F583B4F008742F6 /* TYPagerViewLayout.h */,
+				72C619D41F583B4F008742F6 /* TYPagerViewLayout.m */,
+			);
+			path = TYPagerController;
+			sourceTree = "<group>";
+		};
+		72C619C41F583B4F008742F6 /* TabPager */ = {
+			isa = PBXGroup;
+			children = (
+				72C619C51F583B4F008742F6 /* TYTabPagerBar.h */,
+				72C619C61F583B4F008742F6 /* TYTabPagerBar.m */,
+				72C619C71F583B4F008742F6 /* TYTabPagerBarCell.h */,
+				72C619C81F583B4F008742F6 /* TYTabPagerBarCell.m */,
+				72C619C91F583B4F008742F6 /* TYTabPagerBarLayout.h */,
+				72C619CA1F583B4F008742F6 /* TYTabPagerBarLayout.m */,
+				72C619CB1F583B4F008742F6 /* TYTabPagerController.h */,
+				72C619CC1F583B4F008742F6 /* TYTabPagerController.m */,
+				72C619CD1F583B4F008742F6 /* TYTabPagerView.h */,
+				72C619CE1F583B4F008742F6 /* TYTabPagerView.m */,
+			);
+			path = TabPager;
+			sourceTree = "<group>";
+		};
+		72D657CA1F586EB000A8BCA6 /* SGPagingView */ = {
+			isa = PBXGroup;
+			children = (
+				72D657CB1F586EB000A8BCA6 /* Category */,
+				72D657CE1F586EB000A8BCA6 /* SGPageContent */,
+				72D657D31F586EB000A8BCA6 /* SGPageTitle */,
+				72D657D81F586EB000A8BCA6 /* SGPagingView.h */,
+			);
+			path = SGPagingView;
+			sourceTree = "<group>";
+		};
+		72D657CB1F586EB000A8BCA6 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				72D657CC1F586EB000A8BCA6 /* UIView+SGFrame.h */,
+				72D657CD1F586EB000A8BCA6 /* UIView+SGFrame.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		72D657CE1F586EB000A8BCA6 /* SGPageContent */ = {
+			isa = PBXGroup;
+			children = (
+				72D657CF1F586EB000A8BCA6 /* SGPageContentScrollView.h */,
+				72D657D01F586EB000A8BCA6 /* SGPageContentScrollView.m */,
+				72D657D11F586EB000A8BCA6 /* SGPageContentView.h */,
+				72D657D21F586EB000A8BCA6 /* SGPageContentView.m */,
+			);
+			path = SGPageContent;
+			sourceTree = "<group>";
+		};
+		72D657D31F586EB000A8BCA6 /* SGPageTitle */ = {
+			isa = PBXGroup;
+			children = (
+				72D657D41F586EB000A8BCA6 /* SGPageTitleButton.h */,
+				72D657D51F586EB000A8BCA6 /* SGPageTitleButton.m */,
+				72D657D61F586EB000A8BCA6 /* SGPageTitleView.h */,
+				72D657D71F586EB000A8BCA6 /* SGPageTitleView.m */,
+			);
+			path = SGPageTitle;
 			sourceTree = "<group>";
 		};
 		72E858091E7EC735001EBB8B = {
@@ -255,20 +375,6 @@
 			name = Main;
 			sourceTree = "<group>";
 		};
-		8D3F482A1F57F3200052B612 /* SGPageView */ = {
-			isa = PBXGroup;
-			children = (
-				8D3F482B1F57F3200052B612 /* SGPageContentView.h */,
-				8D3F482C1F57F3200052B612 /* SGPageContentView.m */,
-				8D3F482D1F57F3200052B612 /* SGPageTitleView.h */,
-				8D3F482E1F57F3200052B612 /* SGPageTitleView.m */,
-				8D3F482F1F57F3200052B612 /* SGPageView.h */,
-				8D3F48301F57F3200052B612 /* UIView+SGFrame.h */,
-				8D3F48311F57F3200052B612 /* UIView+SGFrame.m */,
-			);
-			path = SGPageView;
-			sourceTree = "<group>";
-		};
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,12 +405,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E8583F1E7EC735001EBB8B /* Build configuration list for PBXNativeTarget "AppTemplate" */;
 			buildPhases = (
-				491A8D7C8B1C114D59A5BDD5 /* 📦 Check Pods Manifest.lock */,
+				491A8D7C8B1C114D59A5BDD5 /* [CP] Check Pods Manifest.lock */,
 				72E8580E1E7EC735001EBB8B /* Sources */,
 				72E8580F1E7EC735001EBB8B /* Frameworks */,
 				72E858101E7EC735001EBB8B /* Resources */,
-				B0FFA25ABEE2B1367C412E9C /* 📦 Embed Pods Frameworks */,
-				A1394EE79E46C92065F6EAEA /* 📦 Copy Pods Resources */,
+				B0FFA25ABEE2B1367C412E9C /* [CP] Embed Pods Frameworks */,
+				A1394EE79E46C92065F6EAEA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -319,12 +425,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E858421E7EC735001EBB8B /* Build configuration list for PBXNativeTarget "AppTemplateTests" */;
 			buildPhases = (
-				5A463D7A7378F14BA4CD2929 /* 📦 Check Pods Manifest.lock */,
+				5A463D7A7378F14BA4CD2929 /* [CP] Check Pods Manifest.lock */,
 				72E858271E7EC735001EBB8B /* Sources */,
 				72E858281E7EC735001EBB8B /* Frameworks */,
 				72E858291E7EC735001EBB8B /* Resources */,
-				F5F2169F50C358AE8BE9087D /* 📦 Embed Pods Frameworks */,
-				1C4C7C0F1971EA53E56B0733 /* 📦 Copy Pods Resources */,
+				F5F2169F50C358AE8BE9087D /* [CP] Embed Pods Frameworks */,
+				1C4C7C0F1971EA53E56B0733 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -340,11 +446,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72E858451E7EC735001EBB8B /* Build configuration list for PBXNativeTarget "AppTemplateUITests" */;
 			buildPhases = (
-				D6895C4C0705B6E22EBA6422 /* 📦 Check Pods Manifest.lock */,
+				D6895C4C0705B6E22EBA6422 /* [CP] Check Pods Manifest.lock */,
 				72E858321E7EC735001EBB8B /* Sources */,
 				72E858331E7EC735001EBB8B /* Frameworks */,
 				72E858341E7EC735001EBB8B /* Resources */,
-				A6FDEC12745538714737DFC4 /* 📦 Copy Pods Resources */,
+				A6FDEC12745538714737DFC4 /* [CP] Copy Pods Resources */,
+				B700308DE2520416149AC412 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -413,8 +520,8 @@
 				8D3F48291F57F2260052B612 /* PictureCollectionViewController.xib in Resources */,
 				8D3F48431F5805FB0052B612 /* WallpaperListViewController.xib in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
-				8D3F483E1F57F3E80052B612 /* MSMainViewController.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
+				72D657C91F586BA900A8BCA6 /* MTSHomeViewController.xib in Resources */,
 				728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -436,14 +543,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1C4C7C0F1971EA53E56B0733 /* 📦 Copy Pods Resources */ = {
+		1C4C7C0F1971EA53E56B0733 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,44 +558,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplateTests/Pods-AppTemplateTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		491A8D7C8B1C114D59A5BDD5 /* 📦 Check Pods Manifest.lock */ = {
+		491A8D7C8B1C114D59A5BDD5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		5A463D7A7378F14BA4CD2929 /* 📦 Check Pods Manifest.lock */ = {
+		5A463D7A7378F14BA4CD2929 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A1394EE79E46C92065F6EAEA /* 📦 Copy Pods Resources */ = {
+		A1394EE79E46C92065F6EAEA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,14 +603,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A6FDEC12745538714737DFC4 /* 📦 Copy Pods Resources */ = {
+		A6FDEC12745538714737DFC4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -511,14 +618,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		B0FFA25ABEE2B1367C412E9C /* 📦 Embed Pods Frameworks */ = {
+		B0FFA25ABEE2B1367C412E9C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,29 +633,44 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D6895C4C0705B6E22EBA6422 /* 📦 Check Pods Manifest.lock */ = {
+		B700308DE2520416149AC412 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F5F2169F50C358AE8BE9087D /* 📦 Embed Pods Frameworks */ = {
+		D6895C4C0705B6E22EBA6422 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F5F2169F50C358AE8BE9087D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -563,17 +685,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D3F48331F57F3200052B612 /* SGPageTitleView.m in Sources */,
+				72D657DA1F586EB000A8BCA6 /* SGPageContentScrollView.m in Sources */,
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
+				72C619DC1F583B4F008742F6 /* TYPagerController.m in Sources */,
+				72D657D91F586EB000A8BCA6 /* UIView+SGFrame.m in Sources */,
+				72C619D71F583B4F008742F6 /* TYTabPagerBar.m in Sources */,
+				72D657DD1F586EB000A8BCA6 /* SGPageTitleView.m in Sources */,
+				72C619DA1F583B4F008742F6 /* TYTabPagerController.m in Sources */,
+				72D657DB1F586EB000A8BCA6 /* SGPageContentView.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
-				8D3F48321F57F3200052B612 /* SGPageContentView.m in Sources */,
+				72C619DB1F583B4F008742F6 /* TYTabPagerView.m in Sources */,
+				72D657DC1F586EB000A8BCA6 /* SGPageTitleButton.m in Sources */,
+				72C619D91F583B4F008742F6 /* TYTabPagerBarLayout.m in Sources */,
 				8D3F48281F57F2260052B612 /* PictureCollectionViewController.m in Sources */,
-				8D3F48341F57F3200052B612 /* UIView+SGFrame.m in Sources */,
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
-				8D3F483D1F57F3E80052B612 /* MSMainViewController.m in Sources */,
+				72C619D81F583B4F008742F6 /* TYTabPagerBarCell.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
+				72C619DE1F583B4F008742F6 /* TYPagerViewLayout.m in Sources */,
 				72950D2E1E86F35800413E39 /* UIImage+animatedGIF.m in Sources */,
 				8D3F48421F5805FB0052B612 /* WallpaperListViewController.m in Sources */,
+				72D657C81F586BA900A8BCA6 /* MTSHomeViewController.m in Sources */,
+				72C619DD1F583B4F008742F6 /* TYPagerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

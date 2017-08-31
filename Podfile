@@ -19,8 +19,6 @@ target 'AppTemplate' do
   pod 'M13ProgressSuite'
   pod 'MJRefresh'
   pod 'MBCircularProgressBar'
-#   pod 'XLPagerTabStrip'
-  pod 'TYPagerController'
 #  pod 'Charts'
   pod 'PNChart'
   pod 'TSMessages'

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Common.h"
-#import "MSMainViewController.h"
+#import "MTSHomeViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +18,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    UINavigationController *naviCtrl = [[UINavigationController alloc] initWithRootViewController:[[MSMainViewController alloc] init]];
+    UINavigationController *naviCtrl = [[UINavigationController alloc] initWithRootViewController:[[MTSHomeViewController alloc] init]];
     self.window.rootViewController = naviCtrl;
     [self.window makeKeyAndVisible ] ;
     

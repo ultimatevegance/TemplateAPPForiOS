@@ -8,10 +8,13 @@
 #import "SSZipArchive.h"
 #include "unzip.h"
 #include "zip.h"
+#include "minishared.h"
 #import "zlib.h"
 #import "zconf.h"
 
 #include <sys/stat.h>
+
+NSString *const SSZipArchiveErrorDomain = @"SSZipArchiveErrorDomain";
 
 #define CHUNK 16384
 
@@ -30,7 +33,7 @@
 
 + (BOOL)isFilePasswordProtectedAtPath:(NSString *)path {
     // Begin opening
-    zipFile zip = unzOpen((const char*)[path UTF8String]);
+    zipFile zip = unzOpen((const char*)[path fileSystemRepresentation]);
     if (zip == NULL) {
         return NO;
     }
@@ -39,21 +42,20 @@
     if (ret == UNZ_OK) {
         do {
             ret = unzOpenCurrentFile(zip);
-            if( ret!=UNZ_OK ) {
+            if (ret != UNZ_OK) {
                 return NO;
             }
-            unz_file_info   fileInfo ={0};
+            unz_file_info fileInfo = {0};
             ret = unzGetCurrentFileInfo(zip, &fileInfo, NULL, 0, NULL, 0, NULL, 0);
-            if (ret!= UNZ_OK) {
+            if (ret != UNZ_OK) {
                 return NO;
-            } else if((fileInfo.flag & 1) == 1) {
+            } else if ((fileInfo.flag & 1) == 1) {
                 return YES;
             }
             
             unzCloseCurrentFile(zip);
             ret = unzGoToNextFile(zip);
-        } while( ret==UNZ_OK && UNZ_OK!=UNZ_END_OF_LIST_OF_FILE );
-        
+        } while (ret == UNZ_OK && UNZ_OK != UNZ_END_OF_LIST_OF_FILE);
     }
     
     return NO;
@@ -64,11 +66,11 @@
         *error = nil;
     }
 
-    zipFile zip = unzOpen((const char*)[path UTF8String]);
+    zipFile zip = unzOpen((const char*)[path fileSystemRepresentation]);
     if (zip == NULL) {
         if (error) {
-            *error = [NSError errorWithDomain:@"SSZipArchiveErrorDomain"
-                                         code:-1
+            *error = [NSError errorWithDomain:SSZipArchiveErrorDomain
+                                         code:SSZipArchiveErrorCodeFailedOpenZipFile
                                      userInfo:@{NSLocalizedDescriptionKey: @"failed to open zip file"}];
         }
         return NO;
@@ -85,8 +87,8 @@
             if (ret != UNZ_OK) {
                 if (ret != UNZ_BADPASSWORD) {
                     if (error) {
-                        *error = [NSError errorWithDomain:@"SSZipArchiveErrorDomain"
-                                                     code:-2
+                        *error = [NSError errorWithDomain:SSZipArchiveErrorDomain
+                                                     code:SSZipArchiveErrorCodeFailedOpenFileInZip
                                                  userInfo:@{NSLocalizedDescriptionKey: @"failed to open first file in zip file"}];
                     }
                 }
@@ -96,20 +98,20 @@
             ret = unzGetCurrentFileInfo(zip, &fileInfo, NULL, 0, NULL, 0, NULL, 0);
             if (ret != UNZ_OK) {
                 if (error) {
-                    *error = [NSError errorWithDomain:@"SSZipArchiveErrorDomain"
-                                                 code:-3
+                    *error = [NSError errorWithDomain:SSZipArchiveErrorDomain
+                                                 code:SSZipArchiveErrorCodeFileInfoNotLoadable
                                              userInfo:@{NSLocalizedDescriptionKey: @"failed to retrieve info for file"}];
                 }
                 return NO;
-            } else if((fileInfo.flag & 1) == 1) {
+            } else if ((fileInfo.flag & 1) == 1) {
                 unsigned char buffer[10] = {0};
                 int readBytes = unzReadCurrentFile(zip, buffer, (unsigned)MIN(10UL,fileInfo.uncompressed_size));
                 if (readBytes < 0) {
                     // Let's assume the invalid password caused this error
                     if (readBytes != Z_DATA_ERROR) {
                         if (error) {
-                            *error = [NSError errorWithDomain:@"SSZipArchiveErrorDomain"
-                                                         code:-4
+                            *error = [NSError errorWithDomain:SSZipArchiveErrorDomain
+                                                         code:SSZipArchiveErrorCodeFileContentNotReadable
                                                      userInfo:@{NSLocalizedDescriptionKey: @"failed to read contents of file entry"}];
                         }
                     }
@@ -120,8 +122,7 @@
             
             unzCloseCurrentFile(zip);
             ret = unzGoToNextFile(zip);
-        } while (ret==UNZ_OK && UNZ_OK!=UNZ_END_OF_LIST_OF_FILE);
-        
+        } while (ret == UNZ_OK && UNZ_OK != UNZ_END_OF_LIST_OF_FILE);
     }
 
     // No password required
@@ -183,18 +184,34 @@
           toDestination:(NSString *)destination
      preserveAttributes:(BOOL)preserveAttributes
               overwrite:(BOOL)overwrite
-               password:(NSString *)password
+               password:(nullable NSString *)password
                   error:(NSError **)error
                delegate:(id<SSZipArchiveDelegate>)delegate
         progressHandler:(void (^)(NSString *entry, unz_file_info zipInfo, long entryNumber, long total))progressHandler
       completionHandler:(void (^)(NSString *path, BOOL succeeded, NSError * __nullable error))completionHandler
 {
+    
+    // Guard against empty strings
+    if ([path length] == 0 || [destination length] == 0)
+    {
+        NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"received invalid argument(s)"};
+        NSError *err = [NSError errorWithDomain:SSZipArchiveErrorDomain code:SSZipArchiveErrorCodeInvalidArguments userInfo:userInfo];
+        if (error)
+        {
+            *error = err;
+        }
+        if (completionHandler)
+        {
+            completionHandler(nil, NO, err);
+        }
+    }
+    
     // Begin opening
-    zipFile zip = unzOpen((const char*)[path UTF8String]);
+    zipFile zip = unzOpen((const char*)[path fileSystemRepresentation]);
     if (zip == NULL)
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"failed to open zip file"};
-        NSError *err = [NSError errorWithDomain:@"SSZipArchiveErrorDomain" code:-1 userInfo:userInfo];
+        NSError *err = [NSError errorWithDomain:SSZipArchiveErrorDomain code:SSZipArchiveErrorCodeFailedOpenZipFile userInfo:userInfo];
         if (error)
         {
             *error = err;
@@ -217,7 +234,7 @@
     if (unzGoToFirstFile(zip) != UNZ_OK)
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"failed to open first file in zip file"};
-        NSError *err = [NSError errorWithDomain:@"SSZipArchiveErrorDomain" code:-2 userInfo:userInfo];
+        NSError *err = [NSError errorWithDomain:SSZipArchiveErrorDomain code:SSZipArchiveErrorCodeFailedOpenFileInZip userInfo:userInfo];
         if (error)
         {
             *error = err;
@@ -232,7 +249,7 @@
     BOOL success = YES;
     BOOL canceled = NO;
     int ret = 0;
-    int crc_ret =0;
+    int crc_ret = 0;
     unsigned char buffer[4096] = {0};
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSMutableArray *directoriesModificationDates = [[NSMutableArray alloc] init];
@@ -256,6 +273,7 @@
             }
             
             if (ret != UNZ_OK) {
+                unzippingError = [NSError errorWithDomain:@"SSZipArchiveErrorDomain" code:SSZipArchiveErrorCodeFailedOpenFileInZip userInfo:@{NSLocalizedDescriptionKey: @"failed to open file in zip file"}];
                 success = NO;
                 break;
             }
@@ -266,6 +284,7 @@
             
             ret = unzGetCurrentFileInfo(zip, &fileInfo, NULL, 0, NULL, 0, NULL, 0);
             if (ret != UNZ_OK) {
+                unzippingError = [NSError errorWithDomain:@"SSZipArchiveErrorDomain" code:SSZipArchiveErrorCodeFileInfoNotLoadable userInfo:@{NSLocalizedDescriptionKey: @"failed to retrieve info for file"}];
                 success = NO;
                 unzCloseCurrentFile(zip);
                 break;
@@ -294,7 +313,8 @@
             char *filename = (char *)malloc(fileInfo.size_filename + 1);
             if (filename == NULL)
             {
-                return NO;
+                success = NO;
+                break;
             }
             
             unzGetCurrentFileInfo(zip, &fileInfo, filename, fileInfo.size_filename + 1, NULL, 0, NULL, 0);
@@ -345,7 +365,7 @@
             NSError *err = nil;
             NSDictionary *directoryAttr;
             if (preserveAttributes) {
-                NSDate *modDate = [[self class] _dateWithMSDOSFormat:(UInt32)fileInfo.dosDate];
+                NSDate *modDate = [[self class] _dateWithMSDOSFormat:(UInt32)fileInfo.dos_date];
                 directoryAttr = @{NSFileCreationDate: modDate, NSFileModificationDate: modDate};
                 [directoriesModificationDates addObject: @{@"path": fullPath, @"modDate": modDate}];
             }
@@ -376,10 +396,18 @@
                 // ensure we are not creating stale file entries
                 int readBytes = unzReadCurrentFile(zip, buffer, 4096);
                 if (readBytes >= 0) {
-                    FILE *fp = fopen((const char*)[fullPath UTF8String], "wb");
+                    FILE *fp = fopen((const char*)[fullPath fileSystemRepresentation], "wb");
                     while (fp) {
                         if (readBytes > 0) {
-                            fwrite(buffer, readBytes, 1, fp );
+                            if (0 == fwrite(buffer, readBytes, 1, fp)) {
+                                if (ferror(fp)) {
+                                    NSString *message = [NSString stringWithFormat:@"Failed to write file (check your free space)"];
+                                    NSLog(@"[SSZipArchive] %@", message);
+                                    success = NO;
+                                    unzippingError = [NSError errorWithDomain:@"SSZipArchiveErrorDomain" code:SSZipArchiveErrorCodeFailedToWriteFile userInfo:@{NSLocalizedDescriptionKey: message}];
+                                    break;
+                                }
+                            }
                         } else {
                             break;
                         }
@@ -389,7 +417,7 @@
                     if (fp) {
                         if ([[[fullPath pathExtension] lowercaseString] isEqualToString:@"zip"]) {
                             NSLog(@"Unzipping nested .zip file:  %@", [fullPath lastPathComponent]);
-                            if ([self unzipFileAtPath:fullPath toDestination:[fullPath stringByDeletingLastPathComponent] overwrite:overwrite password:password error:nil delegate:nil ]) {
+                            if ([self unzipFileAtPath:fullPath toDestination:[fullPath stringByDeletingLastPathComponent] overwrite:overwrite password:password error:nil delegate:nil]) {
                                 [[NSFileManager defaultManager] removeItemAtPath:fullPath error:nil];
                             }
                         }
@@ -399,8 +427,8 @@
                         if (preserveAttributes) {
 
                             // Set the original datetime property
-                            if (fileInfo.dosDate != 0) {
-                                NSDate *orgDate = [[self class] _dateWithMSDOSFormat:(UInt32)fileInfo.dosDate];
+                            if (fileInfo.dos_date != 0) {
+                                NSDate *orgDate = [[self class] _dateWithMSDOSFormat:(UInt32)fileInfo.dos_date];
                                 NSDictionary *attr = @{NSFileModificationDate: orgDate};
 
                                 if (attr) {
@@ -411,8 +439,8 @@
                                 }
                             }
 
-                            // Set the original permissions on the file
-                            uLong permissions = fileInfo.external_fa >> 16;
+                            // Set the original permissions on the file (+read/write to solve #293)
+                            uLong permissions = fileInfo.external_fa >> 16 | 0b110000000;
                             if (permissions != 0) {
                                 // Store it into a NSNumber
                                 NSNumber *permissionsValue = @(permissions);
@@ -428,10 +456,6 @@
                                     // Unable to set the permissions attribute
                                     NSLog(@"[SSZipArchive] Failed to set attributes - whilst setting permissions");
                                 }
-
-#if !__has_feature(objc_arc)
-                                [attrs release];
-#endif
                             }
                         }
                     }
@@ -455,29 +479,50 @@
                 // Assemble the path for the symbolic link
                 NSMutableString* destinationPath = [NSMutableString string];
                 int bytesRead = 0;
-                while((bytesRead = unzReadCurrentFile(zip, buffer, 4096)) > 0)
+                while ((bytesRead = unzReadCurrentFile(zip, buffer, 4096)) > 0)
                 {
                     buffer[bytesRead] = (int)0;
                     [destinationPath appendString:@((const char*)buffer)];
+                }
+                
+                // Check if the symlink exists and delete it if we're overwriting
+                if (overwrite)
+                {
+                    if ([fileManager fileExistsAtPath:fullPath])
+                    {
+                        NSError *error = nil;
+                        BOOL removeSuccess = [fileManager removeItemAtPath:fullPath error:&error];
+                        if (!removeSuccess)
+                        {
+                            NSString *message = [NSString stringWithFormat:@"Failed to delete existing symbolic link at \"%@\"", error.localizedDescription];
+                            NSLog(@"[SSZipArchive] %@", message);
+                            success = NO;
+                            unzippingError = [NSError errorWithDomain:SSZipArchiveErrorDomain code:error.code userInfo:@{NSLocalizedDescriptionKey: message}];
+                        }
+                    }
                 }
                 
                 // Create the symbolic link (making sure it stays relative if it was relative before)
                 int symlinkError = symlink([destinationPath cStringUsingEncoding:NSUTF8StringEncoding],
                                            [fullPath cStringUsingEncoding:NSUTF8StringEncoding]);
                 
-                if(symlinkError != 0)
+                if (symlinkError != 0)
                 {
-                    NSLog(@"Failed to create symbolic link at \"%@\" to \"%@\". symlink() error code: %d", fullPath, destinationPath, errno);
+                    // Bubble the error up to the completion handler
+                    NSString *message = [NSString stringWithFormat:@"Failed to create symbolic link at \"%@\" to \"%@\" - symlink() error code: %d", fullPath, destinationPath, errno];
+                    NSLog(@"[SSZipArchive] %@", message);
+                    success = NO;
+                    unzippingError = [NSError errorWithDomain:NSPOSIXErrorDomain code:symlinkError userInfo:@{NSLocalizedDescriptionKey: message}];
                 }
             }
             
-            crc_ret = unzCloseCurrentFile( zip );
+            crc_ret = unzCloseCurrentFile(zip);
             if (crc_ret == UNZ_CRCERROR) {
                 //CRC ERROR
                 success = NO;
                 break;
             }
-            ret = unzGoToNextFile( zip );
+            ret = unzGoToNextFile(zip);
             
             // Message delegate
             if ([delegate respondsToSelector:@selector(zipArchiveDidUnzipFileAtIndex:totalFiles:archivePath:fileInfo:)]) {
@@ -494,7 +539,7 @@
                 progressHandler(strPath, fileInfo, currentFileNumber, globalInfo.number_entry);
             }
         }
-    } while(ret == UNZ_OK && ret != UNZ_END_OF_LIST_OF_FILE);
+    } while (ret == UNZ_OK && YES == success);
     
     // Close
     unzClose(zip);
@@ -512,9 +557,6 @@
                 NSLog(@"[SSZipArchive] Error setting directory file modification date attribute: %@",err.localizedDescription);
             }
         }
-#if !__has_feature(objc_arc)
-        [directoriesModificationDates release];
-#endif
     }
     
     // Message delegate
@@ -530,7 +572,7 @@
     if (crc_ret == UNZ_CRCERROR)
     {
         NSDictionary *userInfo = @{NSLocalizedDescriptionKey: @"crc check failed for file"};
-        retErr = [NSError errorWithDomain:@"SSZipArchiveErrorDomain" code:-3 userInfo:userInfo];
+        retErr = [NSError errorWithDomain:SSZipArchiveErrorDomain code:SSZipArchiveErrorCodeFileInfoNotLoadable userInfo:userInfo];
     }
     
     if (error) {
@@ -577,11 +619,6 @@
         }
         success = [zipArchive close];
     }
-    
-#if !__has_feature(objc_arc)
-    [zipArchive release];
-#endif
-    
     return success;
 }
 
@@ -592,10 +629,10 @@
 
 + (BOOL)createZipFileAtPath:(NSString *)path withContentsOfDirectory:(NSString *)directoryPath keepParentDirectory:(BOOL)keepParentDirectory withPassword:(nullable NSString *)password{
     return [SSZipArchive createZipFileAtPath:path
-             withContentsOfDirectory:directoryPath
-                 keepParentDirectory:keepParentDirectory
-                        withPassword:password
-                  andProgressHandler:nil
+                     withContentsOfDirectory:directoryPath
+                         keepParentDirectory:keepParentDirectory
+                                withPassword:password
+                          andProgressHandler:nil
             ];
 }
 
@@ -627,7 +664,7 @@
             }
             else
             {
-                if([[NSFileManager defaultManager] subpathsOfDirectoryAtPath:fullFilePath error:nil].count == 0)
+                if ([[NSFileManager defaultManager] subpathsOfDirectoryAtPath:fullFilePath error:nil].count == 0)
                 {
                     NSString *tempFilePath = [self _temporaryPathForDiscardableFile];
                     NSString *tempFileFilename = [fileName stringByAppendingPathComponent:tempFilePath.lastPathComponent];
@@ -641,12 +678,6 @@
         }
         success = [zipArchive close];
     }
-    
-#if !__has_feature(objc_arc)
-    [fileManager release];
-    [zipArchive release];
-#endif
-    
     return success;
 }
 
@@ -660,19 +691,10 @@
 }
 
 
-#if !__has_feature(objc_arc)
-- (void)dealloc
-{
-    [_path release];
-    [super dealloc];
-}
-#endif
-
-
 - (BOOL)open
 {
     NSAssert((_zip == NULL), @"Attempting open an archive which is already open");
-    _zip = zipOpen([_path UTF8String], APPEND_STATUS_CREATE);
+    _zip = zipOpen([_path fileSystemRepresentation], APPEND_STATUS_CREATE);
     return (NULL != _zip);
 }
 
@@ -686,27 +708,29 @@
     uint flags = NSYearCalendarUnit | NSMonthCalendarUnit | NSDayCalendarUnit | NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
 #endif
     NSDateComponents *components = [currentCalendar components:flags fromDate:date];
-    zipInfo->tmz_date.tm_sec = (unsigned int)components.second;
-    zipInfo->tmz_date.tm_min = (unsigned int)components.minute;
-    zipInfo->tmz_date.tm_hour = (unsigned int)components.hour;
-    zipInfo->tmz_date.tm_mday = (unsigned int)components.day;
-    zipInfo->tmz_date.tm_mon = (unsigned int)components.month - 1;
-    zipInfo->tmz_date.tm_year = (unsigned int)components.year;
+    struct tm tmz_date;
+    tmz_date.tm_sec = (unsigned int)components.second;
+    tmz_date.tm_min = (unsigned int)components.minute;
+    tmz_date.tm_hour = (unsigned int)components.hour;
+    tmz_date.tm_mday = (unsigned int)components.day;
+    tmz_date.tm_mon = (unsigned int)components.month - 1;
+    tmz_date.tm_year = (unsigned int)components.year;
+    zipInfo->dos_date = tm_to_dosdate(&tmz_date);
 }
 
 - (BOOL)writeFolderAtPath:(NSString *)path withFolderName:(NSString *)folderName withPassword:(nullable NSString *)password
 {
     NSAssert((_zip != NULL), @"Attempting to write to an archive which was never opened");
     
-    zip_fileinfo zipInfo = {{0}};
+    zip_fileinfo zipInfo = {0,0,0};
     
     NSDictionary *attr = [[NSFileManager defaultManager] attributesOfItemAtPath:path error: nil];
-    if( attr )
+    if (attr)
     {
         NSDate *fileDate = (NSDate *)attr[NSFileModificationDate];
-        if( fileDate )
+        if (fileDate)
         {
-            [self zipInfo:&zipInfo setDate: fileDate ];
+            [self zipInfo:&zipInfo setDate: fileDate];
         }
         
         // Write permissions into the external attributes, for details on this see here: http://unix.stackexchange.com/a/14727
@@ -723,12 +747,14 @@
             uLong permissionsLong = @(permissionsOctal).unsignedLongValue;
             
             // Store this into the external file attributes once it has been shifted 16 places left to form part of the second from last byte
-            zipInfo.external_fa = permissionsLong << 16L;
+            
+            //Casted back to an unsigned int to match type of external_fa in minizip
+            zipInfo.external_fa = (unsigned int)(permissionsLong << 16L);
         }
     }
     
     unsigned int len = 0;
-    zipOpenNewFileInZip3(_zip, [[folderName stringByAppendingString:@"/"] UTF8String], &zipInfo, NULL, 0, NULL, 0, NULL, Z_DEFLATED, Z_NO_COMPRESSION, 0, -MAX_WBITS, DEF_MEM_LEVEL,
+    zipOpenNewFileInZip3(_zip, [[folderName stringByAppendingString:@"/"] fileSystemRepresentation], &zipInfo, NULL, 0, NULL, 0, NULL, Z_DEFLATED, Z_NO_COMPRESSION, 0, -MAX_WBITS, DEF_MEM_LEVEL,
                          Z_DEFAULT_STRATEGY, [password UTF8String], 0);
     zipWriteInFileInZip(_zip, &len, 0);
     zipCloseFileInZip(_zip);
@@ -747,28 +773,28 @@
 {
     NSAssert((_zip != NULL), @"Attempting to write to an archive which was never opened");
     
-    FILE *input = fopen([path UTF8String], "r");
+    FILE *input = fopen([path fileSystemRepresentation], "r");
     if (NULL == input) {
         return NO;
     }
     
     const char *afileName;
     if (!fileName) {
-        afileName = [path.lastPathComponent UTF8String];
+        afileName = [path.lastPathComponent fileSystemRepresentation];
     }
     else {
-        afileName = [fileName UTF8String];
+        afileName = [fileName fileSystemRepresentation];
     }
     
-    zip_fileinfo zipInfo = {{0}};
+    zip_fileinfo zipInfo = {0,0,0};
     
     NSDictionary *attr = [[NSFileManager defaultManager] attributesOfItemAtPath:path error: nil];
-    if( attr )
+    if (attr)
     {
         NSDate *fileDate = (NSDate *)attr[NSFileModificationDate];
-        if( fileDate )
+        if (fileDate)
         {
-            [self zipInfo:&zipInfo setDate: fileDate ];
+            [self zipInfo:&zipInfo setDate: fileDate];
         }
         
         // Write permissions into the external attributes, for details on this see here: http://unix.stackexchange.com/a/14727
@@ -785,7 +811,9 @@
             uLong permissionsLong = @(permissionsOctal).unsignedLongValue;
             
             // Store this into the external file attributes once it has been shifted 16 places left to form part of the second from last byte
-            zipInfo.external_fa = permissionsLong << 16L;
+            
+            //Casted back to an unsigned int to match type of external_fa in minizip
+            zipInfo.external_fa = (unsigned int)(permissionsLong << 16L);
         }
     }
     
@@ -798,7 +826,7 @@
     zipOpenNewFileInZip3(_zip, afileName, &zipInfo, NULL, 0, NULL, 0, NULL, Z_DEFLATED, Z_DEFAULT_COMPRESSION, 0, -MAX_WBITS, DEF_MEM_LEVEL, Z_DEFAULT_STRATEGY, [password UTF8String], 0);
     unsigned int len = 0;
     
-    while(!feof(input) && !ferror(input))
+    while (!feof(input) && !ferror(input))
     {
         len = (unsigned int) fread(buffer, 1, CHUNK, input);
         zipWriteInFileInZip(_zip, buffer, len);
@@ -818,10 +846,10 @@
     if (!data) {
         return NO;
     }
-    zip_fileinfo zipInfo = {{0,0,0,0,0,0},0,0,0};
+    zip_fileinfo zipInfo = {0,0,0};
     [self zipInfo:&zipInfo setDate:[NSDate date]];
     
-    zipOpenNewFileInZip3(_zip, [filename UTF8String], &zipInfo, NULL, 0, NULL, 0, NULL, Z_DEFLATED, Z_DEFAULT_COMPRESSION, 0, -MAX_WBITS, DEF_MEM_LEVEL, Z_DEFAULT_STRATEGY, [password UTF8String], 0);
+    zipOpenNewFileInZip3(_zip, [filename fileSystemRepresentation], &zipInfo, NULL, 0, NULL, 0, NULL, Z_DEFLATED, Z_DEFAULT_COMPRESSION, 0, -MAX_WBITS, DEF_MEM_LEVEL, Z_DEFAULT_STRATEGY, [password UTF8String], 0);
     
     zipWriteInFileInZip(_zip, data.bytes, (unsigned int)data.length);
     
@@ -848,8 +876,10 @@
         NSString *temporaryDirectoryName = [[NSUUID UUID] UUIDString];
         NSString *temporaryDirectory = [NSTemporaryDirectory() stringByAppendingPathComponent:temporaryDirectoryName];
         BOOL directoryCreated = [[NSFileManager defaultManager] createDirectoryAtPath:temporaryDirectory withIntermediateDirectories:YES attributes:nil error:nil];
-        discardableFilePath = directoryCreated ? [temporaryDirectory stringByAppendingPathComponent:discardableFileName] : nil;
-        [@"" writeToFile:discardableFilePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        if (directoryCreated) {
+            discardableFilePath = [temporaryDirectory stringByAppendingPathComponent:discardableFileName];
+            [@"" writeToFile:discardableFilePath atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        }
     });
     return discardableFilePath;
 }
@@ -892,11 +922,6 @@
     [components setSecond:(msdosDateTime & kSecondMask) * 2];
     
     NSDate *date = [NSDate dateWithTimeInterval:0 sinceDate:[gregorian dateFromComponents:components]];
-    
-#if !__has_feature(objc_arc)
-    [components release];
-#endif
-    
     return date;
 }
 

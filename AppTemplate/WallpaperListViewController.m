@@ -24,6 +24,7 @@ static NSInteger cellMargin = 12;
     [super viewDidLoad];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    self.collectionView.contentInset = UIEdgeInsetsMake( 68 , 0, 0, 0);
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     self.collectionView.collectionViewLayout = layout;
@@ -36,7 +37,6 @@ static NSInteger cellMargin = 12;
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
     return 1;
 }
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return 30;
@@ -54,7 +54,7 @@ static NSInteger cellMargin = 12;
 // cell margins
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(0, cellMargin, 0, cellMargin);
+    return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
 }
 // cell size
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
