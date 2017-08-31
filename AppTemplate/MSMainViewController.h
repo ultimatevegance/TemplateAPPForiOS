@@ -1,13 +1,13 @@
 //
-//  MTSViewController1.h
+//  MSMainViewController.h
 //  AppTemplate
 //
-//  Created by MonsterSucker on 20/03/2017.
+//  Created by Monster on 31/08/2017.
 //  Copyright © 2017 MonsterTechStudio. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MTSViewController1 : UIViewController
+@interface MSMainViewController : UIViewController
 
 @end

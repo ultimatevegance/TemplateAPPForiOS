@@ -7,29 +7,20 @@
 //
 
 #import "AppDelegate.h"
-#import "MSTTabBarCtrl.h"
 #import "Common.h"
+#import "MSMainViewController.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
 
-
-- (void)setAppearence {
-    [[UITabBar appearance ] setTintColor:PrimaryIconColor];
-    [[UITabBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setTranslucent:YES];
-    [[UINavigationBar appearance] setShadowImage:[UIImage imageNamed:@"barShadow"]];
-    [[UITabBar appearance ] setBarStyle:UIBarStyleDefault];
-    [[UILabel appearance] setTextColor:PrimaryBarColor];
-}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window.rootViewController = [[MSTTabBarCtrl alloc]  init];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UINavigationController *naviCtrl = [[UINavigationController alloc] initWithRootViewController:[[MSMainViewController alloc] init]];
+    self.window.rootViewController = naviCtrl;
     [self.window makeKeyAndVisible ] ;
-    [Chameleon setGlobalThemeUsingPrimaryColor:PrimaryBarColor withSecondaryColor:PrimaryColorbarbiePink usingFontName:@"AppleGothic" andContentStyle:UIContentStyleContrast];
-    [self setAppearence];
-
     
     return YES;
 }

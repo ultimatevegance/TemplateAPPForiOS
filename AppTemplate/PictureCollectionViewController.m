@@ -1,24 +1,22 @@
 //
-//  MTSViewController3.m
+//  PictureCollectionViewController.m
 //  AppTemplate
 //
-//  Created by MonsterSucker on 20/03/2017.
+//  Created by Monster on 31/08/2017.
 //  Copyright © 2017 MonsterTechStudio. All rights reserved.
 //
 
-#import "MTSViewController3.h"
-#import "Common.h"
-@interface MTSViewController3 ()
+#import "PictureCollectionViewController.h"
+
+@interface PictureCollectionViewController ()
 
 @end
 
-@implementation MTSViewController3
+@implementation PictureCollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"Discover";
-
 }
 
 - (void)didReceiveMemoryWarning {
