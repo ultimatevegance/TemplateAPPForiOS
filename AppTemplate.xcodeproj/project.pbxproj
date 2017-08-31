@@ -27,6 +27,8 @@
 		72D657DB1F586EB000A8BCA6 /* SGPageContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657D21F586EB000A8BCA6 /* SGPageContentView.m */; };
 		72D657DC1F586EB000A8BCA6 /* SGPageTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657D51F586EB000A8BCA6 /* SGPageTitleButton.m */; };
 		72D657DD1F586EB000A8BCA6 /* SGPageTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657D71F586EB000A8BCA6 /* SGPageTitleView.m */; };
+		72D657E11F5874DA00A8BCA6 /* PicCollectionListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72D657DF1F5874DA00A8BCA6 /* PicCollectionListCell.m */; };
+		72D657E21F5874DA00A8BCA6 /* PicCollectionListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72D657E01F5874DA00A8BCA6 /* PicCollectionListCell.xib */; };
 		72E858171E7EC735001EBB8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858161E7EC735001EBB8B /* main.m */; };
 		72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858191E7EC735001EBB8B /* AppDelegate.m */; };
 		72E858201E7EC735001EBB8B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72E8581E1E7EC735001EBB8B /* Main.storyboard */; };
@@ -104,6 +106,9 @@
 		72D657D61F586EB000A8BCA6 /* SGPageTitleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPageTitleView.h; sourceTree = "<group>"; };
 		72D657D71F586EB000A8BCA6 /* SGPageTitleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGPageTitleView.m; sourceTree = "<group>"; };
 		72D657D81F586EB000A8BCA6 /* SGPagingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGPagingView.h; sourceTree = "<group>"; };
+		72D657DE1F5874DA00A8BCA6 /* PicCollectionListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PicCollectionListCell.h; sourceTree = "<group>"; };
+		72D657DF1F5874DA00A8BCA6 /* PicCollectionListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PicCollectionListCell.m; sourceTree = "<group>"; };
+		72D657E01F5874DA00A8BCA6 /* PicCollectionListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PicCollectionListCell.xib; sourceTree = "<group>"; };
 		72E858121E7EC735001EBB8B /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E858161E7EC735001EBB8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		72E858181E7EC735001EBB8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -182,6 +187,9 @@
 				728774B81E8172FA00CE4DFC /* CollectionViewCell.h */,
 				728774B91E8172FA00CE4DFC /* CollectionViewCell.m */,
 				728774BA1E8172FA00CE4DFC /* CollectionViewCell.xib */,
+				72D657DE1F5874DA00A8BCA6 /* PicCollectionListCell.h */,
+				72D657DF1F5874DA00A8BCA6 /* PicCollectionListCell.m */,
+				72D657E01F5874DA00A8BCA6 /* PicCollectionListCell.xib */,
 			);
 			name = V;
 			sourceTree = "<group>";
@@ -522,6 +530,7 @@
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
 				72D657C91F586BA900A8BCA6 /* MTSHomeViewController.xib in Resources */,
+				72D657E21F5874DA00A8BCA6 /* PicCollectionListCell.xib in Resources */,
 				728774BC1E8172FA00CE4DFC /* CollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -699,6 +708,7 @@
 				72C619D91F583B4F008742F6 /* TYTabPagerBarLayout.m in Sources */,
 				8D3F48281F57F2260052B612 /* PictureCollectionViewController.m in Sources */,
 				728774BB1E8172FA00CE4DFC /* CollectionViewCell.m in Sources */,
+				72D657E11F5874DA00A8BCA6 /* PicCollectionListCell.m in Sources */,
 				72C619D81F583B4F008742F6 /* TYTabPagerBarCell.m in Sources */,
 				72C3090B1E801E9E00165EED /* DataModel.m in Sources */,
 				72C619DE1F583B4F008742F6 /* TYPagerViewLayout.m in Sources */,
