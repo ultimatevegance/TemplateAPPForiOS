@@ -7,17 +7,62 @@
 //
 
 #import "PictureCollectionViewController.h"
-
-@interface PictureCollectionViewController ()
+#import "PicCollectionListCell.h"
+@interface PictureCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
 @implementation PictureCollectionViewController
 
+static NSString * const reuseIdentifier = @"PicCollectionListCell";
+static NSInteger cellMargin = 12;
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    self.collectionView.contentInset = UIEdgeInsetsMake( 68 , 0, 0, 0);
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    layout.scrollDirection = UICollectionViewScrollDirectionVertical;
+    self.collectionView.collectionViewLayout = layout;
+    self.collectionView.backgroundColor = [ UIColor whiteColor];
+    [self.collectionView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
+
 }
+
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 30;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    PicCollectionListCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell
+    
+    return cell;
+}
+
+#pragma mark - UICollectionViewDelegateFlowLayout
+// cell margins
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
+}
+// cell size
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSInteger cellWidth = (CGRectGetWidth(self.collectionView.bounds) - cellMargin * 2)  ;
+    return CGSizeMake(cellWidth , cellWidth * 0.66);
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
