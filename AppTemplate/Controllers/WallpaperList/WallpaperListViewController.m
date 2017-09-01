@@ -26,7 +26,6 @@ static NSInteger cellMargin = 12;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _datasourceArray = [NSMutableArray array];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.contentInset = UIEdgeInsetsMake( 68 , 0, 0, 0);
@@ -46,7 +45,22 @@ static NSInteger cellMargin = 12;
     [self refreshData];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self requestData];
+    
+}
+
 #pragma mark - Networking
+
+
+- (void)requestData {
+    _datasourceArray = [NSMutableArray array];
+    _datasourceArray = @[].mutableCopy;
+    [self requestNewData];
+}
+
 
 - (void)refreshData {
     [_datasourceArray removeAllObjects];
@@ -57,22 +71,23 @@ static NSInteger cellMargin = 12;
 - (void)requestNewData {
     NSDictionary *params = @{
                              @"page" : @(_currentPage),
-                             @"per_page" : @10,
+                             @"per_page" : @30,
                              };
     [MSWallpaperData requestWallpapersDataWithAPIKey:APIClientKey parameter:params callback:^(NSArray *wallpaperDataArray, NSError *error) {
-        [_collectionView.mj_header endRefreshing];
         if ([wallpaperDataArray count]) {
             [_datasourceArray addObjectsFromArray:wallpaperDataArray];
             [_collectionView reloadData];
             _currentPage += 1;
             NSLog(@"%lu", (unsigned long)_currentPage);
-            if (wallpaperDataArray.count <10) {
+            if (wallpaperDataArray.count <30) {
                 _collectionView.mj_footer.hidden = YES;
             } else {
                 _collectionView.mj_footer.hidden = NO;
             }
 
         }
+        [_collectionView.mj_footer endRefreshing];
+        [_collectionView.mj_header endRefreshing];
     }];
 
 }
