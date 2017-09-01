@@ -10,9 +10,12 @@
 #import "CollectionViewCell.h"
 #import "Common.h"
 #import "MJRefresh.h"
+#import "MSWallpaperData.h"
 
 @interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) NSMutableArray *datasourceArray;
+@property (nonatomic) NSUInteger currentPage;
 
 @end
 
@@ -23,6 +26,7 @@ static NSInteger cellMargin = 12;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _datasourceArray = [NSMutableArray array];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     self.collectionView.contentInset = UIEdgeInsetsMake( 68 , 0, 0, 0);
@@ -31,14 +35,46 @@ static NSInteger cellMargin = 12;
     self.collectionView.collectionViewLayout = layout;
     self.collectionView.backgroundColor = [ UIColor whiteColor];
     [self.collectionView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellWithReuseIdentifier:reuseIdentifier];
-    
+    __weak typeof(self) weakSelf = self;
     self.collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [self requestData];
+        [weakSelf refreshData];
+        
     }];
+    self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [weakSelf requestNewData];
+    }];
+    [self refreshData];
 }
 
-- (void)requestData {
-    [_collectionView.mj_header endRefreshing];
+#pragma mark - Networking
+
+- (void)refreshData {
+    [_datasourceArray removeAllObjects];
+    _currentPage = 1;
+    [self requestNewData];
+}
+
+- (void)requestNewData {
+    NSDictionary *params = @{
+                             @"page" : @(_currentPage),
+                             @"per_page" : @10,
+                             };
+    [MSWallpaperData requestWallpapersDataWithAPIKey:APIClientKey parameter:params callback:^(NSArray *wallpaperDataArray, NSError *error) {
+        [_collectionView.mj_header endRefreshing];
+        if ([wallpaperDataArray count]) {
+            [_datasourceArray addObjectsFromArray:wallpaperDataArray];
+            [_collectionView reloadData];
+            _currentPage += 1;
+            NSLog(@"%lu", (unsigned long)_currentPage);
+            if (wallpaperDataArray.count <10) {
+                _collectionView.mj_footer.hidden = YES;
+            } else {
+                _collectionView.mj_footer.hidden = NO;
+            }
+
+        }
+    }];
+
 }
 #pragma mark <UICollectionViewDataSource>
 
@@ -47,11 +83,12 @@ static NSInteger cellMargin = 12;
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 30;
+    return _datasourceArray.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    cell.wallpaperData = _datasourceArray[indexPath.row];
     
     // Configure the cell
     

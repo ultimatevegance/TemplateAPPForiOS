@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class MSWallpaperData;
+
 @interface CollectionViewCell : UICollectionViewCell
+
+@property(nonatomic,strong)MSWallpaperData *wallpaperData;
 
 @end

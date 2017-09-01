@@ -8,6 +8,14 @@
 
 #import "CollectionViewCell.h"
 #import "YYWebImage.h"
+#import "MSWallpaperData.h"
+
+@interface CollectionViewCell()
+
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+
+
+@end
 @implementation CollectionViewCell
 
 - (void)awakeFromNib {
@@ -18,4 +26,9 @@
 
 }
 
+- (void)setWallpaperData:(MSWallpaperData *)wallpaperData {
+    _wallpaperData = wallpaperData;
+    [_coverImageView yy_setImageWithURL:[NSURL URLWithString:_wallpaperData.urls_regular] placeholder:[UIImage imageNamed:@"placeholder"]];
+
+}
 @end
