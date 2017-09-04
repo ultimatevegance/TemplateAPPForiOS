@@ -61,9 +61,11 @@
 #pragma mark - Actions
 
 - (void)iconicButtonClicked {
-    MSSettingViewController *settingVC = [[MSSettingViewController alloc] init];
-    UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:settingVC];
-    [self presentViewController:navi animated:YES completion:nil];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Settings" bundle:nil];
+    UINavigationController *nav = [sb instantiateViewControllerWithIdentifier:@"Settings"];
+    nav.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:nav animated:YES completion:NULL];
 
     
 }

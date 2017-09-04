@@ -11,9 +11,9 @@
 #import "Common.h"
 #import "MJRefresh.h"
 #import "MSWallpaperData.h"
+#import "WallpaperDetailViewController.h"
+@interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UIViewControllerTransitioningDelegate,RMPZoomTransitionAnimating>
 
-@interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *datasourceArray;
 @property (nonatomic) NSUInteger currentPage;
 
@@ -55,7 +55,6 @@ static NSInteger cellMargin = 12;
 
 #pragma mark - Networking
 
-
 - (void)requestData {
     _datasourceArray = @[].mutableCopy;
     [self requestNewDataWithCompletion:^{
@@ -63,13 +62,12 @@ static NSInteger cellMargin = 12;
     }];
 }
 
-
 - (void)refreshData {
     [_datasourceArray removeAllObjects];
     _currentPage = 1;
     [SVProgressHUD showWithStatus:@"loading"];
     [self requestNewDataWithCompletion:^{
-        [SVProgressHUD dismiss];
+        [SVProgressHUD dismissWithDelay:1];
 
     }];
 }
@@ -101,6 +99,20 @@ static NSInteger cellMargin = 12;
     }];
 
 }
+
+#pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CollectionViewCell *cell = (CollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    MSWallpaperData *selectedCellData = _datasourceArray[indexPath.row];
+    WallpaperDetailViewController *detailedVC = [[WallpaperDetailViewController alloc] initWithSourceImage:cell.wallpaper DownloadUrl:selectedCellData.urls_full User:selectedCellData.user] ;
+    
+    detailedVC.transitioningDelegate = self;
+    if (cell.wallpaper) {
+        [self presentViewController:detailedVC animated:YES completion:nil];
+    }
+}
+
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -132,5 +144,32 @@ static NSInteger cellMargin = 12;
     NSInteger cellWidth = (CGRectGetWidth(self.collectionView.bounds) - cellMargin * 4) / 3 ;
     return CGSizeMake(cellWidth , cellWidth * 1.7);
 }
+
+#pragma mark - RMPZoomTransitionAnimating
+- (nonnull UIImageView *)transitionSourceImageView {
+    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    CollectionViewCell *cell = (CollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:cell.coverImageView.image];
+    imageView.contentMode = cell.coverImageView.contentMode;
+    imageView.clipsToBounds = YES;
+    imageView.userInteractionEnabled = NO;
+    imageView.frame = [cell.coverImageView convertRect:cell.coverImageView.frame toView:self.collectionView.superview];
+    return imageView;
+    
+}
+
+- (nonnull UIColor *)transitionSourceBackgroundColor {
+    return self.collectionView.backgroundColor;;
+}
+
+- (CGRect)transitionDestinationImageViewFrame {
+    NSIndexPath *selectedIndexPath = [[self.collectionView indexPathsForSelectedItems] firstObject];
+    CollectionViewCell *cell = (CollectionViewCell *)[self.collectionView cellForItemAtIndexPath:selectedIndexPath];
+    CGRect cellFrameInSuperview = [cell.coverImageView convertRect:cell.coverImageView.frame toView:self.collectionView.superview];
+    return cellFrameInSuperview;
+    
+}
+
+
 
 @end

@@ -13,5 +13,7 @@
 @interface CollectionViewCell : UICollectionViewCell
 
 @property(nonatomic,strong)MSWallpaperData *wallpaperData;
+@property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
+@property(nonatomic,strong)UIImage *wallpaper;
 
 @end

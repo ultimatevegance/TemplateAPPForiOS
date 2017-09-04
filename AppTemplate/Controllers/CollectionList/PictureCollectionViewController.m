@@ -61,9 +61,9 @@ static NSInteger cellMargin = 12;
 - (void)refreshData {
     [_datasourceArray removeAllObjects];
     _currentPage = 1;
-    [SVProgressHUD showWithStatus:@"loading"];
+    [SVProgressHUD showWithStatus:@"Loading"];
     [self requestNewDataWithCompletion:^{
-        [SVProgressHUD dismiss];
+        [SVProgressHUD dismissWithDelay:1];
         
     }];
 }

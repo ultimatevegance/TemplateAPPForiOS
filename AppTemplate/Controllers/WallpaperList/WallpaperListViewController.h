@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WallpaperListViewController : UIViewController
-
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @end
