@@ -42,6 +42,7 @@ PODS:
   - PNChart (0.8.9):
     - UICountingLabel (~> 1.2.0)
   - RKNotificationHub (2.0.4)
+  - RMPZoomTransitionAnimator (1.0.3)
   - SCRecorder (2.7.0)
   - SSZipArchive (2.0.4)
   - TSMessages (0.9.12):
@@ -75,6 +76,7 @@ DEPENDENCIES:
   - Onboard
   - PNChart
   - RKNotificationHub
+  - RMPZoomTransitionAnimator
   - SCRecorder
   - SSZipArchive
   - TSMessages
@@ -101,6 +103,7 @@ SPEC CHECKSUMS:
   Onboard: b6871f25ac753175b2ab9a362fb2feb26a81a311
   PNChart: 84774d225c2126ded6c93d4dbe6ae98c3a73c2d2
   RKNotificationHub: 3765424499139c3d3885b681bb0837f072d12ae6
+  RMPZoomTransitionAnimator: 33ded739d91052810c05c8e553663cc9ec79275b
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
   SSZipArchive: c77fc6ec8194f4e6d57876da1348e46cd63b90ba
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
@@ -109,6 +112,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 2c926de0b637b6ecbe7487bcf680f6c4285b7dad
+PODFILE CHECKSUM: 5b2f8a165a9b158f48a9ff507d069c66dbe2c923
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.0.1
