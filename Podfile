@@ -16,6 +16,7 @@ target 'AppTemplate' do
   pod 'FCAlertView'
   pod 'DZNEmptyDataSet'
   pod 'MBProgressHUD'
+  pod 'SVProgressHUD'
   pod 'M13ProgressSuite'
   pod 'MJRefresh'
   pod 'MBCircularProgressBar'

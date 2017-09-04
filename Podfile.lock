@@ -44,6 +44,7 @@ PODS:
   - RKNotificationHub (2.0.4)
   - SCRecorder (2.7.0)
   - SSZipArchive (1.7)
+  - SVProgressHUD (2.1.2)
   - TSMessages (0.9.12):
     - HexColors (~> 2.2.0)
   - TYPagerController (1.0.2)
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - RKNotificationHub
   - SCRecorder
   - SSZipArchive
+  - SVProgressHUD
   - TSMessages
   - TYPagerController
   - YYWebImage
@@ -105,6 +107,7 @@ SPEC CHECKSUMS:
   RKNotificationHub: 3765424499139c3d3885b681bb0837f072d12ae6
   SCRecorder: bbb521dbc222908876ec9cd9156bbc8a893bed44
   SSZipArchive: 63f8e11cfcc33e03e4cd666b4359ea8bd6facd0c
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   TSMessages: c8cc7b80f2a833af533872cd02010cac061532cc
   TYPagerController: 0b3e3e589a217ff537d5f78e1e76594beaa4cfc6
   UICountingLabel: 1db4e7d023e1762171eb226d6dff47a7a84f27aa
@@ -112,6 +115,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: beb33b172edba3c1a6732deed44878a1abdb3262
+PODFILE CHECKSUM: 6e3dec0e26cba737ba87bd08325edee2b260fabd
 
-COCOAPODS: 1.0.0
+COCOAPODS: 1.2.0
