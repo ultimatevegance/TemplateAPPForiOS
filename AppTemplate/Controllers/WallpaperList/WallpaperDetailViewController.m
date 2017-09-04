@@ -69,7 +69,8 @@
 - (IBAction)save:(UIButton *)sender {
     
     if (_downloadSourceUrlString) {
-        [_downloadSourceUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        [_downloadSourceUrlString stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        [_downloadSourceUrlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
         NSURL *imageDownloadUrl = [NSURL URLWithString:_downloadSourceUrlString];
         NSURLRequest *request = [NSURLRequest requestWithURL:imageDownloadUrl];
         NSURLSessionDownloadTask *downloadTask = [[MSNetworkAPIManager sharedClient] downloadTaskWithRequest:request progress:^(NSProgress * _Nonnull downloadProgress) {
