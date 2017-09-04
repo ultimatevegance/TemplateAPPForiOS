@@ -21,6 +21,9 @@
     UINavigationController *naviCtrl = [[UINavigationController alloc] initWithRootViewController:[[MTSHomeViewController alloc] init]];
     self.window.rootViewController = naviCtrl;
     [self.window makeKeyAndVisible ] ;
+    [Chameleon setGlobalThemeUsingPrimaryColor: PrimaryColororangish withSecondaryColor:nil usingFontName:@"MarkerFelt-Thin" andContentStyle:UIContentStyleDark];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor flatWhiteColor]];
     
 //    NSArray *fontFamilies = [UIFont familyNames];
 //    
