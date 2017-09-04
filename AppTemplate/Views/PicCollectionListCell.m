@@ -7,6 +7,10 @@
 //
 
 #import "PicCollectionListCell.h"
+#import "YYWebImage.h"
+#import "MSWallpaperCollectionData.h"
+#import "MSUserData.h"
+
 @interface PicCollectionListCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *coverImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
@@ -22,6 +26,15 @@
     self.layer.masksToBounds = YES;
     _avatarImageView.layer.cornerRadius = 20;
     _avatarImageView.layer.masksToBounds = YES;
+}
+
+- (void)setWallpaperCollectionData:(MSWallpaperCollectionData *)wallpaperCollectionData {
+    _wallpaperCollectionData = wallpaperCollectionData;
+    _titleLabel.text = _wallpaperCollectionData.title;
+    [_coverImageView yy_setImageWithURL:[NSURL URLWithString:_wallpaperCollectionData.coverImageUrl] placeholder:[UIImage imageNamed:@"placeholder2"]];
+    [_avatarImageView yy_setImageWithURL:[NSURL URLWithString:_wallpaperCollectionData.user.profile_image] placeholder:[UIImage imageNamed:@"placeholder"]];
+    _userNameLabel.text = _wallpaperCollectionData.user.name;
+    
 }
 
 @end

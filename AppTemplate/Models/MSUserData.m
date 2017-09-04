@@ -19,7 +19,7 @@
              @"total_likes" : @"total_likes",
              @"total_photos" : @"total_photos",
              @"total_collections" : @"total_collections",
-             @"profile_image" : @"profile_image.small",
+             @"profile_image" : @"profile_image.medium",
              };
 }
 

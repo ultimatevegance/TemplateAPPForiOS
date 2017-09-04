@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class MSWallpaperCollectionData;
 @interface PicCollectionListCell : UICollectionViewCell
 
+@property (strong,nonatomic)MSWallpaperCollectionData *wallpaperCollectionData;
 @end

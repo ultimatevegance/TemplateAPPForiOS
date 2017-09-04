@@ -18,7 +18,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="363" height="227"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="testImage1" translatesAutoresizingMaskIntoConstraints="NO" id="EOV-VV-pRc">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EOV-VV-pRc">
                         <rect key="frame" x="0.0" y="0.0" width="363" height="227"/>
                     </imageView>
                     <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C4l-MV-jZz" userLabel="maskView">
@@ -99,7 +99,4 @@
             <point key="canvasLocation" x="24.5" y="110.5"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="testImage1" width="1280" height="800"/>
-    </resources>
 </document>

@@ -47,6 +47,7 @@
 		8D4115E01F5931A500069FD9 /* MSWallpaperData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115DF1F5931A500069FD9 /* MSWallpaperData.m */; };
 		8D4115E31F59324A00069FD9 /* MSUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115E21F59324A00069FD9 /* MSUserData.m */; };
 		8D4115EF1F59579E00069FD9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4115EE1F59579E00069FD9 /* MobileCoreServices.framework */; };
+		8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,8 @@
 		8D4115E11F59324A00069FD9 /* MSUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUserData.h; sourceTree = "<group>"; };
 		8D4115E21F59324A00069FD9 /* MSUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUserData.m; sourceTree = "<group>"; };
 		8D4115EE1F59579E00069FD9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8DD693F51F5CE8E2000996B8 /* MSWallpaperCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWallpaperCollectionData.h; sourceTree = "<group>"; };
+		8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWallpaperCollectionData.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -424,6 +427,7 @@
 		8D4115D61F5905C900069FD9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8DD693F41F5CE8BC000996B8 /* Collection */,
 				8D4115E71F5932CF00069FD9 /* Wallpaper */,
 			);
 			path = Models;
@@ -447,6 +451,15 @@
 				8D4115E21F59324A00069FD9 /* MSUserData.m */,
 			);
 			name = Wallpaper;
+			sourceTree = "<group>";
+		};
+		8DD693F41F5CE8BC000996B8 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				8DD693F51F5CE8E2000996B8 /* MSWallpaperCollectionData.h */,
+				8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */,
+			);
+			name = Collection;
 			sourceTree = "<group>";
 		};
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
@@ -785,6 +798,7 @@
 				8D4115C21F5905B500069FD9 /* PictureCollectionViewController.m in Sources */,
 				8D4115C91F5905B500069FD9 /* WallpaperListViewController.m in Sources */,
 				8D4115D21F5905BD00069FD9 /* CollectionViewCell.m in Sources */,
+				8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */,
 				8D4115AA1F59047C00069FD9 /* TYTabPagerView.m in Sources */,
 				8D4115D41F5905BD00069FD9 /* PicCollectionListCell.m in Sources */,
 				8D4115E31F59324A00069FD9 /* MSUserData.m in Sources */,
