@@ -28,6 +28,7 @@ static NSInteger cellMargin = 12;
     [super viewDidLoad];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    _datasourceArray = [NSMutableArray array];
     self.collectionView.contentInset = UIEdgeInsetsMake( 68 , 0, 0, 0);
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
@@ -48,15 +49,12 @@ static NSInteger cellMargin = 12;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    [self requestData];
-    
 }
 
 #pragma mark - Networking
 
 
 - (void)requestData {
-    _datasourceArray = [NSMutableArray array];
     _datasourceArray = @[].mutableCopy;
     [self requestNewData];
 }
