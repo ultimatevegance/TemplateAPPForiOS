@@ -41,7 +41,9 @@ static NSInteger cellMargin = 12;
         
     }];
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf requestNewData];
+        [weakSelf requestNewDataWithCompletion:^{
+            
+        }];
     }];
     [self refreshData];
 }
@@ -56,22 +58,31 @@ static NSInteger cellMargin = 12;
 
 - (void)requestData {
     _datasourceArray = @[].mutableCopy;
-    [self requestNewData];
+    [self requestNewDataWithCompletion:^{
+        
+    }];
 }
 
 
 - (void)refreshData {
     [_datasourceArray removeAllObjects];
     _currentPage = 1;
-    [self requestNewData];
+    [SVProgressHUD showWithStatus:@"loading"];
+    [self requestNewDataWithCompletion:^{
+        [SVProgressHUD dismiss];
+
+    }];
 }
 
-- (void)requestNewData {
+- (void)requestNewDataWithCompletion: (void (^)())completion{
     NSDictionary *params = @{
                              @"page" : @(_currentPage),
                              @"per_page" : @30,
                              };
     [MSWallpaperData requestWallpapersDataWithAPIKey:APIClientKey parameter:params callback:^(NSArray *wallpaperDataArray, NSError *error) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:@"Something Bad Just Happened!"];
+        }
         if ([wallpaperDataArray count]) {
             [_datasourceArray addObjectsFromArray:wallpaperDataArray];
             [_collectionView reloadData];
@@ -84,6 +95,7 @@ static NSInteger cellMargin = 12;
             }
 
         }
+        completion();
         [_collectionView.mj_footer endRefreshing];
         [_collectionView.mj_header endRefreshing];
     }];

@@ -41,7 +41,9 @@ static NSInteger cellMargin = 12;
         [weakSelf requestData];
     }];
     self.collectionView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf requestNewData];
+        [weakSelf requestNewDataWithCompletion:^{
+            
+        }];
     }];
     [self refreshData];
 }
@@ -51,33 +53,44 @@ static NSInteger cellMargin = 12;
 
 - (void)requestData {
     _datasourceArray = @[].mutableCopy;
-    [self requestNewData];
+    [self requestNewDataWithCompletion:^{
+        
+    }];
 }
 
 - (void)refreshData {
     [_datasourceArray removeAllObjects];
     _currentPage = 1;
-    [self requestNewData];
+    [SVProgressHUD showWithStatus:@"loading"];
+    [self requestNewDataWithCompletion:^{
+        [SVProgressHUD dismiss];
+        
+    }];
 }
 
-- (void)requestNewData {
+- (void)requestNewDataWithCompletion: (void (^)())completion{
     NSDictionary *params = @{
                              @"page" : @(_currentPage),
                              @"per_page" : @30,
                              };
     [MSWallpaperCollectionData requestWallpaperCollectionsDataWithAPIKey:APIClientKey parameter:params callback:^(NSArray *wallpaperCollectionDataArray, NSError *error) {
-                if ([wallpaperCollectionDataArray count]) {
-                    [_datasourceArray addObjectsFromArray:wallpaperCollectionDataArray];
-                    [_collectionView reloadData];
-                    _currentPage += 1;
-                    NSLog(@"%lu", (unsigned long)_currentPage);
-                    if (wallpaperCollectionDataArray.count <30) {
+        if (error) {
+            [SVProgressHUD showErrorWithStatus:@"Something Bad Just Happened!"];
+        }
+
+        if ([wallpaperCollectionDataArray count]) {
+            [_datasourceArray addObjectsFromArray:wallpaperCollectionDataArray];
+            [_collectionView reloadData];
+            _currentPage += 1;
+            NSLog(@"%lu", (unsigned long)_currentPage);
+            if (wallpaperCollectionDataArray.count <30) {
                         _collectionView.mj_footer.hidden = YES;
-                    } else {
+            } else {
                         _collectionView.mj_footer.hidden = NO;
                     }
         
-                }
+        }
+                completion();
                 [_collectionView.mj_footer endRefreshing];
                 [_collectionView.mj_header endRefreshing];
         
