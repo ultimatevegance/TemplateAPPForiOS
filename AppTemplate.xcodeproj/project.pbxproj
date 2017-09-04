@@ -47,6 +47,12 @@
 		8D4115E01F5931A500069FD9 /* MSWallpaperData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115DF1F5931A500069FD9 /* MSWallpaperData.m */; };
 		8D4115E31F59324A00069FD9 /* MSUserData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115E21F59324A00069FD9 /* MSUserData.m */; };
 		8D4115EF1F59579E00069FD9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D4115EE1F59579E00069FD9 /* MobileCoreServices.framework */; };
+		8D8F9F961F5D06A000D07450 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F9F8D1F5D06A000D07450 /* SVIndefiniteAnimatedView.m */; };
+		8D8F9F971F5D06A000D07450 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F9F8F1F5D06A000D07450 /* SVProgressAnimatedView.m */; };
+		8D8F9F981F5D06A000D07450 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8D8F9F911F5D06A000D07450 /* SVProgressHUD.bundle */; };
+		8D8F9F991F5D06A000D07450 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F9F931F5D06A000D07450 /* SVProgressHUD.m */; };
+		8D8F9F9A1F5D06A000D07450 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F9F951F5D06A000D07450 /* SVRadialGradientLayer.m */; };
+		8D8F9F9C1F5D06E400D07450 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D8F9F9B1F5D06E400D07450 /* QuartzCore.framework */; };
 		8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
@@ -146,6 +152,17 @@
 		8D4115E11F59324A00069FD9 /* MSUserData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSUserData.h; sourceTree = "<group>"; };
 		8D4115E21F59324A00069FD9 /* MSUserData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSUserData.m; sourceTree = "<group>"; };
 		8D4115EE1F59579E00069FD9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		8D8F9F8C1F5D06A000D07450 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		8D8F9F8D1F5D06A000D07450 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		8D8F9F8E1F5D06A000D07450 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		8D8F9F8F1F5D06A000D07450 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		8D8F9F901F5D06A000D07450 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		8D8F9F911F5D06A000D07450 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		8D8F9F921F5D06A000D07450 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		8D8F9F931F5D06A000D07450 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		8D8F9F941F5D06A000D07450 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		8D8F9F951F5D06A000D07450 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		8D8F9F9B1F5D06E400D07450 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8DD693F51F5CE8E2000996B8 /* MSWallpaperCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWallpaperCollectionData.h; sourceTree = "<group>"; };
 		8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWallpaperCollectionData.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -158,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D8F9F9C1F5D06E400D07450 /* QuartzCore.framework in Frameworks */,
 				8D4115EF1F59579E00069FD9 /* MobileCoreServices.framework in Frameworks */,
 				7D10EA9835D37BC95810846F /* libPods-AppTemplate.a in Frameworks */,
 			);
@@ -253,6 +271,7 @@
 		8D41157A1F59047C00069FD9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8D8F9F8B1F5D06A000D07450 /* SVProgressHUD */,
 				8D41157B1F59047C00069FD9 /* SGPagingView */,
 				8D41158A1F59047C00069FD9 /* TYPagerController */,
 				8D41159E1F59047C00069FD9 /* UIImage+animatedGIF */,
@@ -453,6 +472,23 @@
 			name = Wallpaper;
 			sourceTree = "<group>";
 		};
+		8D8F9F8B1F5D06A000D07450 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8D8F9F8C1F5D06A000D07450 /* SVIndefiniteAnimatedView.h */,
+				8D8F9F8D1F5D06A000D07450 /* SVIndefiniteAnimatedView.m */,
+				8D8F9F8E1F5D06A000D07450 /* SVProgressAnimatedView.h */,
+				8D8F9F8F1F5D06A000D07450 /* SVProgressAnimatedView.m */,
+				8D8F9F901F5D06A000D07450 /* SVProgressHUD-Prefix.pch */,
+				8D8F9F911F5D06A000D07450 /* SVProgressHUD.bundle */,
+				8D8F9F921F5D06A000D07450 /* SVProgressHUD.h */,
+				8D8F9F931F5D06A000D07450 /* SVProgressHUD.m */,
+				8D8F9F941F5D06A000D07450 /* SVRadialGradientLayer.h */,
+				8D8F9F951F5D06A000D07450 /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		8DD693F41F5CE8BC000996B8 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -465,6 +501,7 @@
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8D8F9F9B1F5D06E400D07450 /* QuartzCore.framework */,
 				8D4115EE1F59579E00069FD9 /* MobileCoreServices.framework */,
 				4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */,
 				BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */,
@@ -609,6 +646,7 @@
 				8D4115D31F5905BD00069FD9 /* CollectionViewCell.xib in Resources */,
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				8D4115C31F5905B500069FD9 /* PictureCollectionViewController.xib in Resources */,
+				8D8F9F981F5D06A000D07450 /* SVProgressHUD.bundle in Resources */,
 				8D4115D51F5905BD00069FD9 /* PicCollectionListCell.xib in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				8D4115C81F5905B500069FD9 /* MSSettingViewController.xib in Resources */,
@@ -780,6 +818,7 @@
 				8D4115A31F59047C00069FD9 /* SGPageContentView.m in Sources */,
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
 				8D4115A61F59047C00069FD9 /* TYTabPagerBar.m in Sources */,
+				8D8F9F971F5D06A000D07450 /* SVProgressAnimatedView.m in Sources */,
 				8D4115AE1F59047C00069FD9 /* UIImage+animatedGIF.m in Sources */,
 				8D4115E01F5931A500069FD9 /* MSWallpaperData.m in Sources */,
 				8D4115AB1F59047C00069FD9 /* TYPagerController.m in Sources */,
@@ -791,15 +830,18 @@
 				8D4115C41F5905B500069FD9 /* MainViewController.m in Sources */,
 				8D4115AD1F59047C00069FD9 /* TYPagerViewLayout.m in Sources */,
 				8D4115A41F59047C00069FD9 /* SGPageTitleButton.m in Sources */,
+				8D8F9F991F5D06A000D07450 /* SVProgressHUD.m in Sources */,
 				8D4115C51F5905B500069FD9 /* MTSHomeViewController.m in Sources */,
 				8D4115A71F59047C00069FD9 /* TYTabPagerBarCell.m in Sources */,
 				8D4115AC1F59047C00069FD9 /* TYPagerView.m in Sources */,
+				8D8F9F961F5D06A000D07450 /* SVIndefiniteAnimatedView.m in Sources */,
 				8D4115A11F59047C00069FD9 /* UIView+SGFrame.m in Sources */,
 				8D4115C21F5905B500069FD9 /* PictureCollectionViewController.m in Sources */,
 				8D4115C91F5905B500069FD9 /* WallpaperListViewController.m in Sources */,
 				8D4115D21F5905BD00069FD9 /* CollectionViewCell.m in Sources */,
 				8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */,
 				8D4115AA1F59047C00069FD9 /* TYTabPagerView.m in Sources */,
+				8D8F9F9A1F5D06A000D07450 /* SVRadialGradientLayer.m in Sources */,
 				8D4115D41F5905BD00069FD9 /* PicCollectionListCell.m in Sources */,
 				8D4115E31F59324A00069FD9 /* MSUserData.m in Sources */,
 			);

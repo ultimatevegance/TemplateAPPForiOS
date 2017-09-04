@@ -11,6 +11,7 @@
 
 #import <Chameleon.h>
 #import "MSNetworkAPIManager.h"
+#import "SVProgressHUD.h"
 
 #define APIClientKey @"Client-ID 7b8dd28ed85b026b2dac5c80ab1aba0aeb4c8791beced3e104dec4a0dc65cf93"
 //Constants
