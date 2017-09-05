@@ -24,15 +24,6 @@
     [Chameleon setGlobalThemeUsingPrimaryColor: PrimaryColororangish withSecondaryColor:nil usingFontName:@"MarkerFelt-Thin" andContentStyle:UIContentStyleDark];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor flatWhiteColor]];
-//    NSArray *fontFamilies = [UIFont familyNames];
-//    
-//    for (int i = 0; i < [fontFamilies count]; i++)
-//    {
-//        NSString *fontFamily = [fontFamilies objectAtIndex:i];
-//        NSArray *fontNames = [UIFont fontNamesForFamilyName:[fontFamilies objectAtIndex:i]];
-//        NSLog (@"%@: %@", fontFamily, fontNames);
-//    }
-    
     return YES;
 }
 
