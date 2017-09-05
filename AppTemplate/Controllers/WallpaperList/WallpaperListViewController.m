@@ -12,6 +12,7 @@
 #import "MJRefresh.h"
 #import "MSWallpaperData.h"
 #import "WallpaperDetailViewController.h"
+#import "RZTransitions.h"
 @interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 
 @property (strong, nonatomic) NSMutableArray *datasourceArray;
@@ -26,6 +27,8 @@ static NSInteger cellMargin = 12;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    id<RZAnimationControllerProtocol> presentDismissAnimationController = [[RZZoomAlphaAnimationController alloc] init];
+    [[RZTransitionsManager shared] setDefaultPresentDismissAnimationController:presentDismissAnimationController];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     _datasourceArray = [NSMutableArray array];
@@ -108,6 +111,12 @@ static NSInteger cellMargin = 12;
     WallpaperDetailViewController *detailedVC = [[WallpaperDetailViewController alloc] initWithSourceImage:cell.wallpaper DownloadUrl:selectedCellData.urls_full User:selectedCellData.user] ;
     
     if (cell.wallpaper) {
+        [self setTransitioningDelegate:[RZTransitionsManager shared]];
+        [detailedVC setTransitioningDelegate:[RZTransitionsManager shared]];
+        [[RZTransitionsManager shared] setAnimationController:[[RZZoomPushAnimationController alloc] init]
+                                           fromViewController:[self class]
+                                             toViewController:[detailedVC class]
+                                                    forAction:RZTransitionAction_PresentDismiss];
         [self presentViewController:detailedVC animated:YES completion:nil];
     }
 }
