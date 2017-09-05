@@ -8,7 +8,7 @@
 
 #import "WallpaperListViewController.h"
 #import "MSUserData.h"
-@interface WallpaperDetailViewController : WallpaperListViewController
+@interface WallpaperDetailViewController : UIViewController
 
 - (instancetype)initWithSourceImage: (UIImage *)wallpaper DownloadUrl:(NSString *)downloadUrl User:(MSUserData *)user;
 

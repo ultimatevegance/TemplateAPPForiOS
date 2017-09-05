@@ -10,6 +10,6 @@
 #import "MSUserData.h"
 @interface CollectionDetailViewController : UIViewController
 
-- (instancetype)initWithCollectionID:(NSNumber *)collectionID  User:(MSUserData *)user;
+- (instancetype)initWithCollectionID:(NSNumber *)collectionID  User:(MSUserData *)user CollectionTitle:(NSString *)collectionTitle;
 
 @end

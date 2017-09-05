@@ -13,10 +13,13 @@
 #import "MSWallpaperCollectionData.h"
 #import "MJRefresh.h"
 #import "Common.h"
+#import "WallpaperDetailViewController.h"
+#import "RZTransitions.h"
 @interface CollectionDetailViewController ()<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *datasourceArray;
-@property (copy, nonatomic) NSNumber *collectionID;
+@property (strong, nonatomic) NSNumber *collectionID;
+@property (copy, nonatomic) NSString *collectionTitle;
 @property (nonatomic) NSUInteger currentPage;
 @end
 
@@ -25,10 +28,11 @@ static NSInteger cellMargin = 12;
 
 @implementation CollectionDetailViewController
 
-- (instancetype)initWithCollectionID:(NSNumber *)collectionID  User:(MSUserData *)user {
+- (instancetype)initWithCollectionID:(NSNumber *)collectionID  User:(MSUserData *)user CollectionTitle:(NSString *)collectionTitle {
     self = [super init];
     if (self) {
         _collectionID = collectionID;
+        _collectionTitle = collectionTitle;
     }
     return  self;
 }
@@ -36,13 +40,15 @@ static NSInteger cellMargin = 12;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    id<RZAnimationControllerProtocol> presentDismissAnimationController = [[RZZoomAlphaAnimationController alloc] init];
+    [[RZTransitionsManager shared] setDefaultPresentDismissAnimationController:presentDismissAnimationController];
     _datasourceArray = [NSMutableArray array];
     CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
-    layout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
+    layout.sectionInset = UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
     layout.headerHeight = 15;
     layout.footerHeight = 10;
-    layout.minimumColumnSpacing = 12;
-    layout.minimumInteritemSpacing = 12;
+    layout.minimumColumnSpacing = cellMargin;
+    layout.minimumInteritemSpacing = cellMargin;
     
     _collectionView.collectionViewLayout = layout;
     _collectionView.dataSource = self;
@@ -60,9 +66,15 @@ static NSInteger cellMargin = 12;
         }];
     }];
     [self refreshData];
+    [self configTitleLabel];
+}
 
-    
-
+- (void)configTitleLabel {
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
+    titleLabel.textColor = [UIColor blackColor];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.text = [NSString stringWithFormat:@"%@",_collectionTitle];
+    self.navigationItem.titleView = titleLabel;
 }
 
 #pragma mark - Networking
@@ -110,6 +122,24 @@ static NSInteger cellMargin = 12;
        [_collectionView.mj_header endRefreshing];
 
    }];
+}
+
+#pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CollectionViewCell *cell = (CollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
+    MSWallpaperData *selectedCellData = _datasourceArray[indexPath.row];
+    WallpaperDetailViewController *detailedVC = [[WallpaperDetailViewController alloc] initWithSourceImage:cell.wallpaper DownloadUrl:selectedCellData.urls_full User:selectedCellData.user] ;
+    
+    if (cell.wallpaper) {
+        [self setTransitioningDelegate:[RZTransitionsManager shared]];
+        [detailedVC setTransitioningDelegate:[RZTransitionsManager shared]];
+        [[RZTransitionsManager shared] setAnimationController:[[RZZoomPushAnimationController alloc] init]
+                                           fromViewController:[self class]
+                                             toViewController:[detailedVC class]
+                                                    forAction:RZTransitionAction_PresentDismiss];
+        [self presentViewController:detailedVC animated:YES completion:nil];
+    }
 }
 
 

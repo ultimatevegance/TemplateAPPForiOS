@@ -103,7 +103,7 @@ static NSInteger cellMargin = 12;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     MSWallpaperCollectionData *collectionData = _datasourceArray[indexPath.row];
-    CollectionDetailViewController *detailVC = [[CollectionDetailViewController alloc] initWithCollectionID:collectionData.Id User:collectionData.user];
+    CollectionDetailViewController *detailVC = [[CollectionDetailViewController alloc] initWithCollectionID:collectionData.Id User:collectionData.user CollectionTitle:collectionData.title];
     [self.navigationController pushViewController:detailVC animated:YES];
 }
 
