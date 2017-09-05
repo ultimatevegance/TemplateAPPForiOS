@@ -30,17 +30,6 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-6j-CPF">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoz-6G-7uf">
-                    <rect key="frame" x="16" y="24" width="27" height="27"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="27" id="cSg-I7-6QV"/>
-                        <constraint firstAttribute="height" constant="27" id="lWJ-bZ-nWe"/>
-                    </constraints>
-                    <state key="normal" image="cancel"/>
-                    <connections>
-                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="LV3-TL-CYB"/>
-                    </connections>
-                </button>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HU5-i2-bKm">
                     <rect key="frame" x="9.5" y="587" width="356" height="60"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bjv-CO-qfK">
@@ -111,18 +100,29 @@
                     </constraints>
                     <blurEffect style="light"/>
                 </visualEffectView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoz-6G-7uf">
+                    <rect key="frame" x="332" y="30" width="27" height="27"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="27" id="cSg-I7-6QV"/>
+                        <constraint firstAttribute="height" constant="27" id="lWJ-bZ-nWe"/>
+                    </constraints>
+                    <state key="normal" image="cancel"/>
+                    <connections>
+                        <action selector="cancel:" destination="-1" eventType="touchUpInside" id="LV3-TL-CYB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Maa-6j-CPF" secondAttribute="bottom" id="6Ao-ME-ABj"/>
-                <constraint firstItem="qoz-6G-7uf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="A52-vL-FLs"/>
-                <constraint firstItem="qoz-6G-7uf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="24" id="DUn-Sw-cQg"/>
+                <constraint firstItem="qoz-6G-7uf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="DUn-Sw-cQg"/>
                 <constraint firstAttribute="trailing" secondItem="Maa-6j-CPF" secondAttribute="trailing" id="ISp-Nl-10i"/>
                 <constraint firstItem="HU5-i2-bKm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J3U-3f-Wcf"/>
                 <constraint firstItem="Maa-6j-CPF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SHi-9M-BL3"/>
                 <constraint firstItem="HU5-i2-bKm" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.95" id="Vk7-U8-CaF"/>
                 <constraint firstAttribute="bottom" secondItem="HU5-i2-bKm" secondAttribute="bottom" constant="20" id="b91-ew-giG"/>
                 <constraint firstItem="Maa-6j-CPF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hDW-kg-wjU"/>
+                <constraint firstAttribute="trailing" secondItem="qoz-6G-7uf" secondAttribute="trailing" constant="16" id="o0p-yu-Pha"/>
             </constraints>
             <point key="canvasLocation" x="35.5" y="46.5"/>
         </view>
