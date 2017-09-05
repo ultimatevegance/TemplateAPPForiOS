@@ -47,6 +47,16 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+    
+}
 #pragma mark - Helpers
 
 - (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void*)ctxInfo {
@@ -89,7 +99,7 @@
             UIImageWriteToSavedPhotosAlbum(downloadedImage,
                                            self, // send the message to 'self' when calling the callback
                                            @selector(thisImage:hasBeenSavedInPhotoAlbumWithError:usingContextInfo:), // the selector to tell the method to call on completion
-                                           NULL); // you generally won't need a contextInfo here
+                                           NULL);
 
         }];
         [downloadTask resume];
