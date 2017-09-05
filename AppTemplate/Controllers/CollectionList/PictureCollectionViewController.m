@@ -11,6 +11,8 @@
 #import "MJRefresh.h"
 #import "MSWallpaperCollectionData.h"
 #import "Common.h"
+#import "CollectionDetailViewController.h"
+#import "MSWallpaperCollectionData.h"
 @interface PictureCollectionViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *datasourceArray;
@@ -97,6 +99,13 @@ static NSInteger cellMargin = 12;
     }];
 }
 
+#pragma mark <UICollectionViewDelegate>
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    MSWallpaperCollectionData *collectionData = _datasourceArray[indexPath.row];
+    CollectionDetailViewController *detailVC = [[CollectionDetailViewController alloc] initWithCollectionID:collectionData.Id User:collectionData.user];
+    [self.navigationController pushViewController:detailVC animated:YES];
+}
 
 #pragma mark <UICollectionViewDataSource>
 

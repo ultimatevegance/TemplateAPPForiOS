@@ -32,11 +32,8 @@
 		8D4115AE1F59047C00069FD9 /* UIImage+animatedGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115A01F59047C00069FD9 /* UIImage+animatedGIF.m */; };
 		8D4115C21F5905B500069FD9 /* PictureCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115B21F5905B500069FD9 /* PictureCollectionViewController.m */; };
 		8D4115C31F5905B500069FD9 /* PictureCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4115B31F5905B500069FD9 /* PictureCollectionViewController.xib */; };
-		8D4115C41F5905B500069FD9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115B61F5905B500069FD9 /* MainViewController.m */; };
 		8D4115C51F5905B500069FD9 /* MTSHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115B81F5905B500069FD9 /* MTSHomeViewController.m */; };
 		8D4115C61F5905B500069FD9 /* MTSHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4115B91F5905B500069FD9 /* MTSHomeViewController.xib */; };
-		8D4115C71F5905B500069FD9 /* MSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115BC1F5905B500069FD9 /* MSSettingViewController.m */; };
-		8D4115C81F5905B500069FD9 /* MSSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4115BD1F5905B500069FD9 /* MSSettingViewController.xib */; };
 		8D4115C91F5905B500069FD9 /* WallpaperListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115C01F5905B500069FD9 /* WallpaperListViewController.m */; };
 		8D4115CA1F5905B500069FD9 /* WallpaperListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D4115C11F5905B500069FD9 /* WallpaperListViewController.xib */; };
 		8D4115D21F5905BD00069FD9 /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D4115CD1F5905BD00069FD9 /* CollectionViewCell.m */; };
@@ -76,6 +73,9 @@
 		8D8F9FF11F5E323E00D07450 /* NSObject+RZTransitionsViewHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F9FDC1F5E323E00D07450 /* NSObject+RZTransitionsViewHelpers.m */; };
 		8D8F9FF21F5E323E00D07450 /* UIImage+RZTransitionsFastImageBlur.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F9FDE1F5E323E00D07450 /* UIImage+RZTransitionsFastImageBlur.m */; };
 		8D8F9FF31F5E323E00D07450 /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8F9FE01F5E323E00D07450 /* UIImage+RZTransitionsSnapshotHelpers.m */; };
+		8D8FA00D1F5E86CD00D07450 /* CollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FA00B1F5E86CD00D07450 /* CollectionDetailViewController.m */; };
+		8D8FA00E1F5E86CD00D07450 /* CollectionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8FA00C1F5E86CD00D07450 /* CollectionDetailViewController.xib */; };
+		8D8FA0121F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FA0111F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m */; };
 		8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
@@ -151,14 +151,9 @@
 		8D4115B11F5905B500069FD9 /* PictureCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureCollectionViewController.h; sourceTree = "<group>"; };
 		8D4115B21F5905B500069FD9 /* PictureCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureCollectionViewController.m; sourceTree = "<group>"; };
 		8D4115B31F5905B500069FD9 /* PictureCollectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PictureCollectionViewController.xib; sourceTree = "<group>"; };
-		8D4115B51F5905B500069FD9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		8D4115B61F5905B500069FD9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		8D4115B71F5905B500069FD9 /* MTSHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTSHomeViewController.h; sourceTree = "<group>"; };
 		8D4115B81F5905B500069FD9 /* MTSHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTSHomeViewController.m; sourceTree = "<group>"; };
 		8D4115B91F5905B500069FD9 /* MTSHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTSHomeViewController.xib; sourceTree = "<group>"; };
-		8D4115BB1F5905B500069FD9 /* MSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSSettingViewController.h; sourceTree = "<group>"; };
-		8D4115BC1F5905B500069FD9 /* MSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSSettingViewController.m; sourceTree = "<group>"; };
-		8D4115BD1F5905B500069FD9 /* MSSettingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MSSettingViewController.xib; sourceTree = "<group>"; };
 		8D4115BF1F5905B500069FD9 /* WallpaperListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallpaperListViewController.h; sourceTree = "<group>"; };
 		8D4115C01F5905B500069FD9 /* WallpaperListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallpaperListViewController.m; sourceTree = "<group>"; };
 		8D4115C11F5905B500069FD9 /* WallpaperListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallpaperListViewController.xib; sourceTree = "<group>"; };
@@ -189,9 +184,9 @@
 		8D8F9FA21F5D2F4C00D07450 /* WallpaperDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallpaperDetailViewController.h; sourceTree = "<group>"; };
 		8D8F9FA31F5D2F4C00D07450 /* WallpaperDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallpaperDetailViewController.m; sourceTree = "<group>"; };
 		8D8F9FA41F5D2F4C00D07450 /* WallpaperDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallpaperDetailViewController.xib; sourceTree = "<group>"; };
-		8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
-		8D8F9FAB1F5D4D1400D07450 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = ../SettingsTableViewController.h; sourceTree = "<group>"; };
-		8D8F9FAC1F5D4D1400D07450 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = ../SettingsTableViewController.m; sourceTree = "<group>"; };
+		8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../../Settings.storyboard; sourceTree = "<group>"; };
+		8D8F9FAB1F5D4D1400D07450 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = ../../SettingsTableViewController.h; sourceTree = "<group>"; };
+		8D8F9FAC1F5D4D1400D07450 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = ../../SettingsTableViewController.m; sourceTree = "<group>"; };
 		8D8F9FB01F5E323E00D07450 /* RZTransitionsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsNavigationController.h; sourceTree = "<group>"; };
 		8D8F9FB11F5E323E00D07450 /* RZTransitionsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RZTransitionsNavigationController.m; sourceTree = "<group>"; };
 		8D8F9FB31F5E323E00D07450 /* RZTransitionAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionAction.h; sourceTree = "<group>"; };
@@ -236,6 +231,11 @@
 		8D8F9FDE1F5E323E00D07450 /* UIImage+RZTransitionsFastImageBlur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsFastImageBlur.m"; sourceTree = "<group>"; };
 		8D8F9FDF1F5E323E00D07450 /* UIImage+RZTransitionsSnapshotHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RZTransitionsSnapshotHelpers.h"; sourceTree = "<group>"; };
 		8D8F9FE01F5E323E00D07450 /* UIImage+RZTransitionsSnapshotHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RZTransitionsSnapshotHelpers.m"; sourceTree = "<group>"; };
+		8D8FA00A1F5E86CD00D07450 /* CollectionDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionDetailViewController.h; sourceTree = "<group>"; };
+		8D8FA00B1F5E86CD00D07450 /* CollectionDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionDetailViewController.m; sourceTree = "<group>"; };
+		8D8FA00C1F5E86CD00D07450 /* CollectionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionDetailViewController.xib; sourceTree = "<group>"; };
+		8D8FA0101F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		8D8FA0111F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
 		8DD693F51F5CE8E2000996B8 /* MSWallpaperCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWallpaperCollectionData.h; sourceTree = "<group>"; };
 		8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWallpaperCollectionData.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -344,6 +344,7 @@
 		8D41157A1F59047C00069FD9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8D8FA00F1F5E8D5600D07450 /* WaterfallLayout */,
 				8D8F9FAE1F5E323E00D07450 /* RZTransitions */,
 				8D8F9F8B1F5D06A000D07450 /* SVProgressHUD */,
 				8D41157B1F59047C00069FD9 /* SGPagingView */,
@@ -454,9 +455,6 @@
 		8D4115AF1F5905B500069FD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */,
-				8D8F9FAB1F5D4D1400D07450 /* SettingsTableViewController.h */,
-				8D8F9FAC1F5D4D1400D07450 /* SettingsTableViewController.m */,
 				8D4115B01F5905B500069FD9 /* CollectionList */,
 				8D4115B41F5905B500069FD9 /* Main */,
 				8D4115BA1F5905B500069FD9 /* Setting */,
@@ -471,6 +469,9 @@
 				8D4115B11F5905B500069FD9 /* PictureCollectionViewController.h */,
 				8D4115B21F5905B500069FD9 /* PictureCollectionViewController.m */,
 				8D4115B31F5905B500069FD9 /* PictureCollectionViewController.xib */,
+				8D8FA00A1F5E86CD00D07450 /* CollectionDetailViewController.h */,
+				8D8FA00B1F5E86CD00D07450 /* CollectionDetailViewController.m */,
+				8D8FA00C1F5E86CD00D07450 /* CollectionDetailViewController.xib */,
 			);
 			path = CollectionList;
 			sourceTree = "<group>";
@@ -478,8 +479,6 @@
 		8D4115B41F5905B500069FD9 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				8D4115B51F5905B500069FD9 /* MainViewController.h */,
-				8D4115B61F5905B500069FD9 /* MainViewController.m */,
 				8D4115B71F5905B500069FD9 /* MTSHomeViewController.h */,
 				8D4115B81F5905B500069FD9 /* MTSHomeViewController.m */,
 				8D4115B91F5905B500069FD9 /* MTSHomeViewController.xib */,
@@ -490,9 +489,9 @@
 		8D4115BA1F5905B500069FD9 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				8D4115BB1F5905B500069FD9 /* MSSettingViewController.h */,
-				8D4115BC1F5905B500069FD9 /* MSSettingViewController.m */,
-				8D4115BD1F5905B500069FD9 /* MSSettingViewController.xib */,
+				8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */,
+				8D8F9FAB1F5D4D1400D07450 /* SettingsTableViewController.h */,
+				8D8F9FAC1F5D4D1400D07450 /* SettingsTableViewController.m */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -668,6 +667,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		8D8FA00F1F5E8D5600D07450 /* WaterfallLayout */ = {
+			isa = PBXGroup;
+			children = (
+				8D8FA0101F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.h */,
+				8D8FA0111F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m */,
+			);
+			path = WaterfallLayout;
+			sourceTree = "<group>";
+		};
 		8DD693F41F5CE8BC000996B8 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,12 +833,12 @@
 				8D4115CA1F5905B500069FD9 /* WallpaperListViewController.xib in Resources */,
 				8D8F9FAA1F5D48DC00D07450 /* Settings.storyboard in Resources */,
 				8D4115D31F5905BD00069FD9 /* CollectionViewCell.xib in Resources */,
+				8D8FA00E1F5E86CD00D07450 /* CollectionDetailViewController.xib in Resources */,
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				8D4115C31F5905B500069FD9 /* PictureCollectionViewController.xib in Resources */,
 				8D8F9F981F5D06A000D07450 /* SVProgressHUD.bundle in Resources */,
 				8D4115D51F5905BD00069FD9 /* PicCollectionListCell.xib in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
-				8D4115C81F5905B500069FD9 /* MSSettingViewController.xib in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -996,7 +1004,6 @@
 			files = (
 				8D4115DD1F5909E000069FD9 /* MSNetworkAPIManager.m in Sources */,
 				8D8F9FF11F5E323E00D07450 /* NSObject+RZTransitionsViewHelpers.m in Sources */,
-				8D4115C71F5905B500069FD9 /* MSSettingViewController.m in Sources */,
 				8D8F9FF01F5E323E00D07450 /* RZZoomPushAnimationController.m in Sources */,
 				8D4115A31F59047C00069FD9 /* SGPageContentView.m in Sources */,
 				8D8F9FE71F5E323E00D07450 /* RZVerticalSwipeInteractionController.m in Sources */,
@@ -1010,6 +1017,7 @@
 				8D8F9FE21F5E323E00D07450 /* RZUniqueTransition.m in Sources */,
 				8D4115AB1F59047C00069FD9 /* TYPagerController.m in Sources */,
 				8D8F9FEE1F5E323E00D07450 /* RZZoomAlphaAnimationController.m in Sources */,
+				8D8FA00D1F5E86CD00D07450 /* CollectionDetailViewController.m in Sources */,
 				8D8F9FAD1F5D4D1400D07450 /* SettingsTableViewController.m in Sources */,
 				8D4115A91F59047C00069FD9 /* TYTabPagerController.m in Sources */,
 				8D4115A81F59047C00069FD9 /* TYTabPagerBarLayout.m in Sources */,
@@ -1019,7 +1027,6 @@
 				8D8F9FEF1F5E323E00D07450 /* RZZoomBlurAnimationController.m in Sources */,
 				8D4115A21F59047C00069FD9 /* SGPageContentScrollView.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
-				8D4115C41F5905B500069FD9 /* MainViewController.m in Sources */,
 				8D4115AD1F59047C00069FD9 /* TYPagerViewLayout.m in Sources */,
 				8D4115A41F59047C00069FD9 /* SGPageTitleButton.m in Sources */,
 				8D8F9FEA1F5E323E00D07450 /* RZCirclePushAnimationController.m in Sources */,
@@ -1030,6 +1037,7 @@
 				8D4115A71F59047C00069FD9 /* TYTabPagerBarCell.m in Sources */,
 				8D4115AC1F59047C00069FD9 /* TYPagerView.m in Sources */,
 				8D8F9F961F5D06A000D07450 /* SVIndefiniteAnimatedView.m in Sources */,
+				8D8FA0121F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				8D4115A11F59047C00069FD9 /* UIView+SGFrame.m in Sources */,
 				8D4115C21F5905B500069FD9 /* PictureCollectionViewController.m in Sources */,
 				8D8F9FF21F5E323E00D07450 /* UIImage+RZTransitionsFastImageBlur.m in Sources */,

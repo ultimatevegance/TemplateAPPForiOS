@@ -16,14 +16,12 @@
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *previewScrollView;
-
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *toolBarView;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (strong, nonatomic) UIImage *wallpaperImage;
 @property (strong, nonatomic) MSUserData *userData;
 @property (copy, nonatomic) NSString *downloadSourceUrlString;
-
 
 @end
 

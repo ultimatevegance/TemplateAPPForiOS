@@ -8,6 +8,7 @@
 
 #import "MSWallpaperCollectionData.h"
 #import "MSNetworkAPIManager.h"
+#import "MSWallpaperData.h"
 @implementation MSWallpaperCollectionData
 
 +(NSDictionary *)JSONKeyPathsByPropertyKey {
@@ -38,6 +39,17 @@
     }];
 }
 
-
++ (void)requestWallpaperCollectionsDataWithCollectionID:(NSNumber *)collectionID APIKey:(NSString *)APIKey parameter:(NSDictionary *)param callback:(void (^)(NSArray *, NSError *))block {
+    [[MSNetworkAPIManager sharedClient] requestJSONDataWithPath:[NSString stringWithFormat:@"collections/%@/photos",collectionID.stringValue] userToken:APIKey params:param methodType:GET callback:^(id data, NSError *error) {
+        if (block) {
+            NSArray *wallpaperDataArray = [MTLJSONAdapter modelsOfClass:[MSWallpaperData class]
+                                                                    fromJSONArray:data
+                                                                            error:&error];
+            block(wallpaperDataArray, error);
+        }
+        
+        
+    }];
+}
 
 @end

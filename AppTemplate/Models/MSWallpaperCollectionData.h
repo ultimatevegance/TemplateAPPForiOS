@@ -22,4 +22,7 @@
 
 + (void)requestWallpaperCollectionsDataWithAPIKey:(NSString *)APIKey parameter:(NSDictionary *)param callback:(void (^)( NSArray*, NSError *))block;
 
++ (void)requestWallpaperCollectionsDataWithCollectionID:(NSNumber *)collectionID APIKey:(NSString *)APIKey parameter:(NSDictionary *)param callback:(void (^)( NSArray*, NSError *))block;
+
+
 @end

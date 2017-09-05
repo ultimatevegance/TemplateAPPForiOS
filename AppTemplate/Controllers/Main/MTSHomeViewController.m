@@ -12,8 +12,6 @@
 
 #import "WallpaperListViewController.h"
 #import "PictureCollectionViewController.h"
-#import "MSSettingViewController.h"
-
 @interface MTSHomeViewController ()<SGPageTitleViewDelegate, SGPageContentViewDelegate>
 @property (nonatomic, strong) SGPageTitleView *pageTitleView;
 @property (nonatomic, strong) SGPageContentView *pageContentView;
