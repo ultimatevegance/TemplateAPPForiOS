@@ -63,7 +63,7 @@ static NSInteger cellMargin = 12;
     _currentPage = 1;
     [SVProgressHUD showWithStatus:@"Loading"];
     [self requestNewDataWithCompletion:^{
-        [SVProgressHUD dismissWithDelay:1];
+        [SVProgressHUD dismissWithDelay:0.3];
         
     }];
 }
@@ -113,6 +113,7 @@ static NSInteger cellMargin = 12;
     cell.wallpaperCollectionData = _datasourceArray[indexPath.row];
     
     // Configure the cell
+    
     
     return cell;
 }

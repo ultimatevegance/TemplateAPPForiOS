@@ -7,9 +7,8 @@
 //
 
 #import "WallpaperListViewController.h"
-#import "RMPZoomTransitionAnimator.h"
 #import "MSUserData.h"
-@interface WallpaperDetailViewController : WallpaperListViewController<RMPZoomTransitionAnimating>
+@interface WallpaperDetailViewController : WallpaperListViewController
 
 - (instancetype)initWithSourceImage: (UIImage *)wallpaper DownloadUrl:(NSString *)downloadUrl User:(MSUserData *)user;
 
