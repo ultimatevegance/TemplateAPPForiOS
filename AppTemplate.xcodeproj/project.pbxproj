@@ -189,7 +189,7 @@
 		8D8F9FA21F5D2F4C00D07450 /* WallpaperDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallpaperDetailViewController.h; sourceTree = "<group>"; };
 		8D8F9FA31F5D2F4C00D07450 /* WallpaperDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallpaperDetailViewController.m; sourceTree = "<group>"; };
 		8D8F9FA41F5D2F4C00D07450 /* WallpaperDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WallpaperDetailViewController.xib; sourceTree = "<group>"; };
-		8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Settings.storyboard; path = ../Settings.storyboard; sourceTree = "<group>"; };
 		8D8F9FAB1F5D4D1400D07450 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = ../SettingsTableViewController.h; sourceTree = "<group>"; };
 		8D8F9FAC1F5D4D1400D07450 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = ../SettingsTableViewController.m; sourceTree = "<group>"; };
 		8D8F9FB01F5E323E00D07450 /* RZTransitionsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RZTransitionsNavigationController.h; sourceTree = "<group>"; };
@@ -308,7 +308,6 @@
 				8D41157A1F59047C00069FD9 /* Vendor */,
 				72E858211E7EC735001EBB8B /* Assets.xcassets */,
 				72E858151E7EC735001EBB8B /* Supporting Files */,
-				8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */,
 			);
 			path = AppTemplate;
 			sourceTree = "<group>";
@@ -455,6 +454,7 @@
 		8D4115AF1F5905B500069FD9 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */,
 				8D8F9FAB1F5D4D1400D07450 /* SettingsTableViewController.h */,
 				8D8F9FAC1F5D4D1400D07450 /* SettingsTableViewController.m */,
 				8D4115B01F5905B500069FD9 /* CollectionList */,

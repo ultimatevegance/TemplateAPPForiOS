@@ -10,6 +10,7 @@
 #import "CollectionViewCell.h"
 #import "YYWebImage.h"
 #import "Common.h"
+#import "FCAlertView.h"
 @interface WallpaperDetailViewController ()<UIViewControllerTransitioningDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *previewButton;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
@@ -108,7 +109,20 @@
    }
 
 - (IBAction)showInfo:(UIButton *)sender {
-    
+    FCAlertView *infoAlertView = [[FCAlertView alloc] init];
+    infoAlertView.darkTheme = YES;
+    infoAlertView.customImageScale = 2;
+    infoAlertView.animateAlertInFromTop = YES;
+    infoAlertView.animateAlertOutToBottom = YES;
+    infoAlertView.bounceAnimations = YES;
+    infoAlertView.detachButtons = YES;
+    infoAlertView.avoidCustomImageTint = YES;
+    infoAlertView.titleFont = [UIFont systemFontOfSize:25 weight:20];
+    NSString *userName = _userData.name;
+    NSString *stats = [NSString stringWithFormat:@"%ld likes    &   %ld photos",(long)_userData.total_likes.integerValue,(long)_userData.total_photos.integerValue];
+// TODO : show user avatar image
+//    UIImage *userAvatar = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_userData.profile_image]]];
+    [infoAlertView showAlertWithTitle:userName withSubtitle:stats withCustomImage:[UIImage imageNamed:@"iconicButton"] withDoneButtonTitle:@"OK" andButtons:nil];
 }
 
 @end
