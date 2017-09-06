@@ -79,6 +79,7 @@
 		8DCF183E1F5F9622006604CC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF183C1F5F9622006604CC /* AboutViewController.m */; };
 		8DCF183F1F5F9622006604CC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCF183D1F5F9622006604CC /* AboutViewController.xib */; };
 		8DCF18411F5F965D006604CC /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DCF18401F5F965D006604CC /* About.html */; };
+		8DCF18471F5FD4A3006604CC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCF18461F5FD4A3006604CC /* Photos.framework */; };
 		8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
@@ -243,6 +244,7 @@
 		8DCF183C1F5F9622006604CC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		8DCF183D1F5F9622006604CC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		8DCF18401F5F965D006604CC /* About.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = About.html; sourceTree = "<group>"; };
+		8DCF18461F5FD4A3006604CC /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		8DD693F51F5CE8E2000996B8 /* MSWallpaperCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWallpaperCollectionData.h; sourceTree = "<group>"; };
 		8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWallpaperCollectionData.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DCF18471F5FD4A3006604CC /* Photos.framework in Frameworks */,
 				8D8F9F9C1F5D06E400D07450 /* QuartzCore.framework in Frameworks */,
 				8D4115EF1F59579E00069FD9 /* MobileCoreServices.framework in Frameworks */,
 				7D10EA9835D37BC95810846F /* libPods-AppTemplate.a in Frameworks */,
@@ -699,6 +702,7 @@
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DCF18461F5FD4A3006604CC /* Photos.framework */,
 				8D8F9F9B1F5D06E400D07450 /* QuartzCore.framework */,
 				8D4115EE1F59579E00069FD9 /* MobileCoreServices.framework */,
 				4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */,
@@ -1222,7 +1226,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.wallpaperApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1237,7 +1241,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.wallpaperApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

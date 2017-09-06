@@ -10,8 +10,6 @@
 #import "FCAlertView.h"
 #import "Common.h"
 
-#define URLEMail @"mailto:monsterdev@monstertechstudio.com?subject=Feedback&body=content"
-
 @interface SettingsTableViewController ()<UITableViewDelegate>
 
 @end
@@ -46,7 +44,7 @@
     FCAlertView *alert2 = [[FCAlertView alloc] init];
     [alert2 addButton:@"Yes" withActionBlock:^{
         // open app store;
-        NSString *appLink = @"itms://itunes.apple.com/us/app/wrike-project-management-collaboration/id890048871?mt=8";
+        NSString *appLink = @"itms://itunes.apple.com/us/app/wallpaperguru/id1279668095?ls=1&mt=8";
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appLink] options:@{} completionHandler:^(BOOL success) {
             
         }];
@@ -81,7 +79,7 @@
     
     NSString * appBuildString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
     
-    NSString *feedbackUrl = [NSString stringWithFormat:URLEMail @"mailto:monsterdev@monstertechstudio.com?subject=Feedback&body= Device info : %@ %@ %@ %@ ; App info : version %@ build %@ ",strName,strSysName,strSysVersion,strModel,appVersionString,appBuildString];
+    NSString *feedbackUrl = [NSString stringWithFormat: @"mailto:monsterdev@monstertechstudio.com?subject=Feedback&body= Device info : %@ %@ %@ %@ ; App info : version %@ build %@ ",strName,strSysName,strSysVersion,strModel,appVersionString,appBuildString];
     NSString *url = [feedbackUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
     [[UIApplication sharedApplication]  openURL: [NSURL URLWithString: url]];
 

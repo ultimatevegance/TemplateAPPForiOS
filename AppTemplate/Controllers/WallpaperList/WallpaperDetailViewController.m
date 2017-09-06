@@ -11,6 +11,7 @@
 #import "YYWebImage.h"
 #import "Common.h"
 #import "FCAlertView.h"
+#import <Photos/Photos.h>
 @interface WallpaperDetailViewController ()<UIViewControllerTransitioningDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *previewButton;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
@@ -45,6 +46,7 @@
     _toolBarView.layer.masksToBounds = YES;
     ;
     [self configPreviewLayer];
+    [self requestAuthorizationWithRedirectionToSettings];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -59,9 +61,51 @@
 
 #pragma mark - Helpers
 
+- (void)requestAuthorizationWithRedirectionToSettings {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusAuthorized)
+        {
+            //We have permission. Do whatever is needed
+        }
+        else
+        {
+            //No permission. Trying to normally request it
+            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                if (status != PHAuthorizationStatusAuthorized)
+                {
+                    //User don't give us permission. Showing alert with redirection to settings
+                    //Getting description string from info.plist file
+                    NSString *accessDescription = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"NSPhotoLibraryUsageDescription"];
+                    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:accessDescription message:@"To give permissions tap on 'Change Settings' button" preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+                    [alertController addAction:cancelAction];
+                    
+                    UIAlertAction *settingsAction = [UIAlertAction actionWithTitle:@"Change Settings" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                    }];
+                    [alertController addAction:settingsAction];
+                    
+                    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
+                }
+            }];
+        }
+    });
+}
+
+
 - (void)configPreviewLayer {
     _previewScrollView.contentSize = CGSizeMake(kScreenWidth * 2, kScreenHeight - 20);
-    UIImageView *homeScreenShootImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"homeScreen"]];
+    UIImageView *homeScreenShootImageView = [[UIImageView alloc ]init];
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    {
+        /* Device is iPad */
+        [homeScreenShootImageView setImage:[UIImage imageNamed:@"homeScreenIpad"]];
+        
+    } else {
+        [homeScreenShootImageView setImage:[UIImage imageNamed:@"homeScreen"]];
+    }
     homeScreenShootImageView.contentMode = UIViewContentModeScaleAspectFit;
     homeScreenShootImageView.frame = CGRectMake(0, 0, kScreenWidth, kScreenHeight - 20);
     [_previewScrollView addSubview:homeScreenShootImageView];
@@ -79,11 +123,7 @@
 }
 
 - (void)thisImage:(UIImage *)image hasBeenSavedInPhotoAlbumWithError:(NSError *)error usingContextInfo:(void*)ctxInfo {
-    if (error) {
-        [SVProgressHUD showErrorWithStatus:@"An Error Ocurred!"];
-    } else {
-        [SVProgressHUD showSuccessWithStatus:@"Saved To Albums"
-         ];    }
+    [SVProgressHUD showSuccessWithStatus:@"Saved To Albums"];
 }
 
 #pragma mark - Actions
