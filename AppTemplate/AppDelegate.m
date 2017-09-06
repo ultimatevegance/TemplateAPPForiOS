@@ -24,6 +24,21 @@
     [Chameleon setGlobalThemeUsingPrimaryColor: PrimaryColororangish withSecondaryColor:nil usingFontName:@"MarkerFelt-Thin" andContentStyle:UIContentStyleDark];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor flatWhiteColor]];
+    
+    // network reachability
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:
+                [SVProgressHUD showErrorWithStatus:@"Your Network Is Not Reachable!"];
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                [SVProgressHUD showInfoWithStatus:@"You Are Under Cellular Data Network,Please Pay Attention To The Cost Of Consumption"];
+            default:
+                break;
+        }
+    }];
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     return YES;
 }
 
