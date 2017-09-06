@@ -1226,7 +1226,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.wallpaperGuru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1241,7 +1241,7 @@
 				INFOPLIST_FILE = AppTemplate/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-com.monstertechstudio.wallpaperGuru-";
+				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.wallpaperGuru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
