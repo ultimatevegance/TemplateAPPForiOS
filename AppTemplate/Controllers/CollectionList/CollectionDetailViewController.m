@@ -70,11 +70,7 @@ static NSInteger cellMargin = 12;
 }
 
 - (void)configTitleLabel {
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
-    titleLabel.textColor = [UIColor blackColor];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = [NSString stringWithFormat:@"%@",_collectionTitle];
-    self.navigationItem.titleView = titleLabel;
+    self.title = [NSString stringWithFormat:@"%@",_collectionTitle];
 }
 
 #pragma mark - Networking

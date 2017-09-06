@@ -32,11 +32,10 @@
 - (void)setupPagerView {
     /// pageTitleView
     NSArray *titleArray = @[@"Wallpapers",@"Collections"];
-    self.pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, 0, self.view.frame.size.width * 0.6, 44) delegate:self titleNames:titleArray];
+    self.pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, 0, 210, 44) delegate:self titleNames:titleArray];
     self.navigationItem.titleView  = _pageTitleView;
     _pageTitleView.isShowIndicator = YES;
     _pageTitleView.isShowBottomSeparator = NO;
-    _pageTitleView.titleTextScaling = 0.2;
     _pageTitleView.indicatorLengthStyle = SGIndicatorLengthStyleDefault;
     _pageTitleView.titleColorStateNormal = [UIColor grayColor];
     _pageTitleView.isTitleGradientEffect = NO;

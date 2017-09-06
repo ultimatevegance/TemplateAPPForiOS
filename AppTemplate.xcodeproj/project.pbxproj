@@ -76,6 +76,9 @@
 		8D8FA00D1F5E86CD00D07450 /* CollectionDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FA00B1F5E86CD00D07450 /* CollectionDetailViewController.m */; };
 		8D8FA00E1F5E86CD00D07450 /* CollectionDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D8FA00C1F5E86CD00D07450 /* CollectionDetailViewController.xib */; };
 		8D8FA0121F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D8FA0111F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m */; };
+		8DCF183E1F5F9622006604CC /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DCF183C1F5F9622006604CC /* AboutViewController.m */; };
+		8DCF183F1F5F9622006604CC /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DCF183D1F5F9622006604CC /* AboutViewController.xib */; };
+		8DCF18411F5F965D006604CC /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DCF18401F5F965D006604CC /* About.html */; };
 		8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
@@ -236,6 +239,10 @@
 		8D8FA00C1F5E86CD00D07450 /* CollectionDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollectionDetailViewController.xib; sourceTree = "<group>"; };
 		8D8FA0101F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
 		8D8FA0111F5E8D5600D07450 /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		8DCF183B1F5F9622006604CC /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		8DCF183C1F5F9622006604CC /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		8DCF183D1F5F9622006604CC /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		8DCF18401F5F965D006604CC /* About.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = About.html; sourceTree = "<group>"; };
 		8DD693F51F5CE8E2000996B8 /* MSWallpaperCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWallpaperCollectionData.h; sourceTree = "<group>"; };
 		8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWallpaperCollectionData.m; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -489,9 +496,13 @@
 		8D4115BA1F5905B500069FD9 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
+				8DCF18401F5F965D006604CC /* About.html */,
 				8D8F9FA91F5D48DC00D07450 /* Settings.storyboard */,
 				8D8F9FAB1F5D4D1400D07450 /* SettingsTableViewController.h */,
 				8D8F9FAC1F5D4D1400D07450 /* SettingsTableViewController.m */,
+				8DCF183B1F5F9622006604CC /* AboutViewController.h */,
+				8DCF183C1F5F9622006604CC /* AboutViewController.m */,
+				8DCF183D1F5F9622006604CC /* AboutViewController.xib */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -834,6 +845,8 @@
 				8D8F9FAA1F5D48DC00D07450 /* Settings.storyboard in Resources */,
 				8D4115D31F5905BD00069FD9 /* CollectionViewCell.xib in Resources */,
 				8D8FA00E1F5E86CD00D07450 /* CollectionDetailViewController.xib in Resources */,
+				8DCF18411F5F965D006604CC /* About.html in Resources */,
+				8DCF183F1F5F9622006604CC /* AboutViewController.xib in Resources */,
 				72E858251E7EC735001EBB8B /* LaunchScreen.storyboard in Resources */,
 				8D4115C31F5905B500069FD9 /* PictureCollectionViewController.xib in Resources */,
 				8D8F9F981F5D06A000D07450 /* SVProgressHUD.bundle in Resources */,
@@ -1025,6 +1038,7 @@
 				8D4115A51F59047C00069FD9 /* SGPageTitleView.m in Sources */,
 				8D8F9FE91F5E323E00D07450 /* RZCardSlideAnimationController.m in Sources */,
 				8D8F9FEF1F5E323E00D07450 /* RZZoomBlurAnimationController.m in Sources */,
+				8DCF183E1F5F9622006604CC /* AboutViewController.m in Sources */,
 				8D4115A21F59047C00069FD9 /* SGPageContentScrollView.m in Sources */,
 				72E858171E7EC735001EBB8B /* main.m in Sources */,
 				8D4115AD1F59047C00069FD9 /* TYPagerViewLayout.m in Sources */,
@@ -1206,7 +1220,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = TSXDWSWUUR;
 				INFOPLIST_FILE = AppTemplate/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.wallpaperApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1221,7 +1235,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = TSXDWSWUUR;
 				INFOPLIST_FILE = AppTemplate/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.monstertechstudio.wallpaperApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

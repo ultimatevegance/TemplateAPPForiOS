@@ -21,11 +21,15 @@
     UINavigationController *naviCtrl = [[UINavigationController alloc] initWithRootViewController:[[MTSHomeViewController alloc] init]];
     self.window.rootViewController = naviCtrl;
     [self.window makeKeyAndVisible ] ;
+    
+    // set global appearance
+    
     [Chameleon setGlobalThemeUsingPrimaryColor: PrimaryColororangish withSecondaryColor:nil usingFontName:@"MarkerFelt-Thin" andContentStyle:UIContentStyleDark];
-    
     [[UINavigationBar appearance] setBarTintColor:[UIColor flatWhiteColor]];
-    
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor blackColor],NSFontAttributeName :[UIFont fontWithName:@"MarkerFelt-Thin" size:20]}];
+
     // network reachability
+    
     [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
         switch (status) {

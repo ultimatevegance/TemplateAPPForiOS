@@ -7,8 +7,12 @@
 //
 
 #import "SettingsTableViewController.h"
+#import "FCAlertView.h"
+#import "Common.h"
 
-@interface SettingsTableViewController ()
+#define URLEMail @"mailto:monsterdev@monstertechstudio.com?subject=Feedback&body=content"
+
+@interface SettingsTableViewController ()<UITableViewDelegate>
 
 @end
 
@@ -16,17 +20,71 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(dismiss)];
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 200, 40)];
-    titleLabel.textColor = [UIColor blackColor];
-    titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.text = @"Settings";
-    self.navigationItem.titleView = titleLabel;
+    self.title = @"Settings";
 }
 
 - (void)dismiss {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        if (indexPath.row == 2) {// rate star
+            [self showRater];
+           }
+        if (indexPath.row == 1) { // feedback
+            [self sendFeedback];
+        }
+    }
+}
+
+# pragma mark - Helpers
+
+- (void)showRater {
+    FCAlertView *alert = [[FCAlertView alloc] init];
+    FCAlertView *alert2 = [[FCAlertView alloc] init];
+    [alert2 addButton:@"Yes" withActionBlock:^{
+        // open app store;
+        NSString *appLink = @"itms://itunes.apple.com/us/app/wrike-project-management-collaboration/id890048871?mt=8";
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:appLink] options:@{} completionHandler:^(BOOL success) {
+            
+        }];
+    }];
+    alert2.doneBlock = ^{
+        [SVProgressHUD showImage:[UIImage imageNamed:@"thanks"] status:@"Thank You! O(∩_∩)O"];
+    } ;
+    alert.bounceAnimations = YES;
+    [alert makeAlertTypeRateStars:^(NSInteger rating) {
+        if (rating >= 1) {
+            [alert2 showAlertWithTitle:@"Rate On App Store?" withSubtitle:nil withCustomImage:nil withDoneButtonTitle:@"Cacel" andButtons:nil];
+        }
+    }];
+    [alert showAlertWithTitle:@"Rate Stars" withSubtitle:@"How do you recommend Wallpaper Guru？" withCustomImage:nil withDoneButtonTitle:@"OK" andButtons:nil];
+
+}
+
+- (void)sendFeedback {
+    NSString *strName = [[UIDevice currentDevice] name];
+    NSLog(@"%@", strName);//e.g. "My iPhone"
+    
+    NSString *strSysName = [[UIDevice currentDevice] systemName];
+    NSLog(@"%@", strSysName);// e.g. @"iOS"
+    
+    NSString *strSysVersion = [[UIDevice currentDevice] systemVersion];
+    NSLog(@"%@", strSysVersion);// e.g. @"4.0"
+    
+    NSString *strModel = [[UIDevice currentDevice] model];
+    NSLog(@"%@", strModel);// e.g. @"iPhone", @"iPod touch"
+    
+    NSString * appVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    
+    NSString * appBuildString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleVersion"];
+    
+    NSString *feedbackUrl = [NSString stringWithFormat:URLEMail @"mailto:monsterdev@monstertechstudio.com?subject=Feedback&body= Device info : %@ %@ %@ %@ ; App info : version %@ build %@ ",strName,strSysName,strSysVersion,strModel,appVersionString,appBuildString];
+    NSString *url = [feedbackUrl stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding ];
+    [[UIApplication sharedApplication]  openURL: [NSURL URLWithString: url]];
+
 }
 
 /*
