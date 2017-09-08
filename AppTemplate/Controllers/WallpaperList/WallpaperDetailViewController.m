@@ -12,13 +12,15 @@
 #import "Common.h"
 #import "FCAlertView.h"
 #import <Photos/Photos.h>
+#import "PanoramaView.h"
 @interface WallpaperDetailViewController ()<UIViewControllerTransitioningDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *previewButton;
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIScrollView *previewScrollView;
 @property (weak, nonatomic) IBOutlet UIVisualEffectView *toolBarView;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet PanoramaView *panoramaImageView;
+
 @property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (strong, nonatomic) UIImage *wallpaperImage;
 @property (strong, nonatomic) MSUserData *userData;
@@ -41,7 +43,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [_imageView setImage:_wallpaperImage];
+    PanoramaView *motionView = [[PanoramaView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    [motionView setImage:_wallpaperImage];
+    [self.view insertSubview:motionView atIndex:0];
     _toolBarView.layer.cornerRadius = 8.f;
     _toolBarView.layer.masksToBounds = YES;
     ;

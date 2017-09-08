@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -14,8 +13,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WallpaperDetailViewController">
             <connections>
                 <outlet property="cancelButton" destination="qoz-6G-7uf" id="EIf-Vc-7GQ"/>
-                <outlet property="imageView" destination="Maa-6j-CPF" id="ZKJ-b2-EMK"/>
                 <outlet property="infoButton" destination="sSk-am-jtg" id="wOb-AR-UjA"/>
+                <outlet property="panoramaImageView" destination="hsX-lg-bpE" id="YI6-at-4ma"/>
                 <outlet property="previewButton" destination="kKI-Gk-ikn" id="VEH-Zc-QoL"/>
                 <outlet property="previewScrollView" destination="0VB-36-ABC" id="5xq-LX-svH"/>
                 <outlet property="saveButton" destination="ktd-35-JWu" id="J7R-ZA-IqD"/>
@@ -28,9 +27,14 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Maa-6j-CPF">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hsX-lg-bpE" customClass="PanoramaView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                </imageView>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VB-36-ABC">
+                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </scrollView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HU5-i2-bKm">
                     <rect key="frame" x="9.5" y="587" width="356" height="60"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bjv-CO-qfK">
@@ -112,26 +116,22 @@
                         <action selector="cancel:" destination="-1" eventType="touchUpInside" id="LV3-TL-CYB"/>
                     </connections>
                 </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0VB-36-ABC">
-                    <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </scrollView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Maa-6j-CPF" secondAttribute="bottom" id="6Ao-ME-ABj"/>
                 <constraint firstItem="qoz-6G-7uf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="DUn-Sw-cQg"/>
-                <constraint firstAttribute="trailing" secondItem="Maa-6j-CPF" secondAttribute="trailing" id="ISp-Nl-10i"/>
                 <constraint firstItem="HU5-i2-bKm" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="J3U-3f-Wcf"/>
                 <constraint firstItem="0VB-36-ABC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="LJh-P0-SO8"/>
-                <constraint firstItem="Maa-6j-CPF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SHi-9M-BL3"/>
                 <constraint firstItem="HU5-i2-bKm" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.95" id="Vk7-U8-CaF"/>
                 <constraint firstAttribute="bottom" secondItem="0VB-36-ABC" secondAttribute="bottom" id="Xmx-h7-9CB"/>
                 <constraint firstAttribute="bottom" secondItem="HU5-i2-bKm" secondAttribute="bottom" constant="20" id="b91-ew-giG"/>
-                <constraint firstItem="Maa-6j-CPF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="hDW-kg-wjU"/>
+                <constraint firstItem="hsX-lg-bpE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jtU-8C-G0m"/>
                 <constraint firstItem="0VB-36-ABC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="lE8-53-dlY"/>
+                <constraint firstItem="hsX-lg-bpE" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="llO-1l-xqD"/>
                 <constraint firstAttribute="trailing" secondItem="qoz-6G-7uf" secondAttribute="trailing" constant="16" id="o0p-yu-Pha"/>
                 <constraint firstAttribute="trailing" secondItem="0VB-36-ABC" secondAttribute="trailing" id="qDi-cX-xz8"/>
+                <constraint firstAttribute="bottom" secondItem="hsX-lg-bpE" secondAttribute="bottom" id="qf2-Ib-JFV"/>
+                <constraint firstAttribute="trailing" secondItem="hsX-lg-bpE" secondAttribute="trailing" id="sJ5-T8-2oz"/>
             </constraints>
             <point key="canvasLocation" x="35.5" y="46.5"/>
         </view>

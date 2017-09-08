@@ -81,6 +81,9 @@
 		8DCF18411F5F965D006604CC /* About.html in Resources */ = {isa = PBXBuildFile; fileRef = 8DCF18401F5F965D006604CC /* About.html */; };
 		8DCF18471F5FD4A3006604CC /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DCF18461F5FD4A3006604CC /* Photos.framework */; };
 		8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */; };
+		8DF75DEF1F6242A100239DCC /* PanoramaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF75DEC1F6242A100239DCC /* PanoramaView.m */; };
+		8DF75DF01F6242A100239DCC /* UIScrollView+PanoramaIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF75DEE1F6242A100239DCC /* UIScrollView+PanoramaIndicator.m */; };
+		8DF75DF21F6242C500239DCC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF75DF11F6242C500239DCC /* CoreMotion.framework */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -247,6 +250,11 @@
 		8DCF18461F5FD4A3006604CC /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		8DD693F51F5CE8E2000996B8 /* MSWallpaperCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSWallpaperCollectionData.h; sourceTree = "<group>"; };
 		8DD693F61F5CE8E2000996B8 /* MSWallpaperCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSWallpaperCollectionData.m; sourceTree = "<group>"; };
+		8DF75DEB1F6242A100239DCC /* PanoramaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanoramaView.h; sourceTree = "<group>"; };
+		8DF75DEC1F6242A100239DCC /* PanoramaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanoramaView.m; sourceTree = "<group>"; };
+		8DF75DED1F6242A100239DCC /* UIScrollView+PanoramaIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PanoramaIndicator.h"; sourceTree = "<group>"; };
+		8DF75DEE1F6242A100239DCC /* UIScrollView+PanoramaIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PanoramaIndicator.m"; sourceTree = "<group>"; };
+		8DF75DF11F6242C500239DCC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -257,6 +265,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DF75DF21F6242C500239DCC /* CoreMotion.framework in Frameworks */,
 				8DCF18471F5FD4A3006604CC /* Photos.framework in Frameworks */,
 				8D8F9F9C1F5D06E400D07450 /* QuartzCore.framework in Frameworks */,
 				8D4115EF1F59579E00069FD9 /* MobileCoreServices.framework in Frameworks */,
@@ -354,6 +363,7 @@
 		8D41157A1F59047C00069FD9 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				8DF75DEA1F6242A100239DCC /* TiltView */,
 				8D8FA00F1F5E8D5600D07450 /* WaterfallLayout */,
 				8D8F9FAE1F5E323E00D07450 /* RZTransitions */,
 				8D8F9F8B1F5D06A000D07450 /* SVProgressHUD */,
@@ -699,9 +709,21 @@
 			name = Collection;
 			sourceTree = "<group>";
 		};
+		8DF75DEA1F6242A100239DCC /* TiltView */ = {
+			isa = PBXGroup;
+			children = (
+				8DF75DEB1F6242A100239DCC /* PanoramaView.h */,
+				8DF75DEC1F6242A100239DCC /* PanoramaView.m */,
+				8DF75DED1F6242A100239DCC /* UIScrollView+PanoramaIndicator.h */,
+				8DF75DEE1F6242A100239DCC /* UIScrollView+PanoramaIndicator.m */,
+			);
+			path = TiltView;
+			sourceTree = "<group>";
+		};
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8DF75DF11F6242C500239DCC /* CoreMotion.framework */,
 				8DCF18461F5FD4A3006604CC /* Photos.framework */,
 				8D8F9F9B1F5D06E400D07450 /* QuartzCore.framework */,
 				8D4115EE1F59579E00069FD9 /* MobileCoreServices.framework */,
@@ -1064,12 +1086,14 @@
 				8D8F9FED1F5E323E00D07450 /* RZShrinkZoomAnimationController.m in Sources */,
 				8D8F9FE81F5E323E00D07450 /* RZTransitionsManager.m in Sources */,
 				8D4115D21F5905BD00069FD9 /* CollectionViewCell.m in Sources */,
+				8DF75DF01F6242A100239DCC /* UIScrollView+PanoramaIndicator.m in Sources */,
 				8DD693F71F5CE8E2000996B8 /* MSWallpaperCollectionData.m in Sources */,
 				8D4115AA1F59047C00069FD9 /* TYTabPagerView.m in Sources */,
 				8D8F9FF31F5E323E00D07450 /* UIImage+RZTransitionsSnapshotHelpers.m in Sources */,
 				8D8F9FE51F5E323E00D07450 /* RZOverscrollInteractionController.m in Sources */,
 				8D8F9F9A1F5D06A000D07450 /* SVRadialGradientLayer.m in Sources */,
 				8D4115D41F5905BD00069FD9 /* PicCollectionListCell.m in Sources */,
+				8DF75DEF1F6242A100239DCC /* PanoramaView.m in Sources */,
 				8D8F9FA51F5D2F4C00D07450 /* WallpaperDetailViewController.m in Sources */,
 				8D4115E31F59324A00069FD9 /* MSUserData.m in Sources */,
 			);
