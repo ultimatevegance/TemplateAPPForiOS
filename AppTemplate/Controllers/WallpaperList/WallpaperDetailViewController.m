@@ -117,7 +117,7 @@
     _previewScrollView.hidden = YES;
     
     UITapGestureRecognizer *tapToDismiss = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(exitPreviewMode)];
-    tapToDismiss.numberOfTapsRequired = 2;
+    tapToDismiss.numberOfTapsRequired = 1;
     [_previewScrollView addGestureRecognizer:tapToDismiss];
 
 }
@@ -129,9 +129,17 @@
 #pragma mark - Actions
 
 - (void)exitPreviewMode {
-    _previewScrollView.hidden = YES;
-    _cancelButton.hidden = NO;
-    _toolBarView.hidden = NO;
+    [UIView transitionWithView:_previewScrollView
+                      duration:0.7
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        _previewScrollView.hidden = YES;
+                        _cancelButton.hidden = NO;
+                        _toolBarView.hidden = NO;
+                        
+                    }
+                    completion:NULL];
+
 }
 
 - (IBAction)cancel:(UIButton *)sender {
@@ -139,10 +147,18 @@
 }
 
 - (IBAction)preview:(UIButton *)sender {
-  
-    _previewScrollView.hidden = NO;
-    _toolBarView.hidden = YES;
-    _cancelButton.hidden = YES;
+    
+    [UIView transitionWithView:_previewScrollView
+                      duration:0.7
+                       options:UIViewAnimationOptionTransitionCrossDissolve
+                    animations:^{
+                        _previewScrollView.hidden = NO;
+                        _toolBarView.hidden = YES;
+                        _cancelButton.hidden = YES;
+
+                    }
+                    completion:NULL];
+
 }
 
 - (IBAction)save:(UIButton *)sender {
