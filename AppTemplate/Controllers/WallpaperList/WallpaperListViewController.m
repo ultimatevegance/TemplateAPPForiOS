@@ -201,6 +201,15 @@ static NSInteger cellMargin = 12;
     CollectionViewCell *cell = (CollectionViewCell *)previewingContext.sourceView;
     MSWallpaperData *selectedCellData = cell.wallpaperData;
     WallpaperDetailViewController *detailedVC = [[WallpaperDetailViewController alloc] initWithSourceImage:cell.wallpaper DownloadUrl:selectedCellData.urls_full User:selectedCellData.user] ;
+    [self setTransitioningDelegate:[RZTransitionsManager shared]];
+    [detailedVC setTransitioningDelegate:[RZTransitionsManager shared]];
+    RZVerticalSwipeInteractionController *dismissInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
+    [dismissInteractionController attachViewController:detailedVC withAction:RZTransitionAction_Dismiss];
+    [[RZTransitionsManager shared] setInteractionController:dismissInteractionController
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_Dismiss];
+
     [self presentViewController:detailedVC animated:YES completion:nil];
     // alternatively, use the view controller that's being provided here (viewControllerToCommit)
 }
