@@ -15,11 +15,12 @@
 #import "Common.h"
 #import "WallpaperDetailViewController.h"
 #import "RZTransitions.h"
-@interface CollectionDetailViewController ()<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout>
+@interface CollectionDetailViewController ()<UICollectionViewDataSource, CHTCollectionViewDelegateWaterfallLayout,RZTransitionInteractionControllerDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray *datasourceArray;
 @property (strong, nonatomic) NSNumber *collectionID;
 @property (copy, nonatomic) NSString *collectionTitle;
+@property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
 @property (nonatomic) NSUInteger currentPage;
 @end
 
@@ -40,8 +41,13 @@ static NSInteger cellMargin = 12;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    id<RZAnimationControllerProtocol> presentDismissAnimationController = [[RZZoomAlphaAnimationController alloc] init];
-    [[RZTransitionsManager shared] setDefaultPresentDismissAnimationController:presentDismissAnimationController];
+    self.presentInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
+    [self.presentInteractionController setNextViewControllerDelegate:self];
+    [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
+    // Setup the animations for presenting and dismissing a new VC
+    [[RZTransitionsManager shared] setAnimationController:[[RZCirclePushAnimationController alloc] init]
+                                       fromViewController:[self class]
+                                                forAction:RZTransitionAction_PresentDismiss];
     _datasourceArray = [NSMutableArray array];
     CHTCollectionViewWaterfallLayout *layout = [[CHTCollectionViewWaterfallLayout alloc] init];
     layout.sectionInset = UIEdgeInsetsMake(cellMargin, cellMargin, cellMargin, cellMargin);
@@ -67,6 +73,15 @@ static NSInteger cellMargin = 12;
     }];
     [self refreshData];
     [self configTitleLabel];
+}
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    //  Use the present interaction controller for presenting any view controller from this view controller
+    [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_Present];
+    
 }
 
 - (void)configTitleLabel {
@@ -132,10 +147,10 @@ static NSInteger cellMargin = 12;
         [detailedVC setTransitioningDelegate:[RZTransitionsManager shared]];
         RZVerticalSwipeInteractionController *dismissInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
         [dismissInteractionController attachViewController:detailedVC withAction:RZTransitionAction_Dismiss];
-        [[RZTransitionsManager shared] setAnimationController:[[RZZoomPushAnimationController alloc] init]
-                                           fromViewController:[self class]
-                                             toViewController:[detailedVC class]
-                                                    forAction:RZTransitionAction_PresentDismiss];
+        [[RZTransitionsManager shared] setInteractionController:dismissInteractionController
+                                             fromViewController:[self class]
+                                               toViewController:nil
+                                                      forAction:RZTransitionAction_Dismiss];
         [self presentViewController:detailedVC animated:YES completion:nil];
     }
 }

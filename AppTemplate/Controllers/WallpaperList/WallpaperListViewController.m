@@ -41,7 +41,6 @@ static NSInteger cellMargin = 12;
                                        fromViewController:[self class]
                                                 forAction:RZTransitionAction_PresentDismiss];
 
-
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     _datasourceArray = [NSMutableArray array];
