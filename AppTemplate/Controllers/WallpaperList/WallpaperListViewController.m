@@ -13,10 +13,11 @@
 #import "MSWallpaperData.h"
 #import "WallpaperDetailViewController.h"
 #import "RZTransitions.h"
-@interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,RZTransitionInteractionControllerDelegate>
 
 @property (strong, nonatomic) NSMutableArray *datasourceArray;
 @property (nonatomic) NSUInteger currentPage;
+@property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
 
 @end
 
@@ -27,8 +28,17 @@ static NSInteger cellMargin = 12;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    id<RZAnimationControllerProtocol> presentDismissAnimationController = [[RZZoomAlphaAnimationController alloc] init];
-    [[RZTransitionsManager shared] setDefaultPresentDismissAnimationController:presentDismissAnimationController];
+    // Create the presentation interaction controller that allows a custom gesture
+    // to control presenting a new VC via a presentViewController
+    self.presentInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
+    [self.presentInteractionController setNextViewControllerDelegate:self];
+    [self.presentInteractionController attachViewController:self withAction:RZTransitionAction_Present];
+    // Setup the animations for presenting and dismissing a new VC
+    [[RZTransitionsManager shared] setAnimationController:[[RZCirclePushAnimationController alloc] init]
+                                       fromViewController:[self class]
+                                                forAction:RZTransitionAction_PresentDismiss];
+
+
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     _datasourceArray = [NSMutableArray array];
@@ -54,6 +64,12 @@ static NSInteger cellMargin = 12;
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    //  Use the present interaction controller for presenting any view controller from this view controller
+    [[RZTransitionsManager shared] setInteractionController:self.presentInteractionController
+                                         fromViewController:[self class]
+                                           toViewController:nil
+                                                  forAction:RZTransitionAction_Present];
+
 }
 
 #pragma mark - Networking
@@ -113,10 +129,13 @@ static NSInteger cellMargin = 12;
     if (cell.wallpaper) {
         [self setTransitioningDelegate:[RZTransitionsManager shared]];
         [detailedVC setTransitioningDelegate:[RZTransitionsManager shared]];
-        [[RZTransitionsManager shared] setAnimationController:[[RZZoomPushAnimationController alloc] init]
-                                           fromViewController:[self class]
-                                             toViewController:[detailedVC class]
-                                                    forAction:RZTransitionAction_PresentDismiss];
+        RZVerticalSwipeInteractionController *dismissInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
+        [dismissInteractionController attachViewController:detailedVC withAction:RZTransitionAction_Dismiss];
+        [[RZTransitionsManager shared] setInteractionController:dismissInteractionController
+                                             fromViewController:[self class]
+                                               toViewController:nil
+                                                      forAction:RZTransitionAction_Dismiss];
+
         [self presentViewController:detailedVC animated:YES completion:nil];
     }
 }
