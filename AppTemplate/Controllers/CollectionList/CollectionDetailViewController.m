@@ -130,6 +130,8 @@ static NSInteger cellMargin = 12;
     if (cell.wallpaper) {
         [self setTransitioningDelegate:[RZTransitionsManager shared]];
         [detailedVC setTransitioningDelegate:[RZTransitionsManager shared]];
+        RZVerticalSwipeInteractionController *dismissInteractionController = [[RZVerticalSwipeInteractionController alloc] init];
+        [dismissInteractionController attachViewController:detailedVC withAction:RZTransitionAction_Dismiss];
         [[RZTransitionsManager shared] setAnimationController:[[RZZoomPushAnimationController alloc] init]
                                            fromViewController:[self class]
                                              toViewController:[detailedVC class]

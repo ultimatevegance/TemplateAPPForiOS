@@ -84,6 +84,8 @@
 		8DF75DEF1F6242A100239DCC /* PanoramaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF75DEC1F6242A100239DCC /* PanoramaView.m */; };
 		8DF75DF01F6242A100239DCC /* UIScrollView+PanoramaIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF75DEE1F6242A100239DCC /* UIScrollView+PanoramaIndicator.m */; };
 		8DF75DF21F6242C500239DCC /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF75DF11F6242C500239DCC /* CoreMotion.framework */; };
+		8DF75DF81F62572B00239DCC /* ForceTouchPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8DF75DF61F62572B00239DCC /* ForceTouchPreviewController.m */; };
+		8DF75DF91F62572B00239DCC /* ForceTouchPreviewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8DF75DF71F62572B00239DCC /* ForceTouchPreviewController.xib */; };
 		A8A741E8C25E82B535A60E78 /* libPods-AppTemplateUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */; };
 /* End PBXBuildFile section */
 
@@ -255,6 +257,9 @@
 		8DF75DED1F6242A100239DCC /* UIScrollView+PanoramaIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+PanoramaIndicator.h"; sourceTree = "<group>"; };
 		8DF75DEE1F6242A100239DCC /* UIScrollView+PanoramaIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+PanoramaIndicator.m"; sourceTree = "<group>"; };
 		8DF75DF11F6242C500239DCC /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		8DF75DF51F62572B00239DCC /* ForceTouchPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForceTouchPreviewController.h; sourceTree = "<group>"; };
+		8DF75DF61F62572B00239DCC /* ForceTouchPreviewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForceTouchPreviewController.m; sourceTree = "<group>"; };
+		8DF75DF71F62572B00239DCC /* ForceTouchPreviewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForceTouchPreviewController.xib; sourceTree = "<group>"; };
 		A3007A298E7CC4B86A246C14 /* Pods-AppTemplateUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B0E026F3DED362E87652F2A7 /* Pods-AppTemplateUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplateUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplateUITests/Pods-AppTemplateUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -529,6 +534,9 @@
 				8D4115BF1F5905B500069FD9 /* WallpaperListViewController.h */,
 				8D4115C01F5905B500069FD9 /* WallpaperListViewController.m */,
 				8D4115C11F5905B500069FD9 /* WallpaperListViewController.xib */,
+				8DF75DF51F62572B00239DCC /* ForceTouchPreviewController.h */,
+				8DF75DF61F62572B00239DCC /* ForceTouchPreviewController.m */,
+				8DF75DF71F62572B00239DCC /* ForceTouchPreviewController.xib */,
 			);
 			path = WallpaperList;
 			sourceTree = "<group>";
@@ -877,6 +885,7 @@
 				8D4115C31F5905B500069FD9 /* PictureCollectionViewController.xib in Resources */,
 				8D8F9F981F5D06A000D07450 /* SVProgressHUD.bundle in Resources */,
 				8D4115D51F5905BD00069FD9 /* PicCollectionListCell.xib in Resources */,
+				8DF75DF91F62572B00239DCC /* ForceTouchPreviewController.xib in Resources */,
 				72E858221E7EC735001EBB8B /* Assets.xcassets in Resources */,
 				72E858201E7EC735001EBB8B /* Main.storyboard in Resources */,
 			);
@@ -1081,6 +1090,7 @@
 				8D4115A11F59047C00069FD9 /* UIView+SGFrame.m in Sources */,
 				8D4115C21F5905B500069FD9 /* PictureCollectionViewController.m in Sources */,
 				8D8F9FF21F5E323E00D07450 /* UIImage+RZTransitionsFastImageBlur.m in Sources */,
+				8DF75DF81F62572B00239DCC /* ForceTouchPreviewController.m in Sources */,
 				8D4115C91F5905B500069FD9 /* WallpaperListViewController.m in Sources */,
 				8D8F9FE31F5E323E00D07450 /* RZBaseSwipeInteractionController.m in Sources */,
 				8D8F9FED1F5E323E00D07450 /* RZShrinkZoomAnimationController.m in Sources */,

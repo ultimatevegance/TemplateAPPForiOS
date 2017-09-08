@@ -13,11 +13,14 @@
 #import "MSWallpaperData.h"
 #import "WallpaperDetailViewController.h"
 #import "RZTransitions.h"
-@interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,RZTransitionInteractionControllerDelegate>
+#import "ForceTouchPreviewController.h"
+@interface WallpaperListViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,RZTransitionInteractionControllerDelegate,UIViewControllerPreviewingDelegate>
 
 @property (strong, nonatomic) NSMutableArray *datasourceArray;
 @property (nonatomic) NSUInteger currentPage;
 @property (nonatomic, strong) id<RZTransitionInteractionController> presentInteractionController;
+@property (nonatomic, strong) UILongPressGestureRecognizer *longPress;
+@property (nonatomic, strong)NSIndexPath *selectedIndexPath;
 
 @end
 
@@ -122,6 +125,7 @@ static NSInteger cellMargin = 12;
 #pragma mark <UICollectionViewDelegate>
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    _selectedIndexPath = indexPath;
     CollectionViewCell *cell = (CollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     MSWallpaperData *selectedCellData = _datasourceArray[indexPath.row];
     WallpaperDetailViewController *detailedVC = [[WallpaperDetailViewController alloc] initWithSourceImage:cell.wallpaper DownloadUrl:selectedCellData.urls_full User:selectedCellData.user] ;
@@ -154,6 +158,11 @@ static NSInteger cellMargin = 12;
     CollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     cell.wallpaperData = _datasourceArray[indexPath.row];
     
+    if (self.traitCollection.forceTouchCapability == UIForceTouchCapabilityAvailable) {
+        
+        [self registerForPreviewingWithDelegate:(id)self sourceView:cell];
+    }
+    
     // Configure the cell
     
     return cell;
@@ -170,6 +179,31 @@ static NSInteger cellMargin = 12;
 {
     NSInteger cellWidth = (CGRectGetWidth(self.collectionView.bounds) - cellMargin * 4) / 3 ;
     return CGSizeMake(cellWidth , cellWidth * 1.7);
+}
+
+# pragma mark - 3D Touch Delegate
+
+- (UIViewController *)previewingContext:(id<UIViewControllerPreviewing>)previewingContext viewControllerForLocation:(CGPoint)location {
+    
+    // check if we're not already displaying a preview controller
+    if ([self.presentedViewController isKindOfClass:[ForceTouchPreviewController class]]) {
+        return nil;
+    }
+    
+    CollectionViewCell *cell = (CollectionViewCell *)previewingContext.sourceView;
+    MSWallpaperData *selectedCellData = cell.wallpaperData;
+    
+    ForceTouchPreviewController *fPreviewVC = [[ForceTouchPreviewController alloc] initWithSourceImage:cell.wallpaper DownloadUrl:selectedCellData.urls_full User:selectedCellData.user];
+    return fPreviewVC;
+}
+
+- (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    
+    CollectionViewCell *cell = (CollectionViewCell *)previewingContext.sourceView;
+    MSWallpaperData *selectedCellData = cell.wallpaperData;
+    WallpaperDetailViewController *detailedVC = [[WallpaperDetailViewController alloc] initWithSourceImage:cell.wallpaper DownloadUrl:selectedCellData.urls_full User:selectedCellData.user] ;
+    [self presentViewController:detailedVC animated:YES completion:nil];
+    // alternatively, use the view controller that's being provided here (viewControllerToCommit)
 }
 
 @end
