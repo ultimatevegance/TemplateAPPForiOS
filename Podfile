@@ -31,7 +31,6 @@ target 'AppTemplate' do
   pod 'FastttCamera'
   pod 'SCRecorder'
   pod 'JVFloatLabeledTextField'
-  pod 'RMPZoomTransitionAnimator'
   pod 'FCAlertView'
 #   pod 'YYKit'
   pod 'Canvas'

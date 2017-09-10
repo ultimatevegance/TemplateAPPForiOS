@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		725ACB861F65090600F475CA /* MSImageEffectTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 725ACB851F65090600F475CA /* MSImageEffectTool.m */; };
+		725ACB881F65092D00F475CA /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 725ACB871F65092D00F475CA /* CoreImage.framework */; };
 		7281C2F3489597CCB622F211 /* libPods-AppTemplateTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BEBB9EF5D703DDD5136FF3CE /* libPods-AppTemplateTests.a */; };
 		72E858171E7EC735001EBB8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858161E7EC735001EBB8B /* main.m */; };
 		72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72E858191E7EC735001EBB8B /* AppDelegate.m */; };
@@ -113,6 +115,9 @@
 		4941E7499295362E5205E783 /* libPods-AppTemplateUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplateUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8A317DABCFDDAC5D8441AB /* libPods-AppTemplate.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppTemplate.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52EE46CF075FE7B30045567C /* Pods-AppTemplate.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppTemplate.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppTemplate/Pods-AppTemplate.release.xcconfig"; sourceTree = "<group>"; };
+		725ACB841F65090600F475CA /* MSImageEffectTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MSImageEffectTool.h; sourceTree = "<group>"; };
+		725ACB851F65090600F475CA /* MSImageEffectTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MSImageEffectTool.m; sourceTree = "<group>"; };
+		725ACB871F65092D00F475CA /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		72C309051E7F034600165EED /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		72E858121E7EC735001EBB8B /* AppTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72E858161E7EC735001EBB8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -270,6 +275,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725ACB881F65092D00F475CA /* CoreImage.framework in Frameworks */,
 				8DF75DF21F6242C500239DCC /* CoreMotion.framework in Frameworks */,
 				8DCF18471F5FD4A3006604CC /* Photos.framework in Frameworks */,
 				8D8F9F9C1F5D06E400D07450 /* QuartzCore.framework in Frameworks */,
@@ -297,6 +303,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		725ACB831F6508C900F475CA /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				725ACB841F65090600F475CA /* MSImageEffectTool.h */,
+				725ACB851F65090600F475CA /* MSImageEffectTool.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		72E858091E7EC735001EBB8B = {
 			isa = PBXGroup;
 			children = (
@@ -325,6 +340,7 @@
 				72C309051E7F034600165EED /* Common.h */,
 				72E858181E7EC735001EBB8B /* AppDelegate.h */,
 				72E858191E7EC735001EBB8B /* AppDelegate.m */,
+				725ACB831F6508C900F475CA /* Tools */,
 				8D4115DA1F59097E00069FD9 /* Networking */,
 				8D4115D61F5905C900069FD9 /* Models */,
 				8D4115CB1F5905BD00069FD9 /* Views */,
@@ -731,6 +747,7 @@
 		CA55440556BBB11F27B88A86 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				725ACB871F65092D00F475CA /* CoreImage.framework */,
 				8DF75DF11F6242C500239DCC /* CoreMotion.framework */,
 				8DCF18461F5FD4A3006604CC /* Photos.framework */,
 				8D8F9F9B1F5D06E400D07450 /* QuartzCore.framework */,
@@ -1053,6 +1070,7 @@
 				8D4115DD1F5909E000069FD9 /* MSNetworkAPIManager.m in Sources */,
 				8D8F9FF11F5E323E00D07450 /* NSObject+RZTransitionsViewHelpers.m in Sources */,
 				8D8F9FF01F5E323E00D07450 /* RZZoomPushAnimationController.m in Sources */,
+				725ACB861F65090600F475CA /* MSImageEffectTool.m in Sources */,
 				8D4115A31F59047C00069FD9 /* SGPageContentView.m in Sources */,
 				8D8F9FE71F5E323E00D07450 /* RZVerticalSwipeInteractionController.m in Sources */,
 				72E8581A1E7EC735001EBB8B /* AppDelegate.m in Sources */,
