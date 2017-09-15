@@ -10,9 +10,29 @@
 #import <UIKit/UIKit.h>
 #import <CoreImage/CoreImage.h>
 
+typedef NS_ENUM(NSUInteger, CIEffect) {
+    CIEffectCIMaskedVariableBlur,
+    CIEffectCILinearToSRGBToneCurve,
+    CIEffectCIPhotoEffectInstant,
+    CIEffectCIPhotoEffectMono,
+    CIEffectCICIKaleidoscope,
+    CIEffectCISixfoldReflectedTile,
+    CIEffectCICITriangleKaleidoscope,
+    CIEffectCITriangleTile,
+    CIEffectCICICrystallize ,
+    CIEffectCIDepthOfField,
+    CIEffectCIHexagonalPixellate,
+    CIEffectCIComicEffect,
+    CIEffectCITwelvefoldReflectedTile,
+    CIEffectCIGlassDistortion,
+    CIEffectCIGammaAdjust
+};
+
+
 @interface MSImageEffectTool : NSObject
 
 + (UIImage *)blurredImageWithImage:(UIImage *)sourceImage;
 
++ (UIImage *)processImageWithCIEffect:(CIEffect)Effect InputImage:(UIImage *)inputImage;
 
 @end

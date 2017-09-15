@@ -7,7 +7,6 @@
 //
 
 #import "MSImageEffectTool.h"
-
 @implementation MSImageEffectTool
 
 + (UIImage*)blurredImageWithImage:(UIImage *)sourceImage {
@@ -32,5 +31,129 @@
     }
     
     return retVal;
+}
+
++ (UIImage *)processImageWithCIEffect:(CIEffect)Effect InputImage:(UIImage *)inputImage {
+    UIImage *outputImage ;
+    switch (Effect) {
+        case CIEffectCIMaskedVariableBlur: {
+            
+            return outputImage;
+            break;
+ 
+        }
+            
+        case CIEffectCILinearToSRGBToneCurve:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+        case CIEffectCIPhotoEffectInstant:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCIPhotoEffectMono:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCICIKaleidoscope:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCISixfoldReflectedTile:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCICITriangleKaleidoscope:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCITriangleTile:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCICICrystallize:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCIDepthOfField:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCIHexagonalPixellate:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCIComicEffect:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCITwelvefoldReflectedTile:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCIGlassDistortion:{
+            
+            return outputImage;
+            break;
+            
+        }
+
+            
+        case CIEffectCIGammaAdjust:{
+            
+            return outputImage;
+            break;
+            
+        }
+        default:
+            break;
+    }
 }
 @end
